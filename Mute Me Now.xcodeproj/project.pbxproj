@@ -12,6 +12,9 @@
 		11B86E581EDE9B4D0069D254 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E571EDE9B4D0069D254 /* ViewController.m */; };
 		11B86E5A1EDE9B4D0069D254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E591EDE9B4D0069D254 /* Assets.xcassets */; };
 		11B86E5D1EDE9B4D0069D254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E5B1EDE9B4D0069D254 /* Main.storyboard */; };
+		11B86E661EDE9BD00069D254 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E651EDE9BD00069D254 /* DFRFoundation.framework */; };
+		11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E681EDE9D1A0069D254 /* mute_sript.scpt */; };
+		11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E691EDE9D1A0069D254 /* volume_sript.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		11B86E591EDE9B4D0069D254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11B86E5C1EDE9B4D0069D254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11B86E5E1EDE9B4D0069D254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11B86E651EDE9BD00069D254 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
+		11B86E671EDE9CDC0069D254 /* TouchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchBar.h; sourceTree = "<group>"; };
+		11B86E681EDE9D1A0069D254 /* mute_sript.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mute_sript.scpt; sourceTree = "<group>"; };
+		11B86E691EDE9D1A0069D254 /* volume_sript.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = volume_sript.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11B86E661EDE9BD00069D254 /* DFRFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +50,7 @@
 			children = (
 				11B86E4F1EDE9B4D0069D254 /* Mute Me Now */,
 				11B86E4E1EDE9B4D0069D254 /* Products */,
+				11B86E641EDE9BD00069D254 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +65,8 @@
 		11B86E4F1EDE9B4D0069D254 /* Mute Me Now */ = {
 			isa = PBXGroup;
 			children = (
+				11B86E681EDE9D1A0069D254 /* mute_sript.scpt */,
+				11B86E691EDE9D1A0069D254 /* volume_sript.scpt */,
 				11B86E501EDE9B4D0069D254 /* AppDelegate.h */,
 				11B86E511EDE9B4D0069D254 /* AppDelegate.m */,
 				11B86E561EDE9B4D0069D254 /* ViewController.h */,
@@ -64,6 +75,7 @@
 				11B86E5B1EDE9B4D0069D254 /* Main.storyboard */,
 				11B86E5E1EDE9B4D0069D254 /* Info.plist */,
 				11B86E531EDE9B4D0069D254 /* Supporting Files */,
+				11B86E671EDE9CDC0069D254 /* TouchBar.h */,
 			);
 			path = "Mute Me Now";
 			sourceTree = "<group>";
@@ -74,6 +86,14 @@
 				11B86E541EDE9B4D0069D254 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11B86E641EDE9BD00069D254 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11B86E651EDE9BD00069D254 /* DFRFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				11B86E5A1EDE9B4D0069D254 /* Assets.xcassets in Resources */,
+				11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */,
+				11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */,
 				11B86E5D1EDE9B4D0069D254 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,9 +282,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = "Mute Me Now/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Pixel-Point.Mute-Me-Now";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -272,9 +299,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = "Mute Me Now/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Pixel-Point.Mute-Me-Now";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
