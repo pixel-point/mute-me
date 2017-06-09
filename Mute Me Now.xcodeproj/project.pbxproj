@@ -19,6 +19,16 @@
 		11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		11C515671EEA9F6E004CE22A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 11B86E751EDEAC970069D254;
+			remoteInfo = "Mute Me Now Launcher";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		11B86E941EDEAD980069D254 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -120,6 +130,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		11C515641EEA9F6E004CE22A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,12 +190,28 @@
 			mainGroup = 11B86E441EDE9B4C0069D254;
 			productRefGroup = 11B86E4E1EDE9B4D0069D254 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 11C515641EEA9F6E004CE22A /* Products */;
+					ProjectRef = 11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				11B86E4C1EDE9B4D0069D254 /* Mute Me Now */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Mute Me Now Launcher.app";
+			remoteRef = 11C515671EEA9F6E004CE22A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		11B86E4B1EDE9B4D0069D254 /* Resources */ = {
@@ -362,6 +396,7 @@
 				11B86E631EDE9B4D0069D254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

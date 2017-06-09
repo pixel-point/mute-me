@@ -24,7 +24,6 @@
 		11B86E811EDEAC980069D254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11B86E841EDEAC980069D254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11B86E861EDEAC980069D254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11B86E991EDECB350069D254 /* Mute Me Now Launcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now Launcher.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +56,6 @@
 		11B86E771EDEAC970069D254 /* Mute Me Now Launcher */ = {
 			isa = PBXGroup;
 			children = (
-				11B86E991EDECB350069D254 /* Mute Me Now Launcher.entitlements */,
 				11B86E781EDEAC970069D254 /* AppDelegate.h */,
 				11B86E791EDEAC970069D254 /* AppDelegate.m */,
 				11B86E7E1EDEAC970069D254 /* ViewController.h */,
@@ -309,6 +307,7 @@
 				11B86E8B1EDEAC980069D254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
