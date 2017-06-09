@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1174D17A1EEAA47800A173CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1174D1791EEAA47800A173CD /* AppDelegate.m */; };
+		1174D17D1EEAA47800A173CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1174D17C1EEAA47800A173CD /* main.m */; };
+		1174D1801EEAA47800A173CD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1174D17F1EEAA47800A173CD /* ViewController.m */; };
+		1174D1821EEAA47800A173CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1174D1811EEAA47800A173CD /* Assets.xcassets */; };
+		1174D1851EEAA47800A173CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1174D1831EEAA47800A173CD /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1174D1751EEAA47800A173CD /* Mute Me Launcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mute Me Launcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1174D1781EEAA47800A173CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1174D1791EEAA47800A173CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1174D17C1EEAA47800A173CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1174D17E1EEAA47800A173CD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1174D17F1EEAA47800A173CD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1174D1811EEAA47800A173CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1174D1841EEAA47800A173CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1174D1861EEAA47800A173CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1174D1941EEAA66500A173CD /* Mute Me Launcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Launcher.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1174D1721EEAA47800A173CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1174D16C1EEAA47800A173CD = {
+			isa = PBXGroup;
+			children = (
+				1174D1771EEAA47800A173CD /* Mute Me Launcher */,
+				1174D1761EEAA47800A173CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1174D1761EEAA47800A173CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1174D1751EEAA47800A173CD /* Mute Me Launcher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1174D1771EEAA47800A173CD /* Mute Me Launcher */ = {
+			isa = PBXGroup;
+			children = (
+				1174D1941EEAA66500A173CD /* Mute Me Launcher.entitlements */,
+				1174D1781EEAA47800A173CD /* AppDelegate.h */,
+				1174D1791EEAA47800A173CD /* AppDelegate.m */,
+				1174D17E1EEAA47800A173CD /* ViewController.h */,
+				1174D17F1EEAA47800A173CD /* ViewController.m */,
+				1174D1811EEAA47800A173CD /* Assets.xcassets */,
+				1174D1831EEAA47800A173CD /* Main.storyboard */,
+				1174D1861EEAA47800A173CD /* Info.plist */,
+				1174D17B1EEAA47800A173CD /* Supporting Files */,
+			);
+			path = "Mute Me Launcher";
+			sourceTree = "<group>";
+		};
+		1174D17B1EEAA47800A173CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1174D17C1EEAA47800A173CD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1174D1741EEAA47800A173CD /* Mute Me Launcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1174D1891EEAA47800A173CD /* Build configuration list for PBXNativeTarget "Mute Me Launcher" */;
+			buildPhases = (
+				1174D1711EEAA47800A173CD /* Sources */,
+				1174D1721EEAA47800A173CD /* Frameworks */,
+				1174D1731EEAA47800A173CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mute Me Launcher";
+			productName = "Mute Me Launcher";
+			productReference = 1174D1751EEAA47800A173CD /* Mute Me Launcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1174D16D1EEAA47800A173CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Pixel Point";
+				TargetAttributes = {
+					1174D1741EEAA47800A173CD = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 1174D1701EEAA47800A173CD /* Build configuration list for PBXProject "Mute Me Launcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1174D16C1EEAA47800A173CD;
+			productRefGroup = 1174D1761EEAA47800A173CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1174D1741EEAA47800A173CD /* Mute Me Launcher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1174D1731EEAA47800A173CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1174D1821EEAA47800A173CD /* Assets.xcassets in Resources */,
+				1174D1851EEAA47800A173CD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1174D1711EEAA47800A173CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1174D1801EEAA47800A173CD /* ViewController.m in Sources */,
+				1174D17D1EEAA47800A173CD /* main.m in Sources */,
+				1174D17A1EEAA47800A173CD /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1174D1831EEAA47800A173CD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1174D1841EEAA47800A173CD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1174D1871EEAA47800A173CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1174D1881EEAA47800A173CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1174D18A1EEAA47800A173CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mute Me Launcher/Mute Me Launcher.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Mute Me Launcher/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now-launcher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		1174D18B1EEAA47800A173CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mute Me Launcher/Mute Me Launcher.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Mute Me Launcher/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now-launcher";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1174D1701EEAA47800A173CD /* Build configuration list for PBXProject "Mute Me Launcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1174D1871EEAA47800A173CD /* Debug */,
+				1174D1881EEAA47800A173CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1174D1891EEAA47800A173CD /* Build configuration list for PBXNativeTarget "Mute Me Launcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1174D18A1EEAA47800A173CD /* Debug */,
+				1174D18B1EEAA47800A173CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1174D16D1EEAA47800A173CD /* Project object */;
+}

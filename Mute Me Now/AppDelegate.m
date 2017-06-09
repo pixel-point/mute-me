@@ -23,6 +23,8 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
     [NSTouchBarItem addSystemTrayItem:mute];
     DFRElementSetControlStripPresenceForIdentifier(muteIdentifier, YES);
+
+    [self enableLoginAutostart];
 }
 
 - (void)present:(id)sender
@@ -34,6 +36,12 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
+}
+
+-(void) enableLoginAutostart {
+    if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Launcher", true)) {
+        NSLog(@"The login was not succesfull");
+    }
 }
 
 -(double) currentState {

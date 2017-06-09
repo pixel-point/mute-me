@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Mute Me Launcher.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Mute Me Now.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>113516701EEAC5D6005C1401</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>11B86E4C1EDE9B4D0069D254</key>
 		<dict>
 			<key>primary</key>
