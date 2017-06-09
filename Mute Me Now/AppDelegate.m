@@ -39,7 +39,7 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 }
 
 -(void) enableLoginAutostart {
-    if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"pixel-point.mute-me-now-launcher", true)) {
+    if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Launcher", true)) {
         NSLog(@"The login was not succesfull");
     }
 }
