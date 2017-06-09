@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1174D1931EEAA5D100A173CD /* Mute Me Launcher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1174D1911EEAA47A00A173CD /* Mute Me Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1174D1971EEAA6BF00A173CD /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1174D1961EEAA6BF00A173CD /* ServiceManagement.framework */; };
 		11B86E521EDE9B4D0069D254 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E511EDE9B4D0069D254 /* AppDelegate.m */; };
 		11B86E551EDE9B4D0069D254 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E541EDE9B4D0069D254 /* main.m */; };
 		11B86E581EDE9B4D0069D254 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E571EDE9B4D0069D254 /* ViewController.m */; };
@@ -17,7 +19,33 @@
 		11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E691EDE9D1A0069D254 /* volume_sript.scpt */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1174D1901EEAA47A00A173CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1174D18C1EEAA47800A173CD /* Mute Me Launcher.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1174D1751EEAA47800A173CD;
+			remoteInfo = "Mute Me Launcher";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1174D1921EEAA59D00A173CD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				1174D1931EEAA5D100A173CD /* Mute Me Launcher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1174D18C1EEAA47800A173CD /* Mute Me Launcher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Mute Me Launcher.xcodeproj"; path = "Mute Me Launcher/Mute Me Launcher.xcodeproj"; sourceTree = "<group>"; };
+		1174D1951EEAA66E00A173CD /* Mute Me Now.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now.entitlements"; sourceTree = "<group>"; };
+		1174D1961EEAA6BF00A173CD /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		11B86E4D1EDE9B4D0069D254 /* Mute Me Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mute Me Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B86E501EDE9B4D0069D254 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11B86E511EDE9B4D0069D254 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -38,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1174D1971EEAA6BF00A173CD /* ServiceManagement.framework in Frameworks */,
 				11B86E661EDE9BD00069D254 /* DFRFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,12 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1174D18D1EEAA47800A173CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1174D1911EEAA47A00A173CD /* Mute Me Launcher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		11B86E441EDE9B4C0069D254 = {
 			isa = PBXGroup;
 			children = (
 				11B86E4F1EDE9B4D0069D254 /* Mute Me Now */,
 				11B86E4E1EDE9B4D0069D254 /* Products */,
 				11B86E641EDE9BD00069D254 /* Frameworks */,
+				1174D18C1EEAA47800A173CD /* Mute Me Launcher.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +103,7 @@
 		11B86E4F1EDE9B4D0069D254 /* Mute Me Now */ = {
 			isa = PBXGroup;
 			children = (
+				1174D1951EEAA66E00A173CD /* Mute Me Now.entitlements */,
 				11B86E681EDE9D1A0069D254 /* mute_sript.scpt */,
 				11B86E691EDE9D1A0069D254 /* volume_sript.scpt */,
 				11B86E501EDE9B4D0069D254 /* AppDelegate.h */,
@@ -91,6 +130,7 @@
 		11B86E641EDE9BD00069D254 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1174D1961EEAA6BF00A173CD /* ServiceManagement.framework */,
 				11B86E651EDE9BD00069D254 /* DFRFoundation.framework */,
 			);
 			name = Frameworks;
@@ -106,6 +146,7 @@
 				11B86E491EDE9B4D0069D254 /* Sources */,
 				11B86E4A1EDE9B4D0069D254 /* Frameworks */,
 				11B86E4B1EDE9B4D0069D254 /* Resources */,
+				1174D1921EEAA59D00A173CD /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -127,7 +168,12 @@
 				TargetAttributes = {
 					11B86E4C1EDE9B4D0069D254 = {
 						CreatedOnToolsVersion = 8.3.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -142,12 +188,28 @@
 			mainGroup = 11B86E441EDE9B4C0069D254;
 			productRefGroup = 11B86E4E1EDE9B4D0069D254 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1174D18D1EEAA47800A173CD /* Products */;
+					ProjectRef = 1174D18C1EEAA47800A173CD /* Mute Me Launcher.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				11B86E4C1EDE9B4D0069D254 /* Mute Me Now */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1174D1911EEAA47A00A173CD /* Mute Me Launcher.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Mute Me Launcher.app";
+			remoteRef = 1174D1901EEAA47A00A173CD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		11B86E4B1EDE9B4D0069D254 /* Resources */ = {
@@ -281,7 +343,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -291,6 +356,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -298,7 +365,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -308,6 +378,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -330,6 +402,7 @@
 				11B86E631EDE9B4D0069D254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
