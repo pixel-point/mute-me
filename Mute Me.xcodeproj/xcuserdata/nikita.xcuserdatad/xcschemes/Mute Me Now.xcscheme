@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "11B86E4C1EDE9B4D0069D254"
-               BuildableName = "Mute Me Now.app"
-               BlueprintName = "Mute Me Now"
-               ReferencedContainer = "container:Mute Me Now.xcodeproj">
+               BuildableName = "Mute Me.app"
+               BlueprintName = "Mute Me"
+               ReferencedContainer = "container:Mute Me.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "11B86E4C1EDE9B4D0069D254"
-            BuildableName = "Mute Me Now.app"
-            BlueprintName = "Mute Me Now"
-            ReferencedContainer = "container:Mute Me Now.xcodeproj">
+            BuildableName = "Mute Me.app"
+            BlueprintName = "Mute Me"
+            ReferencedContainer = "container:Mute Me.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "11B86E4C1EDE9B4D0069D254"
-            BuildableName = "Mute Me Now.app"
-            BlueprintName = "Mute Me Now"
-            ReferencedContainer = "container:Mute Me Now.xcodeproj">
+            BuildableName = "Mute Me.app"
+            BlueprintName = "Mute Me"
+            ReferencedContainer = "container:Mute Me.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "11B86E4C1EDE9B4D0069D254"
-            BuildableName = "Mute Me Now.app"
-            BlueprintName = "Mute Me Now"
-            ReferencedContainer = "container:Mute Me Now.xcodeproj">
+            BuildableName = "Mute Me.app"
+            BlueprintName = "Mute Me"
+            ReferencedContainer = "container:Mute Me.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

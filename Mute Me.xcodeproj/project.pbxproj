@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1141FDF21EEFF6DD00CA5B30 /* TouchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1141FDF11EEFF6DD00CA5B30 /* TouchButton.m */; };
 		11B86E521EDE9B4D0069D254 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E511EDE9B4D0069D254 /* AppDelegate.m */; };
 		11B86E551EDE9B4D0069D254 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E541EDE9B4D0069D254 /* main.m */; };
 		11B86E581EDE9B4D0069D254 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E571EDE9B4D0069D254 /* ViewController.m */; };
@@ -43,7 +44,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		11B86E4D1EDE9B4D0069D254 /* Mute Me Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mute Me Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1141FDF01EEFF6DD00CA5B30 /* TouchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchButton.h; sourceTree = "<group>"; };
+		1141FDF11EEFF6DD00CA5B30 /* TouchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchButton.m; sourceTree = "<group>"; };
+		1141FDF51EEFFA0000CA5B30 /* TouchDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDelegate.h; sourceTree = "<group>"; };
+		11B86E4D1EDE9B4D0069D254 /* Mute Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mute Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B86E501EDE9B4D0069D254 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11B86E511EDE9B4D0069D254 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		11B86E541EDE9B4D0069D254 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,7 +93,7 @@
 		11B86E4E1EDE9B4D0069D254 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				11B86E4D1EDE9B4D0069D254 /* Mute Me Now.app */,
+				11B86E4D1EDE9B4D0069D254 /* Mute Me.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +113,9 @@
 				11B86E5E1EDE9B4D0069D254 /* Info.plist */,
 				11B86E531EDE9B4D0069D254 /* Supporting Files */,
 				11B86E671EDE9CDC0069D254 /* TouchBar.h */,
+				1141FDF01EEFF6DD00CA5B30 /* TouchButton.h */,
+				1141FDF11EEFF6DD00CA5B30 /* TouchButton.m */,
+				1141FDF51EEFFA0000CA5B30 /* TouchDelegate.h */,
 			);
 			path = "Mute Me Now";
 			sourceTree = "<group>";
@@ -141,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		11B86E4C1EDE9B4D0069D254 /* Mute Me Now */ = {
+		11B86E4C1EDE9B4D0069D254 /* Mute Me */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11B86E611EDE9B4D0069D254 /* Build configuration list for PBXNativeTarget "Mute Me Now" */;
+			buildConfigurationList = 11B86E611EDE9B4D0069D254 /* Build configuration list for PBXNativeTarget "Mute Me" */;
 			buildPhases = (
 				11B86E491EDE9B4D0069D254 /* Sources */,
 				11B86E4A1EDE9B4D0069D254 /* Frameworks */,
@@ -154,9 +161,9 @@
 			);
 			dependencies = (
 			);
-			name = "Mute Me Now";
+			name = "Mute Me";
 			productName = "Mute Me Now";
-			productReference = 11B86E4D1EDE9B4D0069D254 /* Mute Me Now.app */;
+			productReference = 11B86E4D1EDE9B4D0069D254 /* Mute Me.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -179,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 11B86E481EDE9B4C0069D254 /* Build configuration list for PBXProject "Mute Me Now" */;
+			buildConfigurationList = 11B86E481EDE9B4C0069D254 /* Build configuration list for PBXProject "Mute Me" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -198,7 +205,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				11B86E4C1EDE9B4D0069D254 /* Mute Me Now */,
+				11B86E4C1EDE9B4D0069D254 /* Mute Me */,
 			);
 		};
 /* End PBXProject section */
@@ -232,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1141FDF21EEFF6DD00CA5B30 /* TouchButton.m in Sources */,
 				11B86E581EDE9B4D0069D254 /* ViewController.m in Sources */,
 				11B86E551EDE9B4D0069D254 /* main.m in Sources */,
 				11B86E521EDE9B4D0069D254 /* AppDelegate.m in Sources */,
@@ -380,7 +388,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11B86E481EDE9B4C0069D254 /* Build configuration list for PBXProject "Mute Me Now" */ = {
+		11B86E481EDE9B4C0069D254 /* Build configuration list for PBXProject "Mute Me" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11B86E5F1EDE9B4D0069D254 /* Debug */,
@@ -389,7 +397,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		11B86E611EDE9B4D0069D254 /* Build configuration list for PBXNativeTarget "Mute Me Now" */ = {
+		11B86E611EDE9B4D0069D254 /* Build configuration list for PBXNativeTarget "Mute Me" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				11B86E621EDE9B4D0069D254 /* Debug */,

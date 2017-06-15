@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Mute Me Now.xcodeproj">
+      location = "self:/Users/nikita/Dev/projects/micmute/Mute Me Now/Mute Me.xcodeproj">
    </FileRef>
 </Workspace>

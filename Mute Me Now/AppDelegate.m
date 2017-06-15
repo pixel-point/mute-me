@@ -1,16 +1,19 @@
 #import "AppDelegate.h"
 #import "TouchBar.h"
 #import <ServiceManagement/ServiceManagement.h>
+#import "TouchButton.h"
+#import "TouchDelegate.h"
 
 static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
-@interface AppDelegate ()
+@interface AppDelegate () <TouchDelegate>
 
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [[[[NSApplication sharedApplication] windows] lastObject] close];
 
     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
 
@@ -18,8 +21,9 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     [[NSCustomTouchBarItem alloc] initWithIdentifier:muteIdentifier];
 
     NSImage *muteImage = [NSImage imageNamed:NSImageNameTouchBarAudioInputMuteTemplate];
-    NSButton *button = [NSButton buttonWithImage: muteImage target:self action:@selector(present:)];
+    TouchButton *button = [TouchButton buttonWithImage: muteImage target:nil action:nil];
     [button setBezelColor: [self colorState: [self currentState]]];
+    [button setDelegate: self];
     mute.view = button;
 
     [NSTouchBarItem addSystemTrayItem:mute];
@@ -30,18 +34,11 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 }
 
 -(void) enableLoginAutostart {
-    if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Now-Launcher", false)) {
+    BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto_login"];
+    if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Now-Launcher", !state)) {
         NSLog(@"The login was not succesfull");
     }
 }
-
-- (void)present:(id)sender
-{
-    double volume = [self changeState];
-    NSButton *button = (NSButton *)sender;
-    [button setBezelColor: [self colorState: volume]];
-}
-
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
 }
@@ -76,6 +73,19 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     } else {
         return NSColor.clearColor;
     }
+}
+
+- (void)onPressed:(TouchButton*)sender
+{
+    double volume = [self changeState];
+    NSButton *button = (NSButton *)sender;
+    [button setBezelColor: [self colorState: volume]];
+}
+
+- (void)onLongPressed:(TouchButton*)sender
+{
+    [[[[NSApplication sharedApplication] windows] lastObject] makeKeyAndOrderFront:nil];
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:true];
 }
 
 @end
