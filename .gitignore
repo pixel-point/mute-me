@@ -1,0 +1,6 @@
+.DS_Store
+.Trashes
+*.swp
+*.lock
+*~.nib
+xcuserdata
