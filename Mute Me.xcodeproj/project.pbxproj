@@ -16,8 +16,8 @@
 		11B86E661EDE9BD00069D254 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E651EDE9BD00069D254 /* DFRFoundation.framework */; };
 		11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E681EDE9D1A0069D254 /* mute_sript.scpt */; };
 		11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E691EDE9D1A0069D254 /* volume_sript.scpt */; };
-		11B86E961EDEAE360069D254 /* Mute Me Now Launcher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11B86E951EDEAE360069D254 /* Mute Me Now Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */; };
+		11EA56D81EF3C2AC003AF236 /* Mute Me Now Launcher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +26,13 @@
 			containerPortal = 11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 11B86E751EDEAC970069D254;
+			remoteInfo = "Mute Me Now Launcher";
+		};
+		11EA56D91EF3CD8C003AF236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 11B86E741EDEAC970069D254;
 			remoteInfo = "Mute Me Now Launcher";
 		};
 /* End PBXContainerItemProxy section */
@@ -37,7 +44,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				11B86E961EDEAE360069D254 /* Mute Me Now Launcher.app in CopyFiles */,
+				11EA56D81EF3C2AC003AF236 /* Mute Me Now Launcher.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +69,6 @@
 		11B86E691EDE9D1A0069D254 /* volume_sript.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = volume_sript.scpt; sourceTree = "<group>"; };
 		11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Mute Me Now Launcher.xcodeproj"; path = "Mute Me Now/Mute Me Now Launcher/Mute Me Now Launcher.xcodeproj"; sourceTree = "<group>"; };
 		11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		11B86E951EDEAE360069D254 /* Mute Me Now Launcher.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Mute Me Now Launcher.app"; sourceTree = "<group>"; };
 		11B86E9A1EDECB3F0069D254 /* Mute Me Now.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +88,6 @@
 		11B86E441EDE9B4C0069D254 = {
 			isa = PBXGroup;
 			children = (
-				11B86E951EDEAE360069D254 /* Mute Me Now Launcher.app */,
 				11B86E4F1EDE9B4D0069D254 /* Mute Me Now */,
 				11B86E4E1EDE9B4D0069D254 /* Products */,
 				11B86E641EDE9BD00069D254 /* Frameworks */,
@@ -160,6 +165,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				11EA56DA1EF3CD8C003AF236 /* PBXTargetDependency */,
 			);
 			name = "Mute Me";
 			productName = "Mute Me Now";
@@ -247,6 +253,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11EA56DA1EF3CD8C003AF236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Mute Me Now Launcher";
+			targetProxy = 11EA56D91EF3CD8C003AF236 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		11B86E5B1EDE9B4D0069D254 /* Main.storyboard */ = {
