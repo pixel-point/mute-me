@@ -1,4 +1,5 @@
 #import "ViewController.h"
+#import "MMNLaunchAtLoginController.h"
 
 static NSString *githubURL = @"https://github.com/pixel-point/mute-me";
 static NSString *projectURL = @"https://muteme.pixelpoint.io/";
@@ -9,8 +10,11 @@ static NSString *companyURL = @"https://pixelpoint.io/";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto_login"];
-    [self.autoLoginState setState: !state];
+    // Bind "Launch at login" checkbox state to the corresponding value in the controller object
+    [self.autoLoginState bind:NSValueBinding
+                     toObject:[MMNLaunchAtLoginController sharedController]
+                  withKeyPath:@"shouldLaunchOnLogin"
+                      options:nil];
 }
 
 -(void)viewDidAppear {
@@ -35,16 +39,6 @@ static NSString *companyURL = @"https://pixelpoint.io/";
 
 - (IBAction)onWebsitePressed:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:projectURL]];
-}
-- (IBAction)onLoginStartChanged:(id)sender {
-    NSInteger state = [self.autoLoginState state];
-    BOOL enableState = NO;
-    if(state == NSOnState) {
-        enableState = YES;
-    }
-    if(SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Now-Launcher", enableState)) {
-        [[NSUserDefaults standardUserDefaults] setBool:!enableState forKey:@"auto_login"];
-    }
 }
 - (IBAction)onMainWebsitePressed:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:companyURL]];
