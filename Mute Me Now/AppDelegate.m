@@ -1,6 +1,5 @@
 #import "AppDelegate.h"
 #import "TouchBar.h"
-#import <ServiceManagement/ServiceManagement.h>
 #import "TouchButton.h"
 #import "TouchDelegate.h"
 
@@ -28,16 +27,6 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
     [NSTouchBarItem addSystemTrayItem:mute];
     DFRElementSetControlStripPresenceForIdentifier(muteIdentifier, YES);
-
-    [self enableLoginAutostart];
-
-}
-
--(void) enableLoginAutostart {
-    BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto_login"];
-    if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Now-Launcher", !state)) {
-        NSLog(@"The login was not succesfull");
-    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

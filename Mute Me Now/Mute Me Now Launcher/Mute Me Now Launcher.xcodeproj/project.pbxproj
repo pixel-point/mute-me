@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ADD25F01EF5750B00E095AB /* Mute Me Now Launcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now Launcher.entitlements"; sourceTree = "<group>"; };
 		11B86E751EDEAC970069D254 /* Mute Me Now Launcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mute Me Now Launcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B86E781EDEAC970069D254 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11B86E791EDEAC970069D254 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		11B86E771EDEAC970069D254 /* Mute Me Now Launcher */ = {
 			isa = PBXGroup;
 			children = (
+				0ADD25F01EF5750B00E095AB /* Mute Me Now Launcher.entitlements */,
 				11B86E781EDEAC970069D254 /* AppDelegate.h */,
 				11B86E791EDEAC970069D254 /* AppDelegate.m */,
 				11B86E7E1EDEAC970069D254 /* ViewController.h */,
@@ -264,7 +266,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = "Mute Me Now Launcher/Mute Me Now Launcher.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Mute Me Now Launcher/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -278,7 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = "Mute Me Now Launcher/Mute Me Now Launcher.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Mute Me Now Launcher/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

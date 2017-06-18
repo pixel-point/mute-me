@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9EAC491EF54250002CA9B0 /* MMNLaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9EAC481EF54250002CA9B0 /* MMNLaunchAtLoginController.m */; };
 		1141FDF21EEFF6DD00CA5B30 /* TouchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1141FDF11EEFF6DD00CA5B30 /* TouchButton.m */; };
 		11B86E521EDE9B4D0069D254 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E511EDE9B4D0069D254 /* AppDelegate.m */; };
 		11B86E551EDE9B4D0069D254 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B86E541EDE9B4D0069D254 /* main.m */; };
@@ -51,6 +52,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A9EAC471EF54250002CA9B0 /* MMNLaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNLaunchAtLoginController.h; sourceTree = "<group>"; };
+		0A9EAC481EF54250002CA9B0 /* MMNLaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNLaunchAtLoginController.m; sourceTree = "<group>"; };
 		1141FDF01EEFF6DD00CA5B30 /* TouchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchButton.h; sourceTree = "<group>"; };
 		1141FDF11EEFF6DD00CA5B30 /* TouchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchButton.m; sourceTree = "<group>"; };
 		1141FDF51EEFFA0000CA5B30 /* TouchDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				11B86E511EDE9B4D0069D254 /* AppDelegate.m */,
 				11B86E561EDE9B4D0069D254 /* ViewController.h */,
 				11B86E571EDE9B4D0069D254 /* ViewController.m */,
+				0A9EAC471EF54250002CA9B0 /* MMNLaunchAtLoginController.h */,
+				0A9EAC481EF54250002CA9B0 /* MMNLaunchAtLoginController.m */,
 				11B86E591EDE9B4D0069D254 /* Assets.xcassets */,
 				11B86E5B1EDE9B4D0069D254 /* Main.storyboard */,
 				11B86E5E1EDE9B4D0069D254 /* Info.plist */,
@@ -249,6 +254,7 @@
 				11B86E581EDE9B4D0069D254 /* ViewController.m in Sources */,
 				11B86E551EDE9B4D0069D254 /* main.m in Sources */,
 				11B86E521EDE9B4D0069D254 /* AppDelegate.m in Sources */,
+				0A9EAC491EF54250002CA9B0 /* MMNLaunchAtLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
