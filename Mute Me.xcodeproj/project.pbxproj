@@ -18,9 +18,7 @@
 		11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E691EDE9D1A0069D254 /* volume_sript.scpt */; };
 		11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */; };
 		11EA56D81EF3C2AC003AF236 /* Mute Me Now Launcher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5DA60BD21EFA9BA10045BDCF /* statusBarIconss.Template in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD11EFA9BA10045BDCF /* statusBarIconss.Template */; };
-		5DA60BD61EFA9DAB0045BDCF /* statusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD51EFA9DAB0045BDCF /* statusBarIcon.png */; };
-		5DA60BD81EFA9E0C0045BDCF /* statusBarIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD71EFA9E0C0045BDCF /* statusBarIcon2.png */; };
+		5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,9 +71,7 @@
 		11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Mute Me Now Launcher.xcodeproj"; path = "Mute Me Now/Mute Me Now Launcher/Mute Me Now Launcher.xcodeproj"; sourceTree = "<group>"; };
 		11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		11B86E9A1EDECB3F0069D254 /* Mute Me Now.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now.entitlements"; sourceTree = "<group>"; };
-		5DA60BD11EFA9BA10045BDCF /* statusBarIconss.Template */ = {isa = PBXFileReference; lastKnownFileType = file; path = statusBarIconss.Template; sourceTree = "<group>"; };
-		5DA60BD51EFA9DAB0045BDCF /* statusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon.png; sourceTree = "<group>"; };
-		5DA60BD71EFA9E0C0045BDCF /* statusBarIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon2.png; sourceTree = "<group>"; };
+		5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +90,6 @@
 		11B86E441EDE9B4C0069D254 = {
 			isa = PBXGroup;
 			children = (
-				5DA60BD71EFA9E0C0045BDCF /* statusBarIcon2.png */,
-				5DA60BD51EFA9DAB0045BDCF /* statusBarIcon.png */,
 				11B86E4F1EDE9B4D0069D254 /* Mute Me Now */,
 				11B86E4E1EDE9B4D0069D254 /* Products */,
 				11B86E641EDE9BD00069D254 /* Frameworks */,
@@ -114,7 +108,7 @@
 		11B86E4F1EDE9B4D0069D254 /* Mute Me Now */ = {
 			isa = PBXGroup;
 			children = (
-				5DA60BD11EFA9BA10045BDCF /* statusBarIconss.Template */,
+				5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */,
 				11B86E9A1EDECB3F0069D254 /* Mute Me Now.entitlements */,
 				11B86E681EDE9D1A0069D254 /* mute_sript.scpt */,
 				11B86E691EDE9D1A0069D254 /* volume_sript.scpt */,
@@ -240,10 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DA60BD21EFA9BA10045BDCF /* statusBarIconss.Template in Resources */,
-				5DA60BD81EFA9E0C0045BDCF /* statusBarIcon2.png in Resources */,
 				11B86E5A1EDE9B4D0069D254 /* Assets.xcassets in Resources */,
-				5DA60BD61EFA9DAB0045BDCF /* statusBarIcon.png in Resources */,
+				5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */,
 				11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */,
 				11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */,
 				11B86E5D1EDE9B4D0069D254 /* Main.storyboard in Resources */,

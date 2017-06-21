@@ -24,10 +24,7 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 
-
     BOOL statusBarState = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar"];
-
-    NSLog (@"statusBarState : %i", [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar"]);
 
     if (statusBarState) {
         
@@ -43,13 +40,9 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
         self.statusBar.enabled = YES;
         self.statusBar.menu = self.statusMenu;
         
-        
-        
         self.statusBar.menu = self.statusMenu;
         self.statusBar.highlightMode = YES;
-        
     }
-
 }
 
 
@@ -76,8 +69,6 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 }
 
 -(void) enableLoginAutostart {
-
-    NSLog (@"auto-login : %i", [[NSUserDefaults standardUserDefaults] boolForKey:@"auto_login"]);
 
     // on the first run this should be nil. So don't setup auto run
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"auto_login"] == nil) {
