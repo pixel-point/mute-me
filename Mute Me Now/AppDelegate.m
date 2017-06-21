@@ -17,13 +17,38 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
 - (void) awakeFromNib {
 
-    self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    
-    self.statusBar.title = @"M";
-    //self.statusBar.image = [NSImage imageNamed:@"AppIcon"];
+    // on the first run this should be nil. however we want to show the menubar by default
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"status_bar"] == nil) {
 
-    self.statusBar.menu = self.statusMenu;
-    self.statusBar.highlightMode = YES;
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"status_bar"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
+
+    BOOL statusBarState = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar"];
+
+    NSLog (@"statusBarState : %i", [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar"]);
+
+    if (statusBarState) {
+        
+        self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+        
+        NSImage* statusImage = [NSImage imageNamed:@"statusBarIcon2"];
+        
+        statusImage.size = NSMakeSize(18, 18);
+        
+        self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+        self.statusBar.image = statusImage;
+        self.statusBar.highlightMode = YES;
+        self.statusBar.enabled = YES;
+        self.statusBar.menu = self.statusMenu;
+        
+        
+        
+        self.statusBar.menu = self.statusMenu;
+        self.statusBar.highlightMode = YES;
+        
+    }
 
 }
 
@@ -51,6 +76,14 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 }
 
 -(void) enableLoginAutostart {
+
+    NSLog (@"auto-login : %i", [[NSUserDefaults standardUserDefaults] boolForKey:@"auto_login"]);
+
+    // on the first run this should be nil. So don't setup auto run
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"auto_login"] == nil) {
+        return;
+    }
+
     BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto_login"];
     if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Now-Launcher", !state)) {
         NSLog(@"The login was not succesfull");
