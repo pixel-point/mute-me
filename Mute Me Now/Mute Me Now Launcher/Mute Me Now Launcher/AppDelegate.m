@@ -22,4 +22,6 @@
 }
 
 
+- (IBAction)prefsMenuItemAction:(id)sender {
+}
 @end

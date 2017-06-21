@@ -2,6 +2,13 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (weak) IBOutlet NSMenu *statusMenu;
+@property (strong, nonatomic) NSStatusItem *statusBar;
+
+- (IBAction)prefsMenuItemAction:(id)sender;
+
+- (IBAction)quitMenuItemAction:(id)sender;
+
 
 @end
 

@@ -3,6 +3,7 @@
 #import <ServiceManagement/ServiceManagement.h>
 #import "TouchButton.h"
 #import "TouchDelegate.h"
+#import <Cocoa/Cocoa.h>
 
 static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
@@ -11,6 +12,22 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 @end
 
 @implementation AppDelegate
+
+@synthesize statusBar;
+
+- (void) awakeFromNib {
+
+    self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    
+    self.statusBar.title = @"M";
+    //self.statusBar.image = [NSImage imageNamed:@"AppIcon"];
+
+    self.statusBar.menu = self.statusMenu;
+    self.statusBar.highlightMode = YES;
+
+}
+
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [[[[NSApplication sharedApplication] windows] lastObject] close];
@@ -87,5 +104,16 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     [[[[NSApplication sharedApplication] windows] lastObject] makeKeyAndOrderFront:nil];
     [[NSApplication sharedApplication] activateIgnoringOtherApps:true];
 }
+
+- (IBAction)prefsMenuItemAction:(id)sender {
+
+    [self onLongPressed:sender];
+
+}
+
+- (IBAction)quitMenuItemAction:(id)sender {
+    [NSApp terminate:nil];
+}
+
 
 @end
