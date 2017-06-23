@@ -17,7 +17,7 @@
 		11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E681EDE9D1A0069D254 /* mute_sript.scpt */; };
 		11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E691EDE9D1A0069D254 /* volume_sript.scpt */; };
 		11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */; };
-		11EA56D81EF3C2AC003AF236 /* ReferenceProxy in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11EA56D81EF3C2AC003AF236 /* Mute Me Now Launcher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */; };
 		5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */; };
 		5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */; };
@@ -48,7 +48,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				11EA56D81EF3C2AC003AF236 /* ReferenceProxy in CopyFiles */,
+				11EA56D81EF3C2AC003AF236 /* Mute Me Now Launcher.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +450,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WF57Z34X8U;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -472,7 +472,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WF57Z34X8U;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
