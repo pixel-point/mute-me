@@ -9,6 +9,10 @@
 
 - (IBAction)quitMenuItemAction:(id)sender;
 
+@property (weak) IBOutlet NSMenuItem *muteMenuItem;
+
+- (IBAction)menuMenuItemAction:(id)sender;
+
 
 @end
 

@@ -35,6 +35,9 @@ static NSString *companyURL = @"https://pixelpoint.io/";
     [super viewDidAppear];
     [[self.view window] setTitle:@"Mute me"];
     [[self.view window] center];
+    
+    
+    
 }
 
 

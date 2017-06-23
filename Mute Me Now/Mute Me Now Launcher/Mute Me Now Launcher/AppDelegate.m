@@ -1,10 +1,13 @@
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSString *path = [[[[[[NSBundle mainBundle] bundlePath]
@@ -23,5 +26,7 @@
 
 
 - (IBAction)prefsMenuItemAction:(id)sender {
+}
+- (IBAction)menuMenuItemAction:(id)sender {
 }
 @end

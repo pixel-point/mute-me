@@ -12,6 +12,7 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
                     <connections>
+                        <outlet property="muteMenuItem" destination="ZAi-0g-9Kx" id="mLJ-Vb-Brq"/>
                         <outlet property="prefsMenuItemAction" destination="8zc-qp-Qgx" id="6OC-cf-ZIf"/>
                         <outlet property="quitMenuItemAction" destination="1bB-gU-CMy" id="R2d-IT-17e"/>
                         <outlet property="statusMenu" destination="oLl-V1-4Ka" id="Xvk-NQ-7lL"/>
@@ -669,6 +670,12 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="prefsMenuItemAction:" target="Voe-Tx-rLC" id="IJN-cp-bzY"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Mute" id="ZAi-0g-9Kx" userLabel="Mute">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="menuMenuItemAction:" target="Voe-Tx-rLC" id="GQ9-sA-qtv"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Quit" id="1bB-gU-CMy" userLabel="Quit">

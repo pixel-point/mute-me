@@ -5,6 +5,7 @@
 #import "TouchDelegate.h"
 #import <Cocoa/Cocoa.h>
 
+
 static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
 @interface AppDelegate () <TouchDelegate>
@@ -16,35 +17,26 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 @synthesize statusBar;
 
 - (void) awakeFromNib {
-
-    // on the first run this should be nil. however we want to show the menubar by default
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"status_bar"] == nil) {
-
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"status_bar"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-
-    BOOL statusBarState = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar"];
-
-    if (statusBarState) {
-        
-        self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-        
-        NSImage* statusImage = [NSImage imageNamed:@"statusBarIcon2"];
-        
-        statusImage.size = NSMakeSize(18, 18);
-        
-        self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-        self.statusBar.image = statusImage;
-        self.statusBar.highlightMode = YES;
-        self.statusBar.enabled = YES;
-        self.statusBar.menu = self.statusMenu;
-        
-        self.statusBar.menu = self.statusMenu;
-        self.statusBar.highlightMode = YES;
-    }
+    
+    
+    self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    
+    
+    
+    
+    NSImage* statusImage = [NSImage imageNamed:@"statusBarIcon"];
+    
+    statusImage.size = NSMakeSize(18, 18);
+    
+    // allows cocoa to change the background of the icon
+    [statusImage setTemplate:YES];
+    
+    self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    self.statusBar.image = statusImage;
+    self.statusBar.highlightMode = YES;
+    self.statusBar.enabled = YES;
+    self.statusBar.menu = self.statusMenu;
 }
-
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -64,9 +56,31 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     [NSTouchBarItem addSystemTrayItem:mute];
     DFRElementSetControlStripPresenceForIdentifier(muteIdentifier, YES);
 
+    // set the menuBar Item
+    double currentState = [self currentStateFixed];
+
+    NSLog(@"currentState : %f", currentState);
+
+    if (currentState == 0) {
+        [self.muteMenuItem setState:NSOnState];
+        
+        [self setStatusBarImgRed:YES];
+    }
+
+
     [self enableLoginAutostart];
 
 }
+
+- (void) setStatusBarImgRed:(BOOL) shouldBeRed {
+
+    NSImage* statusImage = [NSImage imageNamed:@"statusBarIcon"];
+    statusImage.size = NSMakeSize(18, 18);
+    [statusImage setTemplate:!shouldBeRed];
+        
+    self.statusBar.image = statusImage;
+}
+
 
 -(void) enableLoginAutostart {
 
@@ -79,6 +93,10 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Now-Launcher", !state)) {
         NSLog(@"The login was not succesfull");
     }
+    
+    
+    
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -92,6 +110,13 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     return currentPosition;
 }
 
+// return the correct microphone volume
+-(double) currentStateFixed {
+    NSAppleEventDescriptor *result = [self excecuteAppleScript:@"volume_sript"];
+    return [result doubleValue];
+}
+
+
 -(double) changeState {
     NSAppleEventDescriptor *result = [self excecuteAppleScript:@"mute_sript"];
     NSData *data = [result data];
@@ -103,8 +128,19 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 -(NSAppleEventDescriptor *) excecuteAppleScript:(NSString *)withName {
     NSString* path = [[NSBundle mainBundle] pathForResource:withName ofType:@"scpt"];
     NSURL* url = [NSURL fileURLWithPath:path];
+    
+    NSLog (@"script : %@", [url absoluteString]);
+    
     NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript = [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
+    
+    if (errors) {
+        NSLog(@"compile error: %@", errors);
+    }
+
+
+    
+    
     return [appleScript executeAndReturnError:nil];
 }
 
@@ -132,12 +168,27 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 - (IBAction)prefsMenuItemAction:(id)sender {
 
     [self onLongPressed:sender];
-
 }
 
 - (IBAction)quitMenuItemAction:(id)sender {
     [NSApp terminate:nil];
 }
+
+- (IBAction)menuMenuItemAction:(id)sender {
+
+    if (self.muteMenuItem.state == NSOffState) {
+
+        self.muteMenuItem.state = NSOnState;
+        [self setStatusBarImgRed:YES];
+        
+    } else {
+        self.muteMenuItem.state = NSOffState;
+        [self setStatusBarImgRed:NO];
+    }
+    
+    [self changeState];
+}
+
 
 
 @end
