@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import <MASShortcut/Shortcut.h>
 
 @interface ViewController : NSViewController
 

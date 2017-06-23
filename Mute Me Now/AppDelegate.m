@@ -40,6 +40,7 @@ NSButton *touchBarButton;
     
     // default shortcut is "Shift Command o"
     MASShortcut *firstLaunchShortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_O modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagShift];
+    NSData *firstLaunchShortcutData = [NSKeyedArchiver archivedDataWithRootObject:firstLaunchShortcut];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -47,26 +48,12 @@ NSButton *touchBarButton;
             [self shortCutKeyPressed];
         }];
     
-    
     // Register default values to be used for the first app start
-    /*
     [defaults registerDefaults:@{
-        MASHardcodedShortcutEnabledKey : @YES,
-        MASCustomShortcutEnabledKey : @YES,
-		MASCustomShortcutKey : firstLaunchShortcutData
-    }];*/
+		@"customShortcut" : firstLaunchShortcutData
+    }];
 
-    // Bind the shortcut recorder view’s value to user defaults.
-    // Run “defaults read com.shpakovski.mac.Demo” to see what’s stored
-    // in user defaults.
-    //[_customShortcutView setAssociatedUserDefaultsKey:MASCustomShortcutKey];
-
-    // Enable or disable the recorder view according to the first checkbox state
-    //[_customShortcutView bind:@"enabled" toObject:defaults
-     //   withKeyPath:MASCustomShortcutEnabledKey options:nil];
-    
-    
-}
+    }
 
 - (void) shortCutKeyPressed {
 
