@@ -4,7 +4,7 @@
 #import "TouchButton.h"
 #import "TouchDelegate.h"
 #import <Cocoa/Cocoa.h>
-
+#import <MASShortcut/Shortcut.h>
 
 static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
@@ -14,15 +14,14 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
 @implementation AppDelegate
 
+NSButton *touchBarButton;
+
 @synthesize statusBar;
 
 - (void) awakeFromNib {
     
     
     self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    
-    
-    
     
     NSImage* statusImage = [NSImage imageNamed:@"statusBarIcon"];
     
@@ -36,8 +35,46 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     self.statusBar.highlightMode = YES;
     self.statusBar.enabled = YES;
     self.statusBar.menu = self.statusMenu;
+    
+    // masshortcut
+    
+    // default shortcut is "Shift Command o"
+    MASShortcut *firstLaunchShortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_O modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagShift];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [[MASShortcutMonitor sharedMonitor] registerShortcut:firstLaunchShortcut withAction:^{
+            [self shortCutKeyPressed];
+        }];
+    
+    
+    // Register default values to be used for the first app start
+    /*
+    [defaults registerDefaults:@{
+        MASHardcodedShortcutEnabledKey : @YES,
+        MASCustomShortcutEnabledKey : @YES,
+		MASCustomShortcutKey : firstLaunchShortcutData
+    }];*/
+
+    // Bind the shortcut recorder view’s value to user defaults.
+    // Run “defaults read com.shpakovski.mac.Demo” to see what’s stored
+    // in user defaults.
+    //[_customShortcutView setAssociatedUserDefaultsKey:MASCustomShortcutKey];
+
+    // Enable or disable the recorder view according to the first checkbox state
+    //[_customShortcutView bind:@"enabled" toObject:defaults
+     //   withKeyPath:MASCustomShortcutEnabledKey options:nil];
+    
+    
 }
 
+- (void) shortCutKeyPressed {
+
+    NSLog (@"shortcut key pressed");
+
+    [self menuMenuItemAction:nil];
+
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [[[[NSApplication sharedApplication] windows] lastObject] close];
@@ -52,6 +89,8 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     [button setBezelColor: [self colorState: [self currentStateFixed]]];
     [button setDelegate: self];
     mute.view = button;
+
+    touchBarButton = button;
 
     [NSTouchBarItem addSystemTrayItem:mute];
     DFRElementSetControlStripPresenceForIdentifier(muteIdentifier, YES);
@@ -146,6 +185,7 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     
     NSButton *button = (NSButton *)sender;
     [button setBezelColor: [self colorState: volume]];
+    
 }
 
 - (void)onLongPressed:(TouchButton*)sender
