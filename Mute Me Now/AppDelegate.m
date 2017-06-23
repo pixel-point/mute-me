@@ -49,7 +49,7 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 
     NSImage *muteImage = [NSImage imageNamed:NSImageNameTouchBarAudioInputMuteTemplate];
     TouchButton *button = [TouchButton buttonWithImage: muteImage target:nil action:nil];
-    [button setBezelColor: [self colorState: [self currentState]]];
+    [button setBezelColor: [self colorState: [self currentStateFixed]]];
     [button setDelegate: self];
     mute.view = button;
 
@@ -93,10 +93,6 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     if(!SMLoginItemSetEnabled((__bridge CFStringRef)@"Pixel-Point.Mute-Me-Now-Launcher", !state)) {
         NSLog(@"The login was not succesfull");
     }
-    
-    
-    
-    
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -129,22 +125,14 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
     NSString* path = [[NSBundle mainBundle] pathForResource:withName ofType:@"scpt"];
     NSURL* url = [NSURL fileURLWithPath:path];
     
-    NSLog (@"script : %@", [url absoluteString]);
-    
     NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript = [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
-    
-    if (errors) {
-        NSLog(@"compile error: %@", errors);
-    }
-
-
-    
     
     return [appleScript executeAndReturnError:nil];
 }
 
 -(NSColor *)colorState:(double)volume {
+
     if(volume == 0.0) {
         return NSColor.redColor;
     } else {
@@ -155,6 +143,7 @@ static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 - (void)onPressed:(TouchButton*)sender
 {
     double volume = [self changeState];
+    
     NSButton *button = (NSButton *)sender;
     [button setBezelColor: [self colorState: volume]];
 }
