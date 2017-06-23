@@ -799,23 +799,13 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UhA-eV-vsx">
-                                <rect key="frame" x="216" y="83" width="123" height="32"/>
+                                <rect key="frame" x="216" y="63" width="123" height="32"/>
                                 <buttonCell key="cell" type="bevel" title="Made by Pixel Point" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="WIm-yh-r21">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="onMainWebsitePressed:" target="XfG-lQ-9wD" id="92d-qe-WWK"/>
-                                </connections>
-                            </button>
-                            <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mgv-qi-eGz">
-                                <rect key="frame" x="20" y="53" width="295" height="18"/>
-                                <buttonCell key="cell" type="check" title="Show in menubar" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="rQa-Uf-qEk">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="showMenuBarChanged:" target="XfG-lQ-9wD" id="hw5-ec-J5r"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -833,21 +823,19 @@
                             <constraint firstAttribute="trailing" secondItem="hHJ-tz-Zfo" secondAttribute="trailing" id="Y4G-Ak-L4o"/>
                             <constraint firstItem="fwG-yv-1ky" firstAttribute="top" secondItem="hHJ-tz-Zfo" secondAttribute="bottom" constant="10" id="YDL-hS-N28"/>
                             <constraint firstItem="paW-7T-Udu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="aUq-vo-NeN"/>
-                            <constraint firstItem="hvj-7s-TwY" firstAttribute="top" secondItem="jgV-z1-Y2K" secondAttribute="bottom" constant="10" id="d3g-2o-f5n"/>
+                            <constraint firstItem="hvj-7s-TwY" firstAttribute="top" secondItem="jgV-z1-Y2K" secondAttribute="bottom" constant="30" id="d3g-2o-f5n"/>
                             <constraint firstItem="jgV-z1-Y2K" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="dOU-bE-MfV"/>
                             <constraint firstItem="hvj-7s-TwY" firstAttribute="leading" secondItem="jgV-z1-Y2K" secondAttribute="leading" id="dOX-nP-MJz"/>
                             <constraint firstItem="KAa-G4-Uci" firstAttribute="centerY" secondItem="paW-7T-Udu" secondAttribute="centerY" id="mwC-vV-fhw"/>
                             <constraint firstItem="IZW-rf-f4A" firstAttribute="leading" secondItem="KAa-G4-Uci" secondAttribute="trailing" constant="22" id="rr6-Qb-AEk"/>
                             <constraint firstItem="jgV-z1-Y2K" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="rz8-or-NlC"/>
                             <constraint firstItem="PYQ-lw-EpL" firstAttribute="centerY" secondItem="KAa-G4-Uci" secondAttribute="centerY" id="tyJ-Oo-zzb"/>
-                            <constraint firstItem="Mgv-qi-eGz" firstAttribute="leading" secondItem="hvj-7s-TwY" secondAttribute="leading" id="uIm-Ix-Xnq"/>
-                            <constraint firstItem="paW-7T-Udu" firstAttribute="top" secondItem="hvj-7s-TwY" secondAttribute="bottom" constant="52" id="znA-PO-LrO"/>
+                            <constraint firstItem="paW-7T-Udu" firstAttribute="top" secondItem="hvj-7s-TwY" secondAttribute="bottom" constant="32" id="znA-PO-LrO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="autoLoginState" destination="hvj-7s-TwY" id="adQ-vO-ZXg"/>
                         <outlet property="githubButton" destination="KAa-G4-Uci" id="HzP-kT-H5e"/>
-                        <outlet property="showInMenuBarState" destination="Mgv-qi-eGz" id="Agd-gF-jKy"/>
                         <outlet property="websiteButton" destination="PYQ-lw-EpL" id="IdY-Vo-epQ"/>
                     </connections>
                 </viewController>
