@@ -19,6 +19,7 @@ static double LONG_PRESS_TIME = 0.5;
 
 - (void)touchesBeganWithEvent:(NSEvent *)event
 {
+
         NSSet<NSTouch *> *touches = [event touchesMatchingPhase:NSTouchPhaseBegan inView:self];
         // Note: Touches may contain 0, 1 or more touches.
         // What to do if there are more than one touch?
@@ -52,6 +53,7 @@ static double LONG_PRESS_TIME = 0.5;
 
 - (void)touchesEndedWithEvent:(NSEvent *)event
 {
+
         for (NSTouch *touch in [event touchesMatchingPhase:NSTouchPhaseEnded inView:self])
         {
             if (touch.type == NSTouchTypeDirect)
@@ -76,6 +78,7 @@ static double LONG_PRESS_TIME = 0.5;
 
 - (void)touchesCancelledWithEvent:(NSEvent *)event
 {
+
         for (NSTouch *touch in [event touchesMatchingPhase:NSTouchPhaseMoved inView:self])
         {
             if (touch.type == NSTouchTypeDirect)

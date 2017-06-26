@@ -18,6 +18,8 @@ NSButton *touchBarButton;
 
 @synthesize statusBar;
 
+TouchButton *button;
+
 - (void) awakeFromNib {
     
     
@@ -38,8 +40,8 @@ NSButton *touchBarButton;
     
     // masshortcut
     
-    // default shortcut is "Shift Command o"
-    MASShortcut *firstLaunchShortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_O modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagShift];
+    // default shortcut is "Shift Command 0"
+    MASShortcut *firstLaunchShortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_0 modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagShift];
     NSData *firstLaunchShortcutData = [NSKeyedArchiver archivedDataWithRootObject:firstLaunchShortcut];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -59,7 +61,7 @@ NSButton *touchBarButton;
 
     NSLog (@"shortcut key pressed");
 
-    [self menuMenuItemAction:nil];
+    [self updateMenuItem];
 
 }
 
@@ -72,7 +74,7 @@ NSButton *touchBarButton;
     [[NSCustomTouchBarItem alloc] initWithIdentifier:muteIdentifier];
 
     NSImage *muteImage = [NSImage imageNamed:NSImageNameTouchBarAudioInputMuteTemplate];
-    TouchButton *button = [TouchButton buttonWithImage: muteImage target:nil action:nil];
+    button = [TouchButton buttonWithImage: muteImage target:nil action:nil];
     [button setBezelColor: [self colorState: [self currentStateFixed]]];
     [button setDelegate: self];
     mute.view = button;
@@ -147,6 +149,12 @@ NSButton *touchBarButton;
     return currentPosition;
 }
 
+-(double) changeStateFixed {
+    NSAppleEventDescriptor *result = [self excecuteAppleScript:@"mute_sript"];
+    return [result doubleValue];
+}
+
+
 -(NSAppleEventDescriptor *) excecuteAppleScript:(NSString *)withName {
     NSString* path = [[NSBundle mainBundle] pathForResource:withName ofType:@"scpt"];
     NSURL* url = [NSURL fileURLWithPath:path];
@@ -159,7 +167,7 @@ NSButton *touchBarButton;
 
 -(NSColor *)colorState:(double)volume {
 
-    if(volume == 0.0) {
+    if(!volume) {
         return NSColor.redColor;
     } else {
         return NSColor.clearColor;
@@ -168,10 +176,20 @@ NSButton *touchBarButton;
 
 - (void)onPressed:(TouchButton*)sender
 {
-    double volume = [self changeState];
+    double volume = [self changeStateFixed];
+    
+    NSLog (@"volume : %f", volume);
     
     NSButton *button = (NSButton *)sender;
     [button setBezelColor: [self colorState: volume]];
+    
+    [self setStatusBarImgRed: !volume];
+
+    if (!volume) {
+        self.muteMenuItem.state = NSOnState;
+    } else {
+        self.muteMenuItem.state = NSOffState;
+    }
     
 }
 
@@ -192,17 +210,24 @@ NSButton *touchBarButton;
 
 - (IBAction)menuMenuItemAction:(id)sender {
 
-    if (self.muteMenuItem.state == NSOffState) {
+    [self updateMenuItem];
+}
 
+- (void) updateMenuItem {
+
+    if (self.muteMenuItem.state == NSOffState) {
         self.muteMenuItem.state = NSOnState;
         [self setStatusBarImgRed:YES];
+        [button setBezelColor: NSColor.redColor];
         
     } else {
         self.muteMenuItem.state = NSOffState;
         [self setStatusBarImgRed:NO];
+        [button setBezelColor: NSColor.clearColor];
     }
     
     [self changeState];
+
 }
 
 
