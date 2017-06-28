@@ -1,5 +1,5 @@
 # Mute Me
-Touch Bar Application for mute/unmute your microphone or even without it just by shortcut
+Touch Bar Application for mute/unmute your microphone or even without it just by shortcut on any Mac
 
 [Visit Site](https://muteme.pixelpoint.io/) | [Download](https://muteme.pixelpoint.io/)
 
