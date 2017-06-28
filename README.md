@@ -21,7 +21,7 @@ When you are in a meeting using Hangouts, Skype, Slack, or another voice applica
 - [Nikita Teplyakov](https://github.com/tplkn)
 - [Alex Barashkov](https://github.com/lnikell)
 - [Vlad Kamelsky](https://www.facebook.com/vlad.kamelsky)
-- Joel Barker
+- [Joel Barker](https://github.com/j-cimb-barker)
 
 ---
 Made by [Pixel Point](https://pixelpoint.io)
