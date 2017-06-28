@@ -15,4 +15,6 @@
     // Update the view, if already loaded.
 }
 
+- (IBAction)showMenuBarChanged:(id)sender {
+}
 @end

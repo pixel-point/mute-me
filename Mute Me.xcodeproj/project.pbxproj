@@ -18,6 +18,10 @@
 		11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E691EDE9D1A0069D254 /* volume_sript.scpt */; };
 		11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */; };
 		11EA56D81EF3C2AC003AF236 /* Mute Me Now Launcher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */; };
+		5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */; };
+		5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */; };
+		DBCC24CD4DBB4A88C86CD871 /* libPods-Mute Me.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30004556042F084BBC0CA872 /* libPods-Mute Me.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,12 @@
 		11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Mute Me Now Launcher.xcodeproj"; path = "Mute Me Now/Mute Me Now Launcher/Mute Me Now Launcher.xcodeproj"; sourceTree = "<group>"; };
 		11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		11B86E9A1EDECB3F0069D254 /* Mute Me Now.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now.entitlements"; sourceTree = "<group>"; };
+		30004556042F084BBC0CA872 /* libPods-Mute Me.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mute Me.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51C19D181CC260D65112962D /* Pods-Mute Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mute Me.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me.release.xcconfig"; sourceTree = "<group>"; };
+		5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon2.png; sourceTree = "<group>"; };
+		5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon3.png; sourceTree = "<group>"; };
+		5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon.png; sourceTree = "<group>"; };
+		B222AB6057D3B902CBA70D34 /* Pods-Mute Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mute Me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 			files = (
 				11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */,
 				11B86E661EDE9BD00069D254 /* DFRFoundation.framework in Frameworks */,
+				DBCC24CD4DBB4A88C86CD871 /* libPods-Mute Me.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,10 +99,13 @@
 		11B86E441EDE9B4C0069D254 = {
 			isa = PBXGroup;
 			children = (
+				5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */,
+				5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */,
 				11B86E4F1EDE9B4D0069D254 /* Mute Me Now */,
 				11B86E4E1EDE9B4D0069D254 /* Products */,
 				11B86E641EDE9BD00069D254 /* Frameworks */,
 				11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */,
+				AB34A6744F649834F2A21B08 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +120,7 @@
 		11B86E4F1EDE9B4D0069D254 /* Mute Me Now */ = {
 			isa = PBXGroup;
 			children = (
+				5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */,
 				11B86E9A1EDECB3F0069D254 /* Mute Me Now.entitlements */,
 				11B86E681EDE9D1A0069D254 /* mute_sript.scpt */,
 				11B86E691EDE9D1A0069D254 /* volume_sript.scpt */,
@@ -138,6 +153,7 @@
 			children = (
 				11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */,
 				11B86E651EDE9BD00069D254 /* DFRFoundation.framework */,
+				30004556042F084BBC0CA872 /* libPods-Mute Me.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,6 +166,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AB34A6744F649834F2A21B08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B222AB6057D3B902CBA70D34 /* Pods-Mute Me.debug.xcconfig */,
+				51C19D181CC260D65112962D /* Pods-Mute Me.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,10 +182,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11B86E611EDE9B4D0069D254 /* Build configuration list for PBXNativeTarget "Mute Me" */;
 			buildPhases = (
+				E377EBCE94FE28E5EE796CBC /* [CP] Check Pods Manifest.lock */,
 				11B86E491EDE9B4D0069D254 /* Sources */,
 				11B86E4A1EDE9B4D0069D254 /* Frameworks */,
 				11B86E4B1EDE9B4D0069D254 /* Resources */,
 				11B86E941EDEAD980069D254 /* CopyFiles */,
+				40C930C145A2928D7225D5F2 /* [CP] Embed Pods Frameworks */,
+				0237E5264A87F3A06915D961 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,7 +214,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -232,13 +260,64 @@
 			buildActionMask = 2147483647;
 			files = (
 				11B86E5A1EDE9B4D0069D254 /* Assets.xcassets in Resources */,
+				5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */,
 				11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */,
+				5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */,
+				5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */,
 				11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */,
 				11B86E5D1EDE9B4D0069D254 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0237E5264A87F3A06915D961 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40C930C145A2928D7225D5F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E377EBCE94FE28E5EE796CBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11B86E491EDE9B4D0069D254 /* Sources */ = {
@@ -365,10 +444,13 @@
 		};
 		11B86E621EDE9B4D0069D254 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B222AB6057D3B902CBA70D34 /* Pods-Mute Me.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WF57Z34X8U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -378,15 +460,19 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		11B86E631EDE9B4D0069D254 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51C19D181CC260D65112962D /* Pods-Mute Me.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WF57Z34X8U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -396,6 +482,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

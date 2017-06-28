@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,7 +10,14 @@
         <scene sceneID="JPo-4y-FX3">
             <objects>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+                    <connections>
+                        <outlet property="muteMenuItem" destination="ZAi-0g-9Kx" id="mLJ-Vb-Brq"/>
+                        <outlet property="prefsMenuItemAction" destination="8zc-qp-Qgx" id="6OC-cf-ZIf"/>
+                        <outlet property="quitMenuItemAction" destination="1bB-gU-CMy" id="R2d-IT-17e"/>
+                        <outlet property="statusMenu" destination="oLl-V1-4Ka" id="Xvk-NQ-7lL"/>
+                    </connections>
+                </customObject>
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
@@ -657,6 +664,28 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
+                <menu id="oLl-V1-4Ka">
+                    <items>
+                        <menuItem title="Preferences" id="8zc-qp-Qgx" userLabel="Preferences">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="prefsMenuItemAction:" target="Voe-Tx-rLC" id="IJN-cp-bzY"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Mute" id="ZAi-0g-9Kx" userLabel="Mute">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="menuMenuItemAction:" target="Voe-Tx-rLC" id="GQ9-sA-qtv"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Quit" id="1bB-gU-CMy" userLabel="Quit">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="quitMenuItemAction:" target="Voe-Tx-rLC" id="AgZ-ht-PEs"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
@@ -710,8 +739,8 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="hvj-7s-TwY">
-                                <rect key="frame" x="18" y="70" width="103" height="18"/>
+                            <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvj-7s-TwY">
+                                <rect key="frame" x="20" y="82" width="103" height="18"/>
                                 <buttonCell key="cell" type="check" title="Open at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uvS-Gd-Ucm">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -812,7 +841,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="654.5"/>
+            <point key="canvasLocation" x="75" y="647"/>
         </scene>
     </scenes>
     <resources>
