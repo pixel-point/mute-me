@@ -10,8 +10,14 @@ Touch Bar Application for mute/unmute your microphone or even without it just by
 When you are in a meeting using Hangouts, Skype, Slack, or another voice application, it's good practice to stay on mute until someone speaks to you directly - especially if you are meeting with three or more people. Often, however, you'll need to browse between multiple tabs, and it can take too long to switch back to the meeting app and unmute your microphone. With Mute Me, you can mute or unmute your mic quickly and easily, right from your Touch Bar.
 
 ### Options
-- Use long tap on Touch Bar icon for open preferences
+- use long tap on Touch Bar icon for open preferences
 - `open at login` option you will find in preferences as well
+- shortcut for Mute/Unmute - cmd + shift + 0(zero)
+
+### Ideas for development 
+If you have any ideas which help us to improve that application, please create new issue. 
+
+Approved ideas for future implementation you can find [here](https://github.com/pixel-point/mute-me/projects/1)
 
 ### How to contribute
 
