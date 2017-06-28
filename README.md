@@ -7,7 +7,7 @@ Touch Bar Application for mute/unmute your microphone
 
 ### Use Case
 
-When you are in a meeting using Hangouts, Skype, Slack, or another voice application, it's good practice to stay on mute until someone speaks to you directly--especially if you are meeting with three or more people. Often, however, you'll need to browse between multiple tabs, and it can take too long to switch back to the meeting app and unmute your microphone. With Mute Me, you can mute or unmute your mic quickly and easily, right from your Touch Bar.
+When you are in a meeting using Hangouts, Skype, Slack, or another voice application, it's good practice to stay on mute until someone speaks to you directly - especially if you are meeting with three or more people. Often, however, you'll need to browse between multiple tabs, and it can take too long to switch back to the meeting app and unmute your microphone. With Mute Me, you can mute or unmute your mic quickly and easily, right from your Touch Bar.
 
 ### How to contribute
 
@@ -21,6 +21,7 @@ When you are in a meeting using Hangouts, Skype, Slack, or another voice applica
 - [Nikita Teplyakov](https://github.com/tplkn)
 - [Alex Barashkov](https://github.com/lnikell)
 - [Vlad Kamelsky](https://www.facebook.com/vlad.kamelsky)
+- Joel Barker
 
 ---
 Made by [Pixel Point](https://pixelpoint.io)
