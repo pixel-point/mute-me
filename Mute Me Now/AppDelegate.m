@@ -20,12 +20,16 @@ NSButton *touchBarButton;
 
 TouchButton *button;
 
+NSString *STATUS_ICON_BLACK = @"tray-unactive-black";
+NSString *STATUS_ICON_RED = @"tray-active";
+NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
+
+
 - (void) awakeFromNib {
-    
     
     self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     
-    NSImage* statusImage = [NSImage imageNamed:@"statusBarIcon"];
+    NSImage* statusImage = [self getStatusBarImage];
     
     statusImage.size = NSMakeSize(18, 18);
     
@@ -58,8 +62,6 @@ TouchButton *button;
     }
 
 - (void) shortCutKeyPressed {
-
-    NSLog (@"shortcut key pressed");
 
     [self updateMenuItem];
 
@@ -97,12 +99,49 @@ TouchButton *button;
 
 
     [self enableLoginAutostart];
+    
+    // fires if we enter / exit dark mode
+    [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(darkModeChanged:) name:@"AppleInterfaceThemeChangedNotification" object:nil];
+
+    
+    
 
 }
 
+-(void)darkModeChanged:(NSNotification *)notif
+{
+    double volume = [self currentStateFixed];
+    [self setStatusBarImgRed: !volume];
+}
+
+
+- (NSImage*) getStatusBarImage {
+
+    NSImage* statusImage = [NSImage imageNamed:STATUS_ICON_BLACK];
+
+    // see https://stackoverflow.com/questions/25379525/how-to-detect-dark-mode-in-yosemite-to-change-the-status-bar-menu-icon
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] persistentDomainForName:NSGlobalDomain];
+    id style = [dict objectForKey:@"AppleInterfaceStyle"];
+
+    BOOL darkModeOn = ( style && [style isKindOfClass:[NSString class]] && NSOrderedSame == [style caseInsensitiveCompare:@"dark"] );
+
+    if (darkModeOn) {
+        statusImage = [NSImage imageNamed:STATUS_ICON_WHITE];
+    }
+
+    return statusImage;
+}
+
+
 - (void) setStatusBarImgRed:(BOOL) shouldBeRed {
 
-    NSImage* statusImage = [NSImage imageNamed:@"statusBarIcon"];
+    NSImage* statusImage = [self getStatusBarImage];
+
+    if (shouldBeRed) {
+        NSLog (@"using red");
+        statusImage = [NSImage imageNamed:STATUS_ICON_RED];
+    }
+    
     statusImage.size = NSMakeSize(18, 18);
     [statusImage setTemplate:!shouldBeRed];
         
