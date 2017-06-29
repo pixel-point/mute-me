@@ -1,5 +1,5 @@
 # Mute Me
-Touch Bar Application for mute/unmute your microphone or even without it just by shortcut on any Mac
+Use the Touch Bar app to Mute/Unmute your microphone, or just use the shortcut on any Mac.
 
 [Visit Site](https://muteme.pixelpoint.io/) | [Download](https://muteme.pixelpoint.io/)
 
@@ -7,27 +7,27 @@ Touch Bar Application for mute/unmute your microphone or even without it just by
 
 ### Use Case
 
-When you are in a meeting using Hangouts, Skype, Slack, or another voice application, it's good practice to stay on mute until someone speaks to you directly - especially if you are meeting with three or more people. Often, however, you'll need to browse between multiple tabs, and it can take too long to switch back to the meeting app and unmute your microphone. With Mute Me, you can mute or unmute your mic quickly and easily, right from your Touch Bar.
+When you’re in a meeting using Hangouts, Skype, Slack, or another voice application, it's good practice to stay on mute until someone speaks to you directly - especially if you’re meeting with three or more people. Often, however, you'll need to browse between multiple tabs, and it can take too long to switch back to the meeting app to unmute your microphone. With Mute Me, you can mute or unmute your mic quickly and easily, right from your Touch Bar.
 
 ### Options
-- use long tap on Touch Bar icon for open preferences
-- `open at login` option you will find in preferences as well
-- shortcut for Mute/Unmute - cmd + shift + 0(zero)
+- use long tap on the Touch Bar icon to open Preferences
+- find the Open at Login option in Preferences
+- shortcut for Mute/Unmute: cmd + shift + 0(zero)
 
 ### Ideas for development 
-If you have any ideas which help us to improve that application, please create new issue. 
+If you have any ideas that can help us improve this application, please create a new issue.
 
-Approved ideas for future implementation you can find [here](https://github.com/pixel-point/mute-me/projects/1)
+You can find approved ideas for future implementation [here](https://github.com/pixel-point/mute-me/projects/1)
 
 ### How to contribute
 
 - Download Xcode
 - Fork that repository
-- Open repository via Xcode 
+- Open repository via Xcode
 - Make changes
 - Provide Pull Request
 
-### Thanks for contribution
+### Thanks for your contribution
 - [Nikita Teplyakov](https://github.com/tplkn)
 - [Alex Barashkov](https://github.com/lnikell)
 - [Vlad Kamelsky](https://www.facebook.com/vlad.kamelsky)
