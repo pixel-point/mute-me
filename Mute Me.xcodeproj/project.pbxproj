@@ -18,6 +18,9 @@
 		11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E691EDE9D1A0069D254 /* volume_sript.scpt */; };
 		11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */; };
 		11EA56D81EF3C2AC003AF236 /* Mute Me Now Launcher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D4763221F0562E6005E8DB0 /* tray-unactive-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D47631F1F0562E6005E8DB0 /* tray-unactive-white@2x.png */; };
+		5D4763231F0562E6005E8DB0 /* tray-unactive-black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D4763201F0562E6005E8DB0 /* tray-unactive-black@2x.png */; };
+		5D4763241F0562E6005E8DB0 /* tray-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D4763211F0562E6005E8DB0 /* tray-active@2x.png */; };
 		5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */; };
 		5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */; };
 		5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */; };
@@ -76,6 +79,9 @@
 		11B86E9A1EDECB3F0069D254 /* Mute Me Now.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now.entitlements"; sourceTree = "<group>"; };
 		30004556042F084BBC0CA872 /* libPods-Mute Me.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mute Me.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C19D181CC260D65112962D /* Pods-Mute Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mute Me.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me.release.xcconfig"; sourceTree = "<group>"; };
+		5D47631F1F0562E6005E8DB0 /* tray-unactive-white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-unactive-white@2x.png"; sourceTree = "<group>"; };
+		5D4763201F0562E6005E8DB0 /* tray-unactive-black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-unactive-black@2x.png"; sourceTree = "<group>"; };
+		5D4763211F0562E6005E8DB0 /* tray-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tray-active@2x.png"; sourceTree = "<group>"; };
 		5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon2.png; sourceTree = "<group>"; };
 		5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon3.png; sourceTree = "<group>"; };
 		5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon.png; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 		11B86E441EDE9B4C0069D254 = {
 			isa = PBXGroup;
 			children = (
+				5D4763251F0562F2005E8DB0 /* Graphics */,
 				5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */,
 				5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */,
 				11B86E4F1EDE9B4D0069D254 /* Mute Me Now */,
@@ -164,6 +171,16 @@
 				11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5D4763251F0562F2005E8DB0 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				5D47631F1F0562E6005E8DB0 /* tray-unactive-white@2x.png */,
+				5D4763201F0562E6005E8DB0 /* tray-unactive-black@2x.png */,
+				5D4763211F0562E6005E8DB0 /* tray-active@2x.png */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 		AB34A6744F649834F2A21B08 /* Pods */ = {
@@ -259,7 +276,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4763241F0562E6005E8DB0 /* tray-active@2x.png in Resources */,
 				11B86E5A1EDE9B4D0069D254 /* Assets.xcassets in Resources */,
+				5D4763231F0562E6005E8DB0 /* tray-unactive-black@2x.png in Resources */,
+				5D4763221F0562E6005E8DB0 /* tray-unactive-white@2x.png in Resources */,
 				5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */,
 				11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */,
 				5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */,

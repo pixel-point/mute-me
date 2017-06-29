@@ -24,8 +24,6 @@ static NSString *companyURL = @"https://pixelpoint.io/";
     BOOL statusBarState = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar"];
     [self.showInMenuBarState setState: statusBarState];
     
-    
-    
     // enable to nil out preferences
     //[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"status_bar"];
     //[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"auto_login"];
