@@ -96,6 +96,7 @@ static const CGFloat MASButtonFontSize = 11;
     switch (_style) {
         case MASShortcutViewStyleDefault: {
             _shortcutCell.bezelStyle = NSRoundRectBezelStyle;
+            
             break;
         }
         case MASShortcutViewStyleTexturedRect: {
@@ -113,6 +114,8 @@ static const CGFloat MASButtonFontSize = 11;
             break;
         }
     }
+    
+    _shortcutCell.bezelStyle = NSTexturedSquareBezelStyle;
 }
 
 - (void)setRecording:(BOOL)flag

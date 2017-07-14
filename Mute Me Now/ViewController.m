@@ -15,6 +15,11 @@ static void *MASObservingContext = &MASObservingContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _masShortCutView.style = MASShortcutViewStyleRounded;
+    
+    
+    
+    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"auto_login"] == nil) {
     
         // the opposite is used later
