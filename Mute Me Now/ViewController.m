@@ -1,7 +1,6 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 
-
 static NSString *githubURL = @"https://github.com/pixel-point/mute-me";
 static NSString *projectURL = @"https://muteme.pixelpoint.io/";
 static NSString *companyURL = @"https://pixelpoint.io/";
@@ -14,10 +13,6 @@ static void *MASObservingContext = &MASObservingContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _masShortCutView.style = MASShortcutViewStyleRounded;
-    
-    
     
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"auto_login"] == nil) {
