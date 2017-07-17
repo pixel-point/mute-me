@@ -14,7 +14,6 @@ static void *MASObservingContext = &MASObservingContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"auto_login"] == nil) {
     
         // the opposite is used later
