@@ -13,6 +13,9 @@
 
 - (IBAction)menuMenuItemAction:(id)sender;
 
+- (void) hideMenuBar:(BOOL)enableState;
+
+- (void) shortCutKeyPressed;
 
 @end
 

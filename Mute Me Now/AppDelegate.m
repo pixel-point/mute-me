@@ -7,6 +7,7 @@
 #import <MASShortcut/Shortcut.h>
 
 static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
+static NSString *const MASCustomShortcutKey = @"customShortcut";
 
 @interface AppDelegate () <TouchDelegate>
 
@@ -27,6 +28,24 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
 
 - (void) awakeFromNib {
     
+    BOOL hideStatusBar = NO;
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"hide_status_bar"] != nil) {
+        hideStatusBar = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide_status_bar"];
+    }
+    
+    if (!hideStatusBar) {
+        [self setupStatusBarItem];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:hideStatusBar forKey:@"hide_status_bar"];
+    
+    // masshortcut
+    [self setShortcutKey];
+}
+
+- (void) setupStatusBarItem {
+
     self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     
     NSImage* statusImage = [self getStatusBarImage];
@@ -41,25 +60,37 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
     self.statusBar.highlightMode = YES;
     self.statusBar.enabled = YES;
     self.statusBar.menu = self.statusMenu;
-    
-    // masshortcut
+
+}
+
+- (void) setShortcutKey {
     
     // default shortcut is "Shift Command 0"
     MASShortcut *firstLaunchShortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_0 modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagShift];
     NSData *firstLaunchShortcutData = [NSKeyedArchiver archivedDataWithRootObject:firstLaunchShortcut];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults registerDefaults:@{
+                                 MASCustomShortcutKey : firstLaunchShortcutData
+                                 }];
+    
+    [defaults synchronize];
+    
     
     [[MASShortcutMonitor sharedMonitor] registerShortcut:firstLaunchShortcut withAction:^{
-            [self shortCutKeyPressed];
-        }];
-    
-    // Register default values to be used for the first app start
-    [defaults registerDefaults:@{
-		@"customShortcut" : firstLaunchShortcutData
+        [self shortCutKeyPressed];
     }];
+    
+}
 
+- (void) hideMenuBar: (BOOL) enableState {
+    
+    if (!enableState) {
+        [self setupStatusBarItem];
+    } else {
+        self.statusBar = nil;
     }
+}
 
 - (void) shortCutKeyPressed {
 
@@ -102,10 +133,6 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
     
     // fires if we enter / exit dark mode
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(darkModeChanged:) name:@"AppleInterfaceThemeChangedNotification" object:nil];
-
-    
-    
-
 }
 
 -(void)darkModeChanged:(NSNotification *)notif

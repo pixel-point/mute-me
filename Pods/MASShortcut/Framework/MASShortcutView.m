@@ -31,6 +31,8 @@ static const CGFloat MASButtonFontSize = 11;
 
 + (Class)shortcutCellClass
 {
+    
+
     return [NSButtonCell class];
 }
 
@@ -56,6 +58,7 @@ static const CGFloat MASButtonFontSize = 11;
 {
     _shortcutCell = [[[self.class shortcutCellClass] alloc] init];
     _shortcutCell.buttonType = NSPushOnPushOffButton;
+    
     _shortcutCell.font = [[NSFontManager sharedFontManager] convertFont:_shortcutCell.font toSize:MASButtonFontSize];
     _shortcutValidator = [MASShortcutValidator sharedValidator];
     _enabled = YES;
@@ -96,6 +99,7 @@ static const CGFloat MASButtonFontSize = 11;
     switch (_style) {
         case MASShortcutViewStyleDefault: {
             _shortcutCell.bezelStyle = NSRoundRectBezelStyle;
+            
             break;
         }
         case MASShortcutViewStyleTexturedRect: {
@@ -113,6 +117,8 @@ static const CGFloat MASButtonFontSize = 11;
             break;
         }
     }
+    
+    _shortcutCell.bezelStyle = NSTexturedSquareBezelStyle;
 }
 
 - (void)setRecording:(BOOL)flag
@@ -211,12 +217,17 @@ static const CGFloat MASButtonFontSize = 11;
 
 - (void)drawRect:(CGRect)dirtyRect
 {
+
     if (self.shortcutValue) {
         NSString *buttonTitle;
         if (self.recording) {
-            buttonTitle = NSStringFromMASKeyCode(kMASShortcutGlyphEscape);
+            //buttonTitle = NSStringFromMASKeyCode(kMASShortcutGlyphEscape);
+            buttonTitle = @"";
         } else if (self.showsDeleteButton) {
-            buttonTitle = NSStringFromMASKeyCode(kMASShortcutGlyphClear);
+            //buttonTitle = NSStringFromMASKeyCode(kMASShortcutGlyphClear);
+            buttonTitle = @"";
+            
+            NSLog (@"buttonTitle : %@", buttonTitle);
         }
         if (buttonTitle != nil) {
             [self drawInRect:self.bounds withTitle:buttonTitle alignment:NSRightTextAlignment state:NSOffState];
@@ -260,12 +271,18 @@ static const CGFloat MASButtonFontSize = 11;
 {
     CGRect shortcutRect, hintRect;
     CGFloat hintButtonWidth = MASHintButtonWidth;
+    
+    NSLog (@"hintButtonWidth : %f", hintButtonWidth);
+    
     switch (self.style) {
         case MASShortcutViewStyleTexturedRect: hintButtonWidth += 2.0; break;
         case MASShortcutViewStyleRounded: hintButtonWidth += 3.0; break;
         case MASShortcutViewStyleFlat: hintButtonWidth -= 8.0 - (_shortcutCell.font.pointSize - MASButtonFontSize); break;
-        default: break;
+        default: hintButtonWidth -= 8.0 - (_shortcutCell.font.pointSize - MASButtonFontSize); hintButtonWidth = hintButtonWidth; break;
     }
+    
+    hintButtonWidth = 0;
+    
     CGRectDivide(self.bounds, &hintRect, &shortcutRect, hintButtonWidth, CGRectMaxXEdge);
     if (shortcutRectRef)  *shortcutRectRef = shortcutRect;
     if (hintRectRef) *hintRectRef = hintRect;

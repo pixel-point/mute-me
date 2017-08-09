@@ -8,6 +8,8 @@
 @property (weak) IBOutlet NSButton *autoLoginState;
 @property (weak) IBOutlet NSButton *showInMenuBarState;
 
+@property (strong) IBOutlet MASShortcutView *masShortCutView;
+
 - (IBAction)showMenuBarChanged:(id)sender;
 
 @end

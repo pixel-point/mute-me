@@ -1,8 +1,13 @@
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 static NSString *githubURL = @"https://github.com/pixel-point/mute-me";
 static NSString *projectURL = @"https://muteme.pixelpoint.io/";
 static NSString *companyURL = @"https://pixelpoint.io/";
+
+static NSString *const MASCustomShortcutKey = @"customShortcut";
+
+static void *MASObservingContext = &MASObservingContext;
 
 @implementation ViewController
 
@@ -21,22 +26,60 @@ static NSString *companyURL = @"https://pixelpoint.io/";
     [self.autoLoginState setState: !state];
     
     
-    BOOL statusBarState = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar"];
-    [self.showInMenuBarState setState: statusBarState];
-    
+    BOOL hideStatusBarState = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide_status_bar"];
+    [self.showInMenuBarState setState: hideStatusBarState];
+
+
     // enable to nil out preferences
-    //[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"status_bar"];
+    //[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"hide_status_bar"];
     //[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"auto_login"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
+    // Make a global context reference
+    void *kGlobalShortcutContext = &kGlobalShortcutContext;
+    
+    // this sets the existing shortcut and allows it to save
+    [self.masShortCutView setAssociatedUserDefaultsKey:MASCustomShortcutKey];
+
+    
+    // Implement when loading view
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults addObserver:self forKeyPath:MASCustomShortcutKey
+                  options:NSKeyValueObservingOptionInitial
+                  context:MASObservingContext];
+
+    
+
+     
 }
+
+- (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context
+{
+
+    if (context != MASObservingContext) {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        return;
+    }
+
+    if ([keyPath isEqualToString:MASCustomShortcutKey]) {
+    
+        NSLog (@"change key");
+        
+        [[MASShortcutBinder sharedBinder] bindShortcutWithDefaultsKey:MASCustomShortcutKey toAction:^{
+        
+            AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
+            [appDelegate shortCutKeyPressed];
+        }];
+        
+    }
+    
+}
+
 
 -(void)viewDidAppear {
     [super viewDidAppear];
     [[self.view window] setTitle:@"Mute me"];
     [[self.view window] center];
-    
-    
     
 }
 
@@ -77,20 +120,25 @@ static NSString *companyURL = @"https://pixelpoint.io/";
         enableState = YES;
     }
 
-    [[NSUserDefaults standardUserDefaults] setBool:!enableState forKey:@"status_bar"];
-    
+    [[NSUserDefaults standardUserDefaults] setBool:enableState forKey:@"hide_status_bar"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    NSString *msgText = @"You will need to restart the App for this change to be applied.";
+    AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
+    [appDelegate hideMenuBar:enableState];
+
     
-    if (enableState == NO) {
-        msgText = [NSString stringWithFormat:@"%@ Long press on the Touch Bar Mute Button to show Preferences when the Menu Item is disabled.", msgText];
+    if (enableState == YES) {
+    
+        NSString *msgText = @"Long press on the Touch Bar Mute Button to show Preferences when the Menu Item is disabled.";
+        
+        NSAlert* msgBox = [[NSAlert alloc] init] ;
+        [msgBox setMessageText:msgText];
+        [msgBox addButtonWithTitle: @"OK"];
+        [msgBox runModal];
     }
     
-    NSAlert* msgBox = [[NSAlert alloc] init] ;
-    [msgBox setMessageText:msgText];
-    [msgBox addButtonWithTitle: @"OK"];
-    [msgBox runModal];
+    
+    
 }
 
 
