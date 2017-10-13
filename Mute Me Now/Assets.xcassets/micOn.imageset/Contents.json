@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ios7-mic.png",
+      "filename" : "mic-on@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ios7-mic-1.png",
+      "filename" : "mic-on@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ios7-mic-2.png",
+      "filename" : "mic-on@3x.png",
       "scale" : "3x"
     }
   ],

@@ -133,7 +133,6 @@ static void *MASObservingContext = &MASObservingContext;
 
     
     if (enableState == YES) {
-        //self.statusBarButtonToggle
     
         NSString *msgText = @"Long press on the Touch Bar Mute Button to show Preferences when the Menu Item is disabled.";
         
