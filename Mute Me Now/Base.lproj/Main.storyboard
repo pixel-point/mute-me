@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -666,20 +666,20 @@
                 </application>
                 <menu id="oLl-V1-4Ka">
                     <items>
-                        <menuItem title="Preferences" id="8zc-qp-Qgx" userLabel="Preferences">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="prefsMenuItemAction:" target="Voe-Tx-rLC" id="IJN-cp-bzY"/>
-                            </connections>
-                        </menuItem>
                         <menuItem title="Mute" id="ZAi-0g-9Kx" userLabel="Mute">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="menuMenuItemAction:" target="Voe-Tx-rLC" id="GQ9-sA-qtv"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Quit" id="1bB-gU-CMy" userLabel="Quit">
-                            <modifierMask key="keyEquivalentModifierMask"/>
+                        <menuItem isSeparatorItem="YES" id="GNT-5P-Irb"/>
+                        <menuItem title="Preferences" keyEquivalent="," id="8zc-qp-Qgx" userLabel="Preferences">
+                            <connections>
+                                <action selector="prefsMenuItemAction:" target="Voe-Tx-rLC" id="IJN-cp-bzY"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="gwz-1U-L0y"/>
+                        <menuItem title="Quit" keyEquivalent="q" id="1bB-gU-CMy" userLabel="Quit">
                             <connections>
                                 <action selector="quitMenuItemAction:" target="Voe-Tx-rLC" id="AgZ-ht-PEs"/>
                             </connections>
@@ -698,6 +698,9 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="400" height="223"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="QmJ-VN-65d"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -712,27 +715,26 @@
             <objects>
                 <viewController title="Mute Me" id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="392" height="399"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jgV-z1-Y2K">
-                                <rect key="frame" x="20" y="213" width="96" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="z1r-30-2kr"/>
-                                    <constraint firstAttribute="height" constant="67" id="zXu-Qt-8b4"/>
-                                </constraints>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgV-z1-Y2K">
+                                <rect key="frame" x="22" y="312" width="96" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="2Je-uk-WdO"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHJ-tz-Zfo">
-                                <rect key="frame" x="154" y="244" width="248" height="31"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hHJ-tz-Zfo">
+                                <rect key="frame" x="152" y="344" width="238" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Mute Me" id="2Zy-2M-TGH">
                                     <font key="font" metaFont="system" size="26"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwG-yv-1ky">
-                                <rect key="frame" x="241" y="217" width="74" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwG-yv-1ky">
+                                <rect key="frame" x="237" y="317" width="74" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version: 1.0" id="aLh-Ga-uOd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
@@ -740,7 +742,7 @@
                                 </textFieldCell>
                             </textField>
                             <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvj-7s-TwY">
-                                <rect key="frame" x="20" y="179" width="103" height="18"/>
+                                <rect key="frame" x="20" y="258" width="103" height="18"/>
                                 <buttonCell key="cell" type="check" title="Open at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uvS-Gd-Ucm">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -749,24 +751,24 @@
                                     <action selector="onLoginStartChanged:" target="XfG-lQ-9wD" id="57j-16-wLE"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paW-7T-Udu">
-                                <rect key="frame" x="18" y="17" width="31" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="paW-7T-Udu">
+                                <rect key="frame" x="16" y="22" width="31" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Visit" id="bpq-Lk-wN5">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZW-rf-f4A">
-                                <rect key="frame" x="114" y="17" width="31" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZW-rf-f4A">
+                                <rect key="frame" x="112" y="22" width="31" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Visit" id="ksb-oB-QsG">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4TQ-VZ-TmS">
-                                <rect key="frame" x="320" y="8" width="66" height="32"/>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4TQ-VZ-TmS">
+                                <rect key="frame" x="314" y="13" width="66" height="32"/>
                                 <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fZe-Yb-1MB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -775,8 +777,8 @@
                                     <action selector="quitPressed:" target="XfG-lQ-9wD" id="nGB-Gp-XJh"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="749" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="KAa-G4-Uci">
-                                <rect key="frame" x="49" y="9" width="45" height="32"/>
+                            <button verticalHuggingPriority="749" verticalCompressionResistancePriority="751" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAa-G4-Uci">
+                                <rect key="frame" x="47" y="14" width="45" height="32"/>
                                 <buttonCell key="cell" type="bevel" title="Github" bezelStyle="rounded" alignment="center" state="on" allowsMixedState="YES" inset="2" id="fnI-lS-sU8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -785,8 +787,8 @@
                                     <action selector="onGithubPressed:" target="XfG-lQ-9wD" id="SOm-af-7F5"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PYQ-lw-EpL">
-                                <rect key="frame" x="146" y="9" width="53" height="32"/>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYQ-lw-EpL">
+                                <rect key="frame" x="144" y="14" width="53" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="abk-Fd-YcD"/>
                                 </constraints>
@@ -798,8 +800,9 @@
                                     <action selector="onWebsitePressed:" target="XfG-lQ-9wD" id="2fA-R3-AZg"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UhA-eV-vsx">
-                                <rect key="frame" x="216" y="160" width="123" height="32"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhA-eV-vsx">
+                                <rect key="frame" x="209" y="260" width="123" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="bevel" title="Made by Pixel Point" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="WIm-yh-r21">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -809,8 +812,8 @@
                                 </connections>
                             </button>
                             <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03l-eq-BdN">
-                                <rect key="frame" x="20" y="143" width="132" height="18"/>
-                                <buttonCell key="cell" type="check" title="Hide icon at menu" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="n61-0U-soc">
+                                <rect key="frame" x="20" y="222" width="194" height="18"/>
+                                <buttonCell key="cell" type="check" title="Hide menu bar icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="n61-0U-soc">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -818,46 +821,62 @@
                                     <action selector="showMenuBarChanged:" target="XfG-lQ-9wD" id="80Y-jW-1qx"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="qVT-Gc-UaR">
+                                <rect key="frame" x="20" y="187" width="238" height="18"/>
+                                <buttonCell key="cell" type="check" title="Use menu bar icon as toggle switch" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tuY-B8-vFd">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="statusBarToggleChanged:" target="XfG-lQ-9wD" id="eby-Ny-Bev"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="dPJ-wa-aGh">
+                                <rect key="frame" x="20" y="150" width="200" height="18"/>
+                                <buttonCell key="cell" type="check" title="Use alternate menu bar icons" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Lo2-Nt-BC5">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="useAlternateStatusBarIconsChanged:" target="XfG-lQ-9wD" id="LV8-lQ-9r0"/>
+                                </connections>
+                            </button>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Dc9-Xu-cYw">
+                                <rect key="frame" x="20" y="58" width="358" height="5"/>
+                            </box>
                             <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvA-Vd-gMo" customClass="MASShortcutView">
-                                <rect key="frame" x="20" y="89" width="358" height="40"/>
+                                <rect key="frame" x="22" y="83" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="r4b-wL-2Sc"/>
                                     <constraint firstAttribute="width" constant="358" id="yLv-u2-v3I"/>
                                 </constraints>
                             </customView>
-                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Dc9-Xu-cYw">
-                                <rect key="frame" x="22" y="50" width="358" height="5"/>
-                            </box>
                         </subviews>
                         <constraints>
                             <constraint firstItem="KAa-G4-Uci" firstAttribute="leading" secondItem="paW-7T-Udu" secondAttribute="trailing" constant="2" id="6Ie-tw-gbe"/>
-                            <constraint firstAttribute="trailing" secondItem="4TQ-VZ-TmS" secondAttribute="trailing" constant="20" id="9uT-yX-Hcx"/>
-                            <constraint firstItem="Dc9-Xu-cYw" firstAttribute="trailing" secondItem="4TQ-VZ-TmS" secondAttribute="trailing" id="DLb-UO-9N5"/>
-                            <constraint firstItem="Dc9-Xu-cYw" firstAttribute="bottom" secondItem="jvA-Vd-gMo" secondAttribute="bottom" constant="20" id="DVr-Qr-Gw5"/>
+                            <constraint firstAttribute="trailing" secondItem="4TQ-VZ-TmS" secondAttribute="trailing" constant="18" id="9uT-yX-Hcx"/>
+                            <constraint firstItem="Dc9-Xu-cYw" firstAttribute="trailing" secondItem="4TQ-VZ-TmS" secondAttribute="trailing" constant="4" id="DLb-UO-9N5"/>
+                            <constraint firstItem="Dc9-Xu-cYw" firstAttribute="bottom" secondItem="jvA-Vd-gMo" secondAttribute="bottom" constant="24" id="DVr-Qr-Gw5"/>
                             <constraint firstItem="4TQ-VZ-TmS" firstAttribute="centerY" secondItem="IZW-rf-f4A" secondAttribute="centerY" id="HoT-4q-8c8"/>
                             <constraint firstItem="IZW-rf-f4A" firstAttribute="centerY" secondItem="paW-7T-Udu" secondAttribute="centerY" id="K1x-0t-XYq"/>
-                            <constraint firstItem="hHJ-tz-Zfo" firstAttribute="leading" secondItem="jgV-z1-Y2K" secondAttribute="trailing" constant="40" id="Pfa-gL-Cmv"/>
-                            <constraint firstItem="UhA-eV-vsx" firstAttribute="centerY" secondItem="hvj-7s-TwY" secondAttribute="centerY" id="QKF-iV-bEb"/>
-                            <constraint firstItem="hHJ-tz-Zfo" firstAttribute="top" secondItem="jgV-z1-Y2K" secondAttribute="top" constant="5" id="QMH-TQ-WYW"/>
+                            <constraint firstItem="qVT-Gc-UaR" firstAttribute="leading" secondItem="Dc9-Xu-cYw" secondAttribute="leading" constant="2" id="NTr-x4-CYo"/>
                             <constraint firstItem="KAa-G4-Uci" firstAttribute="centerY" secondItem="paW-7T-Udu" secondAttribute="centerY" id="Saz-gm-fsK"/>
-                            <constraint firstItem="UhA-eV-vsx" firstAttribute="centerX" secondItem="hHJ-tz-Zfo" secondAttribute="centerX" id="TJH-hi-wcM"/>
-                            <constraint firstItem="jvA-Vd-gMo" firstAttribute="bottom" secondItem="m2S-Jp-Qdl" secondAttribute="bottom" constant="-72" id="TXR-iF-TYp"/>
+                            <constraint firstItem="jvA-Vd-gMo" firstAttribute="bottom" secondItem="m2S-Jp-Qdl" secondAttribute="bottom" constant="-84" id="TXR-iF-TYp"/>
                             <constraint firstItem="PYQ-lw-EpL" firstAttribute="leading" secondItem="IZW-rf-f4A" secondAttribute="trailing" constant="3" id="U4C-MJ-9xq"/>
                             <constraint firstItem="03l-eq-BdN" firstAttribute="leading" secondItem="hvj-7s-TwY" secondAttribute="leading" id="XSI-A5-1wn"/>
-                            <constraint firstAttribute="trailing" secondItem="hHJ-tz-Zfo" secondAttribute="trailing" id="Y4G-Ak-L4o"/>
-                            <constraint firstItem="fwG-yv-1ky" firstAttribute="top" secondItem="hHJ-tz-Zfo" secondAttribute="bottom" constant="10" id="YDL-hS-N28"/>
                             <constraint firstItem="03l-eq-BdN" firstAttribute="top" secondItem="hvj-7s-TwY" secondAttribute="top" constant="35" id="aIM-aG-d6f"/>
-                            <constraint firstItem="paW-7T-Udu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="aUq-vo-NeN"/>
-                            <constraint firstItem="hvj-7s-TwY" firstAttribute="top" secondItem="jgV-z1-Y2K" secondAttribute="bottom" constant="30" id="d3g-2o-f5n"/>
-                            <constraint firstItem="jgV-z1-Y2K" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="dOU-bE-MfV"/>
-                            <constraint firstItem="hvj-7s-TwY" firstAttribute="leading" secondItem="jgV-z1-Y2K" secondAttribute="leading" id="dOX-nP-MJz"/>
-                            <constraint firstItem="jvA-Vd-gMo" firstAttribute="trailing" secondItem="4TQ-VZ-TmS" secondAttribute="trailing" id="kac-rS-txm"/>
+                            <constraint firstItem="paW-7T-Udu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="18" id="aUq-vo-NeN"/>
+                            <constraint firstItem="dPJ-wa-aGh" firstAttribute="leading" secondItem="qVT-Gc-UaR" secondAttribute="leading" id="f5i-bS-zEy"/>
+                            <constraint firstItem="qVT-Gc-UaR" firstAttribute="top" secondItem="03l-eq-BdN" secondAttribute="bottom" constant="21" id="hTE-Hj-jj9"/>
+                            <constraint firstItem="jvA-Vd-gMo" firstAttribute="trailing" secondItem="4TQ-VZ-TmS" secondAttribute="trailing" constant="4" id="kac-rS-txm"/>
+                            <constraint firstItem="dPJ-wa-aGh" firstAttribute="top" secondItem="qVT-Gc-UaR" secondAttribute="bottom" constant="23" id="mcM-Qe-NaN"/>
                             <constraint firstItem="KAa-G4-Uci" firstAttribute="centerY" secondItem="paW-7T-Udu" secondAttribute="centerY" id="mwC-vV-fhw"/>
                             <constraint firstItem="Dc9-Xu-cYw" firstAttribute="width" secondItem="jvA-Vd-gMo" secondAttribute="width" id="oj0-On-MpP"/>
                             <constraint firstItem="IZW-rf-f4A" firstAttribute="leading" secondItem="KAa-G4-Uci" secondAttribute="trailing" constant="22" id="rr6-Qb-AEk"/>
-                            <constraint firstItem="jgV-z1-Y2K" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="rz8-or-NlC"/>
+                            <constraint firstItem="qVT-Gc-UaR" firstAttribute="leading" secondItem="03l-eq-BdN" secondAttribute="leading" id="seQ-mD-acH"/>
                             <constraint firstItem="PYQ-lw-EpL" firstAttribute="centerY" secondItem="KAa-G4-Uci" secondAttribute="centerY" id="tyJ-Oo-zzb"/>
-                            <constraint firstItem="paW-7T-Udu" firstAttribute="top" secondItem="hvj-7s-TwY" secondAttribute="bottom" constant="135" id="znA-PO-LrO"/>
+                            <constraint firstItem="jvA-Vd-gMo" firstAttribute="top" secondItem="qVT-Gc-UaR" secondAttribute="bottom" constant="65" id="zWL-Za-nii"/>
+                            <constraint firstItem="paW-7T-Udu" firstAttribute="top" secondItem="hvj-7s-TwY" secondAttribute="bottom" constant="221" id="znA-PO-LrO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -865,12 +884,14 @@
                         <outlet property="githubButton" destination="KAa-G4-Uci" id="HzP-kT-H5e"/>
                         <outlet property="masShortCutView" destination="jvA-Vd-gMo" id="u8T-CH-ucC"/>
                         <outlet property="showInMenuBarState" destination="03l-eq-BdN" id="dNu-RU-PeR"/>
+                        <outlet property="statusBarButtonToggle" destination="qVT-Gc-UaR" id="V4K-8G-Dvy"/>
+                        <outlet property="useAlternateStatusBarIcons" destination="dPJ-wa-aGh" id="mQh-oR-nwD"/>
                         <outlet property="websiteButton" destination="PYQ-lw-EpL" id="IdY-Vo-epQ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="646"/>
+            <point key="canvasLocation" x="75" y="658.5"/>
         </scene>
     </scenes>
     <resources>

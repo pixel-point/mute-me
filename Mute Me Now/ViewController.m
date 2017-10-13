@@ -25,9 +25,14 @@ static void *MASObservingContext = &MASObservingContext;
     BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto_login"];
     [self.autoLoginState setState: !state];
     
-    
     BOOL hideStatusBarState = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide_status_bar"];
     [self.showInMenuBarState setState: hideStatusBarState];
+    
+    BOOL statusBarButtonToggle = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar_button_toggle"];
+    [self.statusBarButtonToggle setState: statusBarButtonToggle];
+    
+    BOOL useAlternateStatusBarIcons = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar_alternate_icons"];
+    [self.useAlternateStatusBarIcons setState: useAlternateStatusBarIcons];
 
 
     // enable to nil out preferences
@@ -128,6 +133,7 @@ static void *MASObservingContext = &MASObservingContext;
 
     
     if (enableState == YES) {
+        //self.statusBarButtonToggle
     
         NSString *msgText = @"Long press on the Touch Bar Mute Button to show Preferences when the Menu Item is disabled.";
         
@@ -141,7 +147,51 @@ static void *MASObservingContext = &MASObservingContext;
     
 }
 
+- (IBAction)statusBarToggleChanged:(id)sender {
+    
+    NSInteger hideState = [self.showInMenuBarState state];
+    
+    if(hideState == NSOnState) {
+        return;
+    }
+    
+    NSInteger state = [self.statusBarButtonToggle state];
+    
+    BOOL enableState = NO;
+    if(state == NSOnState) {
+        enableState = YES;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:enableState forKey:@"status_bar_button_toggle"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
+    [appDelegate hideMenuBar:NO];
+    
+}
 
+- (IBAction)useAlternateStatusBarIconsChanged:(id)sender {
+    
+    NSInteger hideState = [self.showInMenuBarState state];
+    
+    if(hideState == NSOnState) {
+        return;
+    }
+    
+    NSInteger state = [self.useAlternateStatusBarIcons state];
+    
+    BOOL enableState = NO;
+    if(state == NSOnState) {
+        enableState = YES;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:enableState forKey:@"status_bar_alternate_icons"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
+    [appDelegate hideMenuBar:NO];
+    
+}
 
 
 - (IBAction)onMainWebsitePressed:(id)sender {

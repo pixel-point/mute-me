@@ -14,6 +14,8 @@ When you’re in a meeting using Hangouts, Skype, Slack, or another voice applic
 - find the Open at Login option in Preferences
 - add custom shortcut for Mute/Unmute (default cmd + shift + 0) in Preferences
 - show/hide Mute/Unmute button in MacOS menu bar in Preferences
+- configure functionality to Mute/Unmute by left clicking icon in MacOS menu bar (right click to open menu) in Preferences
+- configure alternate set of icons for MacOS menu bar (for those that prefer monochromatic icons) in Preferences
 
 ### Ideas for development 
 If you have any ideas that can help us improve this application, please create a new issue.

@@ -17,4 +17,7 @@
 
 - (IBAction)showMenuBarChanged:(id)sender {
 }
+
+- (IBAction)statusBarToggleChanged:(id)sender {
+}
 @end

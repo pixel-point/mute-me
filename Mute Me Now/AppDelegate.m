@@ -25,28 +25,61 @@ NSString *STATUS_ICON_BLACK = @"tray-unactive-black";
 NSString *STATUS_ICON_RED = @"tray-active";
 NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
 
+NSString *STATUS_ICON_OFF = @"micOff";
+NSString *STATUS_ICON_ON = @"micOn";
+
 
 - (void) awakeFromNib {
     
     BOOL hideStatusBar = NO;
+    BOOL statusBarButtonToggle = NO;
+    BOOL useAlternateStatusBarIcons = NO;
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"hide_status_bar"] != nil) {
         hideStatusBar = [[NSUserDefaults standardUserDefaults] boolForKey:@"hide_status_bar"];
     }
     
-    if (!hideStatusBar) {
-        [self setupStatusBarItem];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"status_bar_button_toggle"] != nil) {
+        statusBarButtonToggle = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar_button_toggle"];
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"status_bar_alternate_icons"] != nil) {
+        useAlternateStatusBarIcons = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar_alternate_icons"];
     }
     
     [[NSUserDefaults standardUserDefaults] setBool:hideStatusBar forKey:@"hide_status_bar"];
+    [[NSUserDefaults standardUserDefaults] setBool:statusBarButtonToggle forKey:@"status_bar_button_toggle"];
+    [[NSUserDefaults standardUserDefaults] setBool:useAlternateStatusBarIcons forKey:@"status_bar_alternate_icons"];
+    
+    if (!hideStatusBar) {
+        [self setupStatusBarItem];
+    }
     
     // masshortcut
     [self setShortcutKey];
 }
 
 - (void) setupStatusBarItem {
-
-    self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    BOOL statusBarButtonToggle = NO;
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"status_bar_button_toggle"] != nil) {
+        statusBarButtonToggle = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar_button_toggle"];
+    }
+    
+    if (statusBarButtonToggle) {
+        NSStatusItem *statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+        NSStatusBarButton *statusButton = statusItem.button;
+        
+        statusButton.target = self;
+        statusButton.action = @selector(handleStatusButtonAction);
+        
+        [statusButton sendActionOn:NSEventMaskLeftMouseUp|NSEventMaskRightMouseUp];
+        
+        self.statusBar = statusItem;
+    } else {
+        self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+        self.statusBar.menu = self.statusMenu;
+    }
     
     NSImage* statusImage = [self getStatusBarImage];
     
@@ -55,12 +88,11 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
     // allows cocoa to change the background of the icon
     [statusImage setTemplate:YES];
     
-    self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     self.statusBar.image = statusImage;
     self.statusBar.highlightMode = YES;
     self.statusBar.enabled = YES;
-    self.statusBar.menu = self.statusMenu;
-
+    
+    [self updateMenuItemIcon];
 }
 
 - (void) setShortcutKey {
@@ -96,6 +128,12 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
 
     [self updateMenuItem];
 
+}
+
+- (void) showMenu {
+    
+    [self.statusBar popUpStatusItemMenu:self.statusMenu];
+    
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -144,16 +182,28 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
 
 - (NSImage*) getStatusBarImage {
 
-    NSImage* statusImage = [NSImage imageNamed:STATUS_ICON_BLACK];
-
-    // see https://stackoverflow.com/questions/25379525/how-to-detect-dark-mode-in-yosemite-to-change-the-status-bar-menu-icon
-    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] persistentDomainForName:NSGlobalDomain];
-    id style = [dict objectForKey:@"AppleInterfaceStyle"];
-
-    BOOL darkModeOn = ( style && [style isKindOfClass:[NSString class]] && NSOrderedSame == [style caseInsensitiveCompare:@"dark"] );
-
-    if (darkModeOn) {
-        statusImage = [NSImage imageNamed:STATUS_ICON_WHITE];
+    BOOL useAlternateIcons = NO;
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"status_bar_alternate_icons"] != nil) {
+        useAlternateIcons = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar_alternate_icons"];
+    }
+    
+    NSImage* statusImage;
+    
+    if (useAlternateIcons) {
+        statusImage = [NSImage imageNamed:STATUS_ICON_ON];
+    } else {
+        statusImage = [NSImage imageNamed:STATUS_ICON_BLACK];
+        
+        // see https://stackoverflow.com/questions/25379525/how-to-detect-dark-mode-in-yosemite-to-change-the-status-bar-menu-icon
+        NSDictionary *dict = [[NSUserDefaults standardUserDefaults] persistentDomainForName:NSGlobalDomain];
+        id style = [dict objectForKey:@"AppleInterfaceStyle"];
+        
+        BOOL darkModeOn = ( style && [style isKindOfClass:[NSString class]] && NSOrderedSame == [style caseInsensitiveCompare:@"dark"] );
+        
+        if (darkModeOn) {
+            statusImage = [NSImage imageNamed:STATUS_ICON_WHITE];
+        }
     }
 
     return statusImage;
@@ -166,13 +216,27 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
 
     if (shouldBeRed) {
         NSLog (@"using red");
-        statusImage = [NSImage imageNamed:STATUS_ICON_RED];
+        
+        BOOL useAlternateIcons = NO;
+        
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"status_bar_alternate_icons"] != nil) {
+            useAlternateIcons = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar_alternate_icons"];
+        }
+        
+        if (useAlternateIcons) {
+            statusImage = [NSImage imageNamed:STATUS_ICON_OFF];
+            [statusImage setTemplate:YES];
+        } else {
+            statusImage = [NSImage imageNamed:STATUS_ICON_RED];
+            [statusImage setTemplate:!shouldBeRed];
+        }
+        
     }
     
     statusImage.size = NSMakeSize(18, 18);
-    [statusImage setTemplate:!shouldBeRed];
-        
+    
     self.statusBar.image = statusImage;
+    
 }
 
 
@@ -279,6 +343,14 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
     [self updateMenuItem];
 }
 
+- (void) updateMenuItemIcon {
+    if (self.muteMenuItem.state == NSOnState) {
+        [self setStatusBarImgRed:YES];
+    } else {
+        [self setStatusBarImgRed:NO];
+    }
+}
+
 - (void) updateMenuItem {
 
     if (self.muteMenuItem.state == NSOffState) {
@@ -296,6 +368,18 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
 
 }
 
+- (void) handleStatusButtonAction {
+    NSEvent *event = [[NSApplication sharedApplication] currentEvent];
+    
+    if ((event.modifierFlags & NSEventModifierFlagControl) || (event.modifierFlags & NSEventModifierFlagOption) || (event.type == NSEventTypeRightMouseUp)) {
+        
+        [self showMenu];
+        
+        return;
+    }
+    
+    [self updateMenuItem];
+}
 
 
 @end
