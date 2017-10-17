@@ -14,6 +14,7 @@
 - (IBAction)menuMenuItemAction:(id)sender;
 
 - (void) hideMenuBar:(BOOL)enableState;
+- (void) updateMenuItemIcon;
 
 - (void) shortCutKeyPressed;
 
