@@ -732,15 +732,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwG-yv-1ky">
-                                <rect key="frame" x="237" y="317" width="74" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version: 1.0" id="aLh-Ga-uOd">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hvj-7s-TwY">
                                 <rect key="frame" x="20" y="258" width="103" height="18"/>
                                 <buttonCell key="cell" type="check" title="Open at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uvS-Gd-Ucm">
@@ -851,6 +842,15 @@
                                     <constraint firstAttribute="width" constant="358" id="yLv-u2-v3I"/>
                                 </constraints>
                             </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwG-yv-1ky">
+                                <rect key="frame" x="222" y="319" width="97" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version: 1.0" id="aLh-Ga-uOd">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="KAa-G4-Uci" firstAttribute="leading" secondItem="paW-7T-Udu" secondAttribute="trailing" constant="2" id="6Ie-tw-gbe"/>
@@ -886,6 +886,7 @@
                         <outlet property="showInMenuBarState" destination="03l-eq-BdN" id="dNu-RU-PeR"/>
                         <outlet property="statusBarButtonToggle" destination="qVT-Gc-UaR" id="V4K-8G-Dvy"/>
                         <outlet property="useAlternateStatusBarIcons" destination="dPJ-wa-aGh" id="mQh-oR-nwD"/>
+                        <outlet property="versionTextFieldCell" destination="aLh-Ga-uOd" id="46Z-Op-4gH"/>
                         <outlet property="websiteButton" destination="PYQ-lw-EpL" id="IdY-Vo-epQ"/>
                     </connections>
                 </viewController>
