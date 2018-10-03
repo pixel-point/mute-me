@@ -14,8 +14,6 @@
 		11B86E5A1EDE9B4D0069D254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E591EDE9B4D0069D254 /* Assets.xcassets */; };
 		11B86E5D1EDE9B4D0069D254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E5B1EDE9B4D0069D254 /* Main.storyboard */; };
 		11B86E661EDE9BD00069D254 /* DFRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E651EDE9BD00069D254 /* DFRFoundation.framework */; };
-		11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E681EDE9D1A0069D254 /* mute_sript.scpt */; };
-		11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 11B86E691EDE9D1A0069D254 /* volume_sript.scpt */; };
 		11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */; };
 		11EA56D81EF3C2AC003AF236 /* Mute Me Now Launcher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11C515681EEA9F6E004CE22A /* Mute Me Now Launcher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5D4763221F0562E6005E8DB0 /* tray-unactive-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D47631F1F0562E6005E8DB0 /* tray-unactive-white@2x.png */; };
@@ -24,6 +22,7 @@
 		5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */; };
 		5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */; };
 		5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */; };
+		C6ABF3272163A01B00A62E2F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6ABF3262163A01B00A62E2F /* CoreAudio.framework */; };
 		DBCC24CD4DBB4A88C86CD871 /* libPods-Mute Me.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30004556042F084BBC0CA872 /* libPods-Mute Me.a */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +71,6 @@
 		11B86E5E1EDE9B4D0069D254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11B86E651EDE9BD00069D254 /* DFRFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DFRFoundation.framework; path = ../../../../../../System/Library/PrivateFrameworks/DFRFoundation.framework; sourceTree = "<group>"; };
 		11B86E671EDE9CDC0069D254 /* TouchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchBar.h; sourceTree = "<group>"; };
-		11B86E681EDE9D1A0069D254 /* mute_sript.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mute_sript.scpt; sourceTree = "<group>"; };
-		11B86E691EDE9D1A0069D254 /* volume_sript.scpt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = volume_sript.scpt; sourceTree = "<group>"; };
 		11B86E8C1EDEAC980069D254 /* Mute Me Now Launcher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Mute Me Now Launcher.xcodeproj"; path = "Mute Me Now/Mute Me Now Launcher/Mute Me Now Launcher.xcodeproj"; sourceTree = "<group>"; };
 		11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		11B86E9A1EDECB3F0069D254 /* Mute Me Now.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now.entitlements"; sourceTree = "<group>"; };
@@ -86,6 +83,8 @@
 		5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon3.png; sourceTree = "<group>"; };
 		5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon.png; sourceTree = "<group>"; };
 		B222AB6057D3B902CBA70D34 /* Pods-Mute Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mute Me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me.debug.xcconfig"; sourceTree = "<group>"; };
+		C6ABF32421639AAD00A62E2F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C6ABF3262163A01B00A62E2F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6ABF3272163A01B00A62E2F /* CoreAudio.framework in Frameworks */,
 				11B86E981EDEC6720069D254 /* ServiceManagement.framework in Frameworks */,
 				11B86E661EDE9BD00069D254 /* DFRFoundation.framework in Frameworks */,
 				DBCC24CD4DBB4A88C86CD871 /* libPods-Mute Me.a in Frameworks */,
@@ -129,8 +129,6 @@
 			children = (
 				5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */,
 				11B86E9A1EDECB3F0069D254 /* Mute Me Now.entitlements */,
-				11B86E681EDE9D1A0069D254 /* mute_sript.scpt */,
-				11B86E691EDE9D1A0069D254 /* volume_sript.scpt */,
 				11B86E501EDE9B4D0069D254 /* AppDelegate.h */,
 				11B86E511EDE9B4D0069D254 /* AppDelegate.m */,
 				11B86E561EDE9B4D0069D254 /* ViewController.h */,
@@ -158,6 +156,8 @@
 		11B86E641EDE9BD00069D254 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6ABF3262163A01B00A62E2F /* CoreAudio.framework */,
+				C6ABF32421639AAD00A62E2F /* AVFoundation.framework */,
 				11B86E921EDEAD1D0069D254 /* ServiceManagement.framework */,
 				11B86E651EDE9BD00069D254 /* DFRFoundation.framework */,
 				30004556042F084BBC0CA872 /* libPods-Mute Me.a */,
@@ -281,10 +281,8 @@
 				5D4763231F0562E6005E8DB0 /* tray-unactive-black@2x.png in Resources */,
 				5D4763221F0562E6005E8DB0 /* tray-unactive-white@2x.png in Resources */,
 				5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */,
-				11B86E6A1EDE9D1A0069D254 /* mute_sript.scpt in Resources */,
 				5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */,
 				5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */,
-				11B86E6B1EDE9D1A0069D254 /* volume_sript.scpt in Resources */,
 				11B86E5D1EDE9B4D0069D254 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,7 +468,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WF57Z34X8U;
+				DEVELOPMENT_TEAM = 4TVB38S7R4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -492,7 +490,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WF57Z34X8U;
+				DEVELOPMENT_TEAM = 4TVB38S7R4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",

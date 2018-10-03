@@ -107,7 +107,7 @@
 				TargetAttributes = {
 					11B86E741EDEAC970069D254 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = WF57Z34X8U;
+						DevelopmentTeam = 4TVB38S7R4;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -268,7 +268,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WF57Z34X8U;
+				DEVELOPMENT_TEAM = 4TVB38S7R4;
 				INFOPLIST_FILE = "Mute Me Now Launcher/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Pixel-Point.Mute-Me-Now-Launcher";
@@ -285,7 +285,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WF57Z34X8U;
+				DEVELOPMENT_TEAM = 4TVB38S7R4;
 				INFOPLIST_FILE = "Mute Me Now Launcher/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Pixel-Point.Mute-Me-Now-Launcher";
