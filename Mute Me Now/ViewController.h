@@ -9,6 +9,7 @@
 @property (weak) IBOutlet NSButton *showInMenuBarState;
 @property (weak) IBOutlet NSButton *statusBarButtonToggle;
 @property (weak) IBOutlet NSButton *useAlternateStatusBarIcons;
+@property (weak) IBOutlet NSTextFieldCell *versionTextFieldCell;
 
 @property (strong) IBOutlet MASShortcutView *masShortCutView;
 

@@ -53,9 +53,9 @@ static void *MASObservingContext = &MASObservingContext;
                   options:NSKeyValueObservingOptionInitial
                   context:MASObservingContext];
 
-    
-
-     
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *versionFieldValue = [NSString stringWithFormat:@"Version %@", version];
+    [self.versionTextFieldCell setStringValue:versionFieldValue];
 }
 
 - (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context
@@ -84,8 +84,7 @@ static void *MASObservingContext = &MASObservingContext;
 -(void)viewDidAppear {
     [super viewDidAppear];
     [[self.view window] setTitle:@"Mute me"];
-    [[self.view window] center];
-    
+    [[self.view window] center];    
 }
 
 
