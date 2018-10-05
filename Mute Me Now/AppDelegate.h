@@ -11,8 +11,6 @@
 
 @property (weak) IBOutlet NSMenuItem *muteMenuItem;
 
-- (IBAction)menuMenuItemAction:(id)sender;
-
 - (void) hideMenuBar:(BOOL)enableState;
 - (void) updateMenuItemIcon;
 

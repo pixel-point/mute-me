@@ -28,10 +28,11 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
 NSString *STATUS_ICON_OFF = @"micOff";
 NSString *STATUS_ICON_ON = @"micOn";
 
-float savedInputVolume = 1;
+AudioDeviceID currentAudioDeviceID = kAudioObjectUnknown;
+AudioObjectPropertyListenerBlock onDefaultInputDeviceChange = NULL;
+AudioObjectPropertyListenerBlock onAudioDeviceMuteChange = NULL;
 
 - (void) awakeFromNib {
-    
     BOOL hideStatusBar = NO;
     BOOL statusBarButtonToggle = NO;
     BOOL useAlternateStatusBarIcons = NO;
@@ -97,27 +98,20 @@ float savedInputVolume = 1;
 }
 
 - (void) setShortcutKey {
-    
     // default shortcut is "Shift Command 0"
     MASShortcut *firstLaunchShortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_0 modifierFlags:NSEventModifierFlagCommand | NSEventModifierFlagShift];
     NSData *firstLaunchShortcutData = [NSKeyedArchiver archivedDataWithRootObject:firstLaunchShortcut];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults registerDefaults:@{
-                                 MASCustomShortcutKey : firstLaunchShortcutData
-                                 }];
-    
+    [defaults registerDefaults:@{ MASCustomShortcutKey : firstLaunchShortcutData }];
     [defaults synchronize];
-    
     
     [[MASShortcutMonitor sharedMonitor] registerShortcut:firstLaunchShortcut withAction:^{
         [self shortCutKeyPressed];
     }];
-    
 }
 
 - (void) hideMenuBar: (BOOL) enableState {
-    
     if (!enableState) {
         [self setupStatusBarItem];
     } else {
@@ -126,8 +120,7 @@ float savedInputVolume = 1;
 }
 
 - (void) shortCutKeyPressed {
-    [self toggleDefaultInputVolume];
-    [self updatePresentation];
+    [self toggleMute];
 }
 
 - (void) showMenu {
@@ -149,35 +142,115 @@ float savedInputVolume = 1;
 
     [NSTouchBarItem addSystemTrayItem:mute];
     DFRElementSetControlStripPresenceForIdentifier(muteIdentifier, YES);
+    
+    onDefaultInputDeviceChange = ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress * _Nonnull inAddresses) {
+        BOOL muted = false;
+        BOOL setMuted = false;
+        
+        if (currentAudioDeviceID != kAudioObjectUnknown) {
+            setMuted = true;
+            muted = [self getInputDeviceMute:currentAudioDeviceID];
+            
+            [self unlistenInputDevice:currentAudioDeviceID];
+        }
+        
+        [self setDefaultInputDeviceAsCurrentAndListen];
+        
+        if (setMuted) {
+            [self setInputDevice:currentAudioDeviceID mute:muted];
+        }
+    };
+    
+    onAudioDeviceMuteChange = ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress * _Nonnull inAddresses) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updatePresentation];
+        });
+    };
 
-    [self updatePresentation];
     [self enableLoginAutostart];
+    [self listenInputDevices];
     
     // fires if we enter / exit dark mode
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(darkModeChanged:) name:@"AppleInterfaceThemeChangedNotification" object:nil];
 }
 
-- (void) updatePresentation {
-    [self updateTouchBarButton];
-    [self updateStatusBarIcon];
+- (void) unlistenCurrentDevice {
+    if (currentAudioDeviceID != kAudioObjectUnknown) {
+        [self unlistenInputDevice:currentAudioDeviceID];
+    }
 }
 
-- (void) updateTouchBarButton {
-    float currentVolume = [self getSystemInputVolume];
+- (void) setDefaultInputDeviceAsCurrentAndListen {
+    currentAudioDeviceID = [self getDefaultInputDevice];
     
-    [touchBarButton setBezelColor: [self colorState: currentVolume]];
+    if (currentAudioDeviceID != kAudioObjectUnknown) {
+        OSStatus error = [self listenInputDevice:currentAudioDeviceID];
+        if (error != noErr) {
+            currentAudioDeviceID = kAudioObjectUnknown;
+        } else {
+            NSLog(@"Listen device: 0x%0x", currentAudioDeviceID);
+        }
+    }
+}
+
+- (void) listenInputDevices {
+    AudioObjectPropertyAddress propertyAddress = [self defaultInputDevicePropertyAddress];
+    
+    OSStatus error = AudioObjectAddPropertyListenerBlock(kAudioObjectSystemObject, &propertyAddress, NULL, onDefaultInputDeviceChange);
+    if (error != noErr) {
+        NSLog(@"Can't listen change of default device. Error: %d", error);
+    }
+    
+    [self setDefaultInputDeviceAsCurrentAndListen];
+}
+
+- (OSStatus) listenInputDevice:(AudioDeviceID)deviceID {
+    AudioObjectPropertyAddress muteAddress = [self mutePropertyAddress];
+    
+    OSStatus error = AudioObjectAddPropertyListenerBlock(deviceID, &muteAddress, NULL, onAudioDeviceMuteChange);
+    if (error != noErr) {
+        NSLog(@"Can't listen mute change of device: 0x%0x. Error: %d", deviceID, error);
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updatePresentation];
+    });
+    
+    return error;
+}
+
+- (void) unlistenInputDevice:(AudioDeviceID)deviceID {
+    AudioObjectPropertyAddress muteAddress = [self mutePropertyAddress];
+    
+    OSStatus error = AudioObjectRemovePropertyListenerBlock(deviceID, &muteAddress, NULL, onAudioDeviceMuteChange);
+    if (error != noErr) {
+        NSLog(@"Can't unlisten mute change of device: 0x%0x. Error: %d", deviceID, error);
+    }
+    
+    [self setInputDevice:deviceID mute:false];
+}
+
+- (void) updatePresentation {
+    if (currentAudioDeviceID == kAudioObjectUnknown) {
+        return;
+    }
+    
+    BOOL muted = [self getInputDeviceMute:currentAudioDeviceID];
+    [self updateTouchBarButtonWithMuted:muted];
+    [self updateStatusBarIconWithMuted:muted];
+}
+
+- (void) updateTouchBarButtonWithMuted:(BOOL)muted {
+    [touchBarButton setBezelColor: [self colorForMuted: muted]];
     [touchBarButton layout];
 }
 
-- (void) updateStatusBarIcon {
-    float currentVolume = [self getSystemInputVolume];
-    BOOL isRed = currentVolume == 0;
-    
-    [self setStatusBarImgRed: isRed];
+- (void) updateStatusBarIconWithMuted:(BOOL)muted {
+    [self setStatusBarImgRed: muted];
 }
 
 -(void)darkModeChanged:(NSNotification *)notif {
-    [self updateStatusBarIcon];
+    [self updatePresentation];
 }
 
 
@@ -237,6 +310,92 @@ float savedInputVolume = 1;
     
 }
 
+- (BOOL) setAudioObject:(AudioObjectID)audioObjectID
+               property:(AudioObjectPropertyAddress)propertyAddress
+               dataSize:(UInt32)dataSize
+                   data:(const void *)data
+{
+    if (!AudioObjectHasProperty(audioObjectID, &propertyAddress) ) {
+        NSLog(@"No property for audioObject 0x%0x", audioObjectID);
+        return false;
+    }
+    
+    Boolean settable;
+    OSStatus theError = AudioObjectIsPropertySettable(audioObjectID, &propertyAddress, &settable);
+    if (theError != noErr || !settable) {
+        NSLog(@"The property of audioObject 0x%0x cannot be set", audioObjectID);
+        return false;
+    }
+    
+    //now read the property and correct it, if outside [0...1]
+    theError = AudioObjectSetPropertyData(audioObjectID, &propertyAddress, 0, NULL, dataSize, data);
+    if (theError != noErr) {
+        NSLog(@"Unable to set property for audioObject 0x%0x", audioObjectID);
+        return false;
+    }
+    
+    return true;
+}
+
+- (BOOL) getAudioObject:(AudioObjectID)audioObjectID
+                       property:(AudioObjectPropertyAddress)propertyAddress
+                       dataSize:(UInt32)dataSize
+                           data:(void *)data
+{
+    if (!AudioObjectHasProperty(audioObjectID, &propertyAddress) ) {
+        NSLog(@"No property for audioObject 0x%0x", audioObjectID);
+        return false;
+    }
+    
+    OSStatus theError = AudioObjectGetPropertyData(audioObjectID, &propertyAddress, 0, NULL, &dataSize, data);
+    if (theError != noErr)    {
+        NSLog(@"Unable to read property for audioObject 0x%0x", audioObjectID);
+        return false;
+    }
+    
+    return true;
+}
+
+- (AudioObjectPropertyAddress) mutePropertyAddress {
+    AudioObjectPropertyAddress propertyAddress = {
+        kAudioDevicePropertyMute,
+        kAudioDevicePropertyScopeInput,
+        kAudioObjectPropertyElementMaster
+    };
+
+    return propertyAddress;
+}
+
+- (AudioObjectPropertyAddress) defaultInputDevicePropertyAddress {
+    AudioObjectPropertyAddress propertyAddress = {
+        kAudioHardwarePropertyDefaultInputDevice,
+        kAudioObjectPropertyScopeGlobal,
+        kAudioObjectPropertyElementMaster
+    };
+    
+    return propertyAddress;
+}
+
+- (BOOL) getInputDeviceMute:(AudioDeviceID)deviceID {
+    AudioObjectPropertyAddress propertyAddress = [self mutePropertyAddress];
+    UInt32 data;
+    
+    BOOL success = [self getAudioObject:deviceID property:propertyAddress dataSize:sizeof(data) data:&data];
+    return success ? data == 1 : false;
+}
+
+- (void) setInputDevice:(AudioDeviceID)deviceID mute:(BOOL)mute {
+    UInt32 value = mute ? 1 : 0;
+    AudioObjectPropertyAddress propertyAddress = [self mutePropertyAddress];
+    
+    BOOL s = [self setAudioObject:deviceID property:propertyAddress dataSize:sizeof(value) data:&value];
+    
+    if (s) {
+        printf("123");
+        AudioObjectShow(deviceID);
+        NSLog(@"Set property for audioObject 0x%0x to %d", deviceID, value);
+    }
+}
 
 -(void) enableLoginAutostart {
 
@@ -252,107 +411,20 @@ float savedInputVolume = 1;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
+    [self unlistenCurrentDevice];
 }
 
--(AudioDeviceID) obtainDefaultOutputDevice {
-    AudioDeviceID theAnswer = kAudioObjectUnknown;
-    UInt32 theSize = sizeof(AudioDeviceID);
-    AudioObjectPropertyAddress theAddress;
+- (AudioDeviceID) getDefaultInputDevice {
+    AudioDeviceID defaultDevice = kAudioObjectUnknown;
+    AudioObjectPropertyAddress address = [self defaultInputDevicePropertyAddress];
     
-    theAddress.mSelector = kAudioHardwarePropertyDefaultInputDevice;
-    theAddress.mScope = kAudioObjectPropertyScopeGlobal;
-    theAddress.mElement = kAudioObjectPropertyElementMaster;
+    [self getAudioObject:kAudioObjectSystemObject property:address dataSize:sizeof(AudioDeviceID) data:&defaultDevice];
     
-    //first be sure that a default device exists
-    if (! AudioObjectHasProperty(kAudioObjectSystemObject, &theAddress) )    {
-        NSLog(@"Unable to get default input audio device");
-        return theAnswer;
-    }
-    
-    //get the property 'default output device'
-    OSStatus theError = AudioObjectGetPropertyData(kAudioObjectSystemObject, &theAddress, 0, NULL, &theSize, &theAnswer);
-    if (theError != noErr) {
-        NSLog(@"Unable to get output audio device");
-        return theAnswer;
-    }
-    
-    return theAnswer;
+    return defaultDevice;
 }
 
--(float) getSystemInputVolume {
-    AudioDeviceID                defaultDevID = [self obtainDefaultOutputDevice];
-    
-    if (defaultDevID == kAudioObjectUnknown) {
-        return 0.0;
-    }
-    
-    UInt32                     theSize = sizeof(Float32);
-    OSStatus                   theError;
-    Float32                    theVolume = 0;
-    AudioObjectPropertyAddress theAddress;
-    
-    theAddress.mSelector = kAudioHardwareServiceDeviceProperty_VirtualMasterVolume;
-    theAddress.mScope = kAudioDevicePropertyScopeInput;
-    theAddress.mElement = kAudioObjectPropertyElementMaster;
-    
-    //be sure that the default device has the volume property
-    if (! AudioObjectHasProperty(defaultDevID, &theAddress) ) {
-        NSLog(@"No volume control for device 0x%0x",defaultDevID);
-        return 0.0;
-    }
-    
-    //now read the property and correct it, if outside [0...1]
-    theError = AudioObjectGetPropertyData(defaultDevID, &theAddress, 0, NULL, &theSize, &theVolume);
-    if ( theError != noErr )    {
-        NSLog(@"Unable to read volume for device 0x%0x", defaultDevID);
-        return 0.0;
-    }
-    theVolume = theVolume > 1.0 ? 1.0 : (theVolume < 0.0 ? 0.0 : theVolume);
-    
-    return theVolume;
-}
-
-- (void) setSystemInputVolume:(float)volume {
-    AudioDeviceID defaultDevID = [self obtainDefaultOutputDevice];
-    
-    if (defaultDevID == kAudioObjectUnknown) {
-        return;
-    }
-    
-    // check if the new value is in the correct range - normalize it if not
-    volume = volume > 1.0 ? 1.0 : (volume < 0.0 ? 0.0 : volume);
-    
-    OSStatus                   theError;
-    AudioObjectPropertyAddress theAddress;
-    Boolean                    canSetVol = YES;
-    
-    theAddress.mSelector = kAudioHardwareServiceDeviceProperty_VirtualMasterVolume;
-    theAddress.mScope = kAudioDevicePropertyScopeInput;
-    theAddress.mElement = kAudioObjectPropertyElementMaster;
-    
-    //be sure that the default device has the volume property
-    if (! AudioObjectHasProperty(defaultDevID, &theAddress) ) {
-        NSLog(@"No volume control for device 0x%0x", defaultDevID);
-        return;
-    }
-    
-    //be sure the device can set the volume
-    theError = AudioObjectIsPropertySettable(defaultDevID, &theAddress, &canSetVol);
-    if ( theError!=noErr || !canSetVol ) {
-        NSLog(@"The volume of device 0x%0x cannot be set", defaultDevID);
-        return;
-    }
-    
-    //now read the property and correct it, if outside [0...1]
-    theError = AudioObjectSetPropertyData(defaultDevID, &theAddress, 0, NULL, sizeof(volume), &volume);
-    if ( theError != noErr ) {
-        NSLog(@"Unable to read volume for device 0x%0x", defaultDevID);
-        return;
-    }
-}
-
--(NSColor *)colorState:(double)volume {
-    if(!volume) {
+-(NSColor *)colorForMuted:(BOOL)muted {
+    if(muted) {
         return NSColor.redColor;
     } else {
         return NSColor.clearColor;
@@ -360,35 +432,35 @@ float savedInputVolume = 1;
 }
 
 - (void)onPressed:(TouchButton*)sender {
-    [self toggleDefaultInputVolume];
-    [self updatePresentation];
+    [self toggleMute];
 }
 
-- (void) toggleDefaultInputVolume {
-    float volume = [self getSystemInputVolume];
-    
-    if (volume > 0) {
-        savedInputVolume = volume;
-        [self setSystemInputVolume:0];
-    } else {
-        [self setSystemInputVolume:savedInputVolume];
+- (void) toggleMute {
+    if (currentAudioDeviceID == kAudioObjectUnknown) {
+        NSLog(@"Can't toggle mute. No audio device.");
+        return;
     }
+    
+    BOOL isMuted = [self getInputDeviceMute:currentAudioDeviceID];
+    [self setInputDevice:currentAudioDeviceID mute:!isMuted];
 }
 
-- (void)onLongPressed:(TouchButton*)sender
-{
+- (void) openPrefsWindow {
+    // todo I saw a bug when pref window doesn't open (after night)
     [[[[NSApplication sharedApplication] windows] lastObject] makeKeyAndOrderFront:nil];
     [[NSApplication sharedApplication] activateIgnoringOtherApps:true];
 }
 
+- (void)onLongPressed:(TouchButton*)sender {
+    [self openPrefsWindow];
+}
+
 - (IBAction)muteMenuItemAction:(id)sender {
-    [self toggleDefaultInputVolume];
-    [self updatePresentation];
+    [self toggleMute];
 }
 
 - (IBAction)prefsMenuItemAction:(id)sender {
-
-    [self onLongPressed:sender];
+    [self openPrefsWindow];
 }
 
 - (IBAction)quitMenuItemAction:(id)sender {
@@ -411,8 +483,7 @@ float savedInputVolume = 1;
         return;
     }
     
-    [self toggleDefaultInputVolume];
-    [self updatePresentation];
+    [self toggleMute];
 }
 
 @end
