@@ -23,6 +23,7 @@
 		5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */; };
 		5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */; };
 		C6ABF3272163A01B00A62E2F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6ABF3262163A01B00A62E2F /* CoreAudio.framework */; };
+		C6B6195A2167483F00F06C6B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C6B619592167483F00F06C6B /* .gitignore */; };
 		DBCC24CD4DBB4A88C86CD871 /* libPods-Mute Me.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30004556042F084BBC0CA872 /* libPods-Mute Me.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		B222AB6057D3B902CBA70D34 /* Pods-Mute Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mute Me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me.debug.xcconfig"; sourceTree = "<group>"; };
 		C6ABF32421639AAD00A62E2F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C6ABF3262163A01B00A62E2F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		C6B619592167483F00F06C6B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		11B86E441EDE9B4C0069D254 = {
 			isa = PBXGroup;
 			children = (
+				C6B619592167483F00F06C6B /* .gitignore */,
 				5D4763251F0562F2005E8DB0 /* Graphics */,
 				5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */,
 				5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */,
@@ -283,6 +286,7 @@
 				5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */,
 				5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */,
 				5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */,
+				C6B6195A2167483F00F06C6B /* .gitignore in Resources */,
 				11B86E5D1EDE9B4D0069D254 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
