@@ -7,6 +7,7 @@
 #import <MASShortcut/Shortcut.h>
 #import <CoreAudio/CoreAudio.h>
 #import <AudioToolbox/AudioServices.h>
+#import "ViewController.h"
 
 static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 static NSString *const MASCustomShortcutKey = @"customShortcut";
@@ -128,8 +129,6 @@ AudioObjectPropertyListenerBlock onAudioDeviceMuteChange = NULL;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [[[[NSApplication sharedApplication] windows] lastObject] close];
-
     DFRSystemModalShowsCloseBoxWhenFrontMost(YES);
 
     NSCustomTouchBarItem *mute = [[NSCustomTouchBarItem alloc] initWithIdentifier:muteIdentifier];
@@ -446,8 +445,10 @@ AudioObjectPropertyListenerBlock onAudioDeviceMuteChange = NULL;
 }
 
 - (void) openPrefsWindow {
-    // todo I saw a bug when pref window doesn't open (after night)
-    [[[[NSApplication sharedApplication] windows] lastObject] makeKeyAndOrderFront:nil];
+    NSStoryboard *mainStoryboard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+    NSWindowController *prefsWindowController = [mainStoryboard instantiateControllerWithIdentifier:@"prefsWindowController"];
+    
+    [prefsWindowController showWindow:self];
     [[NSApplication sharedApplication] activateIgnoringOtherApps:true];
 }
 

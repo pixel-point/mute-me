@@ -24,6 +24,7 @@
 		11B86E811EDEAC980069D254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11B86E841EDEAC980069D254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11B86E861EDEAC980069D254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6B6195B216B3D4F00F06C6B /* Mute Me Now Launcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mute Me Now Launcher.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		11B86E771EDEAC970069D254 /* Mute Me Now Launcher */ = {
 			isa = PBXGroup;
 			children = (
+				C6B6195B216B3D4F00F06C6B /* Mute Me Now Launcher.entitlements */,
 				11B86E781EDEAC970069D254 /* AppDelegate.h */,
 				11B86E791EDEAC970069D254 /* AppDelegate.m */,
 				11B86E7E1EDEAC970069D254 /* ViewController.h */,
@@ -265,7 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = "Mute Me Now Launcher/Mute Me Now Launcher.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4TVB38S7R4;
@@ -282,7 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = "Mute Me Now Launcher/Mute Me Now Launcher.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4TVB38S7R4;

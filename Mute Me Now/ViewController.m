@@ -15,13 +15,11 @@ static void *MASObservingContext = &MASObservingContext;
     [super viewDidLoad];
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"auto_login"] == nil) {
-    
         // the opposite is used later
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"auto_login"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-
-        
+    
     BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto_login"];
     [self.autoLoginState setState: !state];
     
@@ -33,19 +31,12 @@ static void *MASObservingContext = &MASObservingContext;
     
     BOOL useAlternateStatusBarIcons = [[NSUserDefaults standardUserDefaults] boolForKey:@"status_bar_alternate_icons"];
     [self.useAlternateStatusBarIcons setState: useAlternateStatusBarIcons];
-
-
-    // enable to nil out preferences
-    //[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"hide_status_bar"];
-    //[[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"auto_login"];
-    //[[NSUserDefaults standardUserDefaults] synchronize];
     
     // Make a global context reference
     void *kGlobalShortcutContext = &kGlobalShortcutContext;
     
     // this sets the existing shortcut and allows it to save
     [self.masShortCutView setAssociatedUserDefaultsKey:MASCustomShortcutKey];
-
     
     // Implement when loading view
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -53,6 +44,7 @@ static void *MASObservingContext = &MASObservingContext;
                   options:NSKeyValueObservingOptionInitial
                   context:MASObservingContext];
 
+    // set version from plist to label
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     NSString *versionFieldValue = [NSString stringWithFormat:@"Version %@", version];
     [self.versionTextFieldCell setStringValue:versionFieldValue];
@@ -60,7 +52,6 @@ static void *MASObservingContext = &MASObservingContext;
 
 - (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context
 {
-
     if (context != MASObservingContext) {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         return;
@@ -83,15 +74,7 @@ static void *MASObservingContext = &MASObservingContext;
 
 -(void)viewDidAppear {
     [super viewDidAppear];
-    [[self.view window] setTitle:@"Mute me"];
-    [[self.view window] center];    
-}
-
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    [[[[NSApplication sharedApplication] windows] lastObject] setTitle:@"Mute Me"];
+    [[self.view window] center];
 }
 
 - (IBAction)quitPressed:(id)sender {
