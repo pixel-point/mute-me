@@ -46,7 +46,9 @@ static void *MASObservingContext = &MASObservingContext;
 
     // set version from plist to label
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *versionFieldValue = [NSString stringWithFormat:@"Version %@", version];
+    NSString *buildVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString *buildLabel = [buildVersion isEqualToString:@"1"] ? @"" :[NSString stringWithFormat:@"(%@)", buildVersion];
+    NSString *versionFieldValue = [NSString stringWithFormat:@"Version %@%@", version, buildLabel];
     [self.versionTextFieldCell setStringValue:versionFieldValue];
 }
 
