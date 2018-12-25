@@ -9,6 +9,11 @@ Use the Touch Bar app to Mute/Unmute your microphone, or just use the shortcut o
 
 When you’re in a meeting using Hangouts, Skype, Slack, or another voice application, it's good practice to stay on mute until someone speaks to you directly - especially if you’re meeting with three or more people. Often, however, you'll need to browse between multiple tabs, and it can take too long to switch back to the meeting app to unmute your microphone. With Mute Me, you can mute or unmute your mic quickly and easily, right from your Touch Bar.
 
+### Colors
+- Grey touchbar icon - Devices aren't muted
+- Yellow touchbar icon - Devices should be muted but some of them not. (For example, due to another software control)
+- Red touchbar icon - All devices are successfuly muted 👍
+
 ### Options
 - use long tap on the Touch Bar icon to open Preferences
 - find the Open at Login option in Preferences
@@ -35,6 +40,7 @@ You can find approved ideas for future implementation [here](https://github.com/
 - [Alex Barashkov](https://github.com/lnikell)
 - [Vlad Kamelsky](https://www.facebook.com/vlad.kamelsky)
 - [Joel Barker](https://github.com/j-cimb-barker)
+- [Alexandr Promakh](https://github.com/proAlexandr)
 
 ---
 Made by [Pixel Point](https://pixelpoint.io)

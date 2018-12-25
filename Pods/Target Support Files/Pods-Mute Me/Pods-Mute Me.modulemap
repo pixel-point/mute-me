@@ -1,0 +1,6 @@
+module Pods_Mute_Me {
+  umbrella header "Pods-Mute Me-umbrella.h"
+
+  export *
+  module * { export * }
+}

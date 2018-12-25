@@ -1,16 +1,20 @@
 PODS:
+  - AMCoreAudio (3.2.1)
   - MASShortcut (2.3.6)
 
 DEPENDENCIES:
+  - AMCoreAudio
   - MASShortcut
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AMCoreAudio
     - MASShortcut
 
 SPEC CHECKSUMS:
+  AMCoreAudio: 7fa6b718dc93acc29f849d60c3ad680ae1bf07b5
   MASShortcut: 9c215e8a8a78f3d01ce56da48e2730ab66b538fa
 
-PODFILE CHECKSUM: 4683a7c2272d973f5c2f219be2eb48cc49488353
+PODFILE CHECKSUM: a66a8437d41c8d97188c3af2ea62b72882bd49de
 
 COCOAPODS: 1.5.3
