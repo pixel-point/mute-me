@@ -1,6 +1,16 @@
 # Mute Me
 Use the Touch Bar app to Mute/Unmute your microphone, or just use the shortcut on any Mac.
 
+### We rebuilt app and the functionality from scratch and now distribute it as a separate app available at [https://mutify.app/](https://mutify.app/#muteme)
+
+<a href="https://mutify.app/#muteme">
+<img src="https://user-images.githubusercontent.com/2697570/56202283-fff70e80-6042-11e9-9d6f-92deb41ce59a.png" width="282">
+</a>
+
+**Try it for free with 7-days trial and get 50% discount with promo code: MUTEME**
+
+### However open source version of the app still available below
+
 [Visit Site](https://muteme.pixelpoint.io/) | [Download](https://muteme.pixelpoint.io/)
 
 ![touch-bar 2x](https://cloud.githubusercontent.com/assets/2697570/26759775/a67c47e2-4921-11e7-8f71-53b197b5e893.jpg)
