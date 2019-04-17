@@ -22,8 +22,10 @@
 		5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60BD91EFAB9270045BDCF /* statusBarIcon2.png */; };
 		5DA60C531EFBC5400045BDCF /* statusBarIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */; };
 		5DA60C551EFBC5D30045BDCF /* statusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */; };
+		C665CBA621D0E33B00CB4EC4 /* Mute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C665CBA521D0E33B00CB4EC4 /* Mute.swift */; };
 		C6ABF3272163A01B00A62E2F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6ABF3262163A01B00A62E2F /* CoreAudio.framework */; };
 		C6B6195A2167483F00F06C6B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C6B619592167483F00F06C6B /* .gitignore */; };
+		C6E45B8121D2664100AD80F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C6E45B8021D2664100AD80F4 /* README.md */; };
 		DBCC24CD4DBB4A88C86CD871 /* libPods-Mute Me.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30004556042F084BBC0CA872 /* libPods-Mute Me.a */; };
 /* End PBXBuildFile section */
 
@@ -84,9 +86,12 @@
 		5DA60C521EFBC5400045BDCF /* statusBarIcon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon3.png; sourceTree = "<group>"; };
 		5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusBarIcon.png; sourceTree = "<group>"; };
 		B222AB6057D3B902CBA70D34 /* Pods-Mute Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mute Me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me.debug.xcconfig"; sourceTree = "<group>"; };
+		C665CBA521D0E33B00CB4EC4 /* Mute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mute.swift; sourceTree = "<group>"; };
 		C6ABF32421639AAD00A62E2F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C6ABF3262163A01B00A62E2F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		C6B46BA421CD142D000D577A /* Mute Me-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mute Me-Bridging-Header.h"; sourceTree = "<group>"; };
 		C6B619592167483F00F06C6B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C6E45B8021D2664100AD80F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,7 @@
 		11B86E441EDE9B4C0069D254 = {
 			isa = PBXGroup;
 			children = (
+				C6E45B8021D2664100AD80F4 /* README.md */,
 				C6B619592167483F00F06C6B /* .gitignore */,
 				5D4763251F0562F2005E8DB0 /* Graphics */,
 				5DA60C541EFBC5D30045BDCF /* statusBarIcon.png */,
@@ -144,6 +150,8 @@
 				1141FDF01EEFF6DD00CA5B30 /* TouchButton.h */,
 				1141FDF11EEFF6DD00CA5B30 /* TouchButton.m */,
 				1141FDF51EEFFA0000CA5B30 /* TouchDelegate.h */,
+				C6B46BA421CD142D000D577A /* Mute Me-Bridging-Header.h */,
+				C665CBA521D0E33B00CB4EC4 /* Mute.swift */,
 			);
 			path = "Mute Me Now";
 			sourceTree = "<group>";
@@ -207,7 +215,6 @@
 				11B86E4A1EDE9B4D0069D254 /* Frameworks */,
 				11B86E4B1EDE9B4D0069D254 /* Resources */,
 				11B86E941EDEAD980069D254 /* CopyFiles */,
-				40C930C145A2928D7225D5F2 /* [CP] Embed Pods Frameworks */,
 				0237E5264A87F3A06915D961 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -231,6 +238,7 @@
 				TargetAttributes = {
 					11B86E4C1EDE9B4D0069D254 = {
 						CreatedOnToolsVersion = 8.3.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -281,6 +289,7 @@
 			files = (
 				5D4763241F0562E6005E8DB0 /* tray-active@2x.png in Resources */,
 				11B86E5A1EDE9B4D0069D254 /* Assets.xcassets in Resources */,
+				C6E45B8121D2664100AD80F4 /* README.md in Resources */,
 				5D4763231F0562E6005E8DB0 /* tray-unactive-black@2x.png in Resources */,
 				5D4763221F0562E6005E8DB0 /* tray-unactive-white@2x.png in Resources */,
 				5DA60BDA1EFAB9270045BDCF /* statusBarIcon2.png in Resources */,
@@ -300,28 +309,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MASShortcut/MASShortcut.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MASShortcut.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		40C930C145A2928D7225D5F2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mute Me/Pods-Mute Me-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E377EBCE94FE28E5EE796CBC /* [CP] Check Pods Manifest.lock */ = {
@@ -330,13 +327,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mute Me-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -348,6 +348,7 @@
 			files = (
 				1141FDF21EEFF6DD00CA5B30 /* TouchButton.m in Sources */,
 				11B86E581EDE9B4D0069D254 /* ViewController.m in Sources */,
+				C665CBA621D0E33B00CB4EC4 /* Mute.swift in Sources */,
 				11B86E551EDE9B4D0069D254 /* main.m in Sources */,
 				11B86E521EDE9B4D0069D254 /* AppDelegate.m in Sources */,
 			);
@@ -469,6 +470,7 @@
 			baseConfigurationReference = B222AB6057D3B902CBA70D34 /* Pods-Mute Me.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -483,6 +485,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mute Me Now/Mute Me-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -491,6 +496,7 @@
 			baseConfigurationReference = 51C19D181CC260D65112962D /* Pods-Mute Me.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Mute Me Now/Mute Me Now.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -505,6 +511,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pixel-point.mute-me-now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mute Me Now/Mute Me-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

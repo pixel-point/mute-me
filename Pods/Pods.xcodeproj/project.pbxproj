@@ -7,314 +7,443 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E3FE226CE18F169D10196723C37D1D6 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 038D200C5F73B8EFF0A93DF4E6E1BD90 /* fr.lproj */; };
-		0E9F71B13EB5B5185C1368803180F2BA /* MASShortcut-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2035E0B6B08D4683931B31919D5194 /* MASShortcut-dummy.m */; };
-		1BFB0520F10AC37A104DF56489C393AD /* cs.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8C406EEFC562A5DDF90E7181CB08331B /* cs.lproj */; };
-		2BEA82707F6B1289F28D8C8097CF4121 /* MASShortcut.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EA5D3E1505005EA05EF0615090F48F8 /* MASShortcut.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DBA7EDB796E0AF9A189672E9CBA1407 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 262F9C963F67BB43B77AEBFCCACE7C2E /* zh-Hans.lproj */; };
-		33691F55769BFDF534CD2343841B2B48 /* MASShortcutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 36695E6AC45B850D887F4F00D8CE1EE9 /* MASShortcutBinder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		34A3BE024A34E64B83C0CEBB641D987D /* MASShortcutValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = BE890D74FF5505CA2C7D20BDC9D0402A /* MASShortcutValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C5B1682B90C602799A06D0A5FDC68F9 /* MASLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAD18341A993AF2033A3FB2D21AA783 /* MASLocalization.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3F085DAD796785980C134C9F89C27044 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = BA53FE178C20D7B44CF09D6CE340DB43 /* MASShortcut.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4416502FCC3847A2A4239B44A9624A47 /* MASShortcutMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 71170E4E2771D185598BE05475B68E69 /* MASShortcutMonitor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		45333808B39FACCB4128E10F4B44432B /* Shortcut.h in Headers */ = {isa = PBXBuildFile; fileRef = 7431A6D435BC007D466649E2A7BAC1A9 /* Shortcut.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56B0E92AC0CDAB0AD106E4A16CAA4B1C /* MASShortcutBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9775F916524923D2392B56450009DFB7 /* MASShortcutBinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C5FEAFEBC103CA46099D2D65EBC47A1 /* MASDictionaryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED853B9DF49E5C90CCA069BB3F2B43B /* MASDictionaryTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6229CC2D8700E52B2C67C085FF9563D5 /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 66963E9C1F04B976EC0D1830456B912C /* ko.lproj */; };
-		67250F0458194534752D26E44041F059 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 605EBDBCA1616C656042B471811F6C71 /* ru.lproj */; };
-		6DFD61F5CE0AFF2AD3918A9719D46F63 /* MASShortcutMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = FC87DC0EA27BB8249F80FAE5FC10020C /* MASShortcutMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F22DF5181A0505E68AB893585556551 /* MASKeyMasks.h in Headers */ = {isa = PBXBuildFile; fileRef = 819F2EB6B7FFAB4121876D2654ACD028 /* MASKeyMasks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		720804F34108B4D8CA6ED208E23391E0 /* MASDictionaryTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2414CC14D6996F009EBA016B98439675 /* MASDictionaryTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7A95B39667A492A060986B0795B85122 /* MASShortcutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 20E469613DEEF5698CC2E0658385B3A7 /* MASShortcutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86288836A35118CD387C7B8383A1F9F1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CB16911106539CF98B4AF79FAA2938 /* Cocoa.framework */; };
-		87E1E943697B97013BB895607DAC60F4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CB16911106539CF98B4AF79FAA2938 /* Cocoa.framework */; };
-		88087104DB90EC679F1E367163351FFD /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FD95351169AD17DCD8AE7D859C1D6BC1 /* ja.lproj */; };
-		902EEE23E9D3AA8467EF3A50431EF2BE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8B3BCAE3930DB03E31F39C1A09E705 /* Carbon.framework */; };
-		959B73A9B0B7E25899F6A37ECB3302C5 /* Pods-Mute Me-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4CB1032B70EC4DE02D87B368D77636 /* Pods-Mute Me-dummy.m */; };
-		96C33D954D43210E97B3DF6444AB94E5 /* MASShortcutValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5C2484673E6954903EEDF333085965 /* MASShortcutValidator.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A358B1CC04588D145AA9D67E26A66AEA /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A9C4628298B582F17383E31ED11A5F08 /* zh-Hant.lproj */; };
-		A5D5DCDE376956279D5B36EA42A24D7D /* MASHotKey.h in Headers */ = {isa = PBXBuildFile; fileRef = BC6E28893186CA3688715CA60BFC32E0 /* MASHotKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BCF8876FA78B037CCD4B6BC9246DC6FD /* MASHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A11AB5D416530A484DAD1F97D9E010 /* MASHotKey.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		BE1F5449678438070473EA08C4951547 /* MASShortcutView+Bindings.m in Sources */ = {isa = PBXBuildFile; fileRef = FD619B73B50911A58B096529F52A50A7 /* MASShortcutView+Bindings.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C322A7288AAD972168AE2C0B75CD059B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5E586EAF4C098BB13472B84B96B96F /* AppKit.framework */; };
-		CA74C6C7D02F9C3FFAA2E3600617F0EF /* MASKeyCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A7023C612FF3F139AE89D62A61C7A13 /* MASKeyCodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC55627A7F9AC4EFF8FFE3AE9A73CBEC /* MASLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 6247799F171A0B65576998B4116F1F4E /* MASLocalization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D12DF721C2FBA157157279D77B865C1E /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B4F45EF1CC04352F093E8BF2B47F48B1 /* nl.lproj */; };
-		D6B7130455C1FC500FCFBB4C7B52F8DF /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2404E18B631A74AD670CE1609A7080BF /* en.lproj */; };
-		D7790A18B5A9A073E65E6C35CC4E93C4 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 19DD9FCBCB8B9347A5BE1D983DEE6192 /* de.lproj */; };
-		E450732C1FBD59C7E1C614CC5B0AA249 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E9B40B057B9FEE6019C779F14C5A8 /* MASShortcutView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F0E73BA1E7A419B07EDEDB7670600937 /* MASShortcutView+Bindings.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AD57029FEF1D175476848C76ACD611D /* MASShortcutView+Bindings.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0FBB86094DE6FFD72E0FA11946335D7 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BC5C51BB4780191957F415BC673514BE /* it.lproj */; };
-		F111E58A8F199C64FAA24329DE9DC5C8 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = EFDE7A909E6986B29687C1E0DEFF2C69 /* pl.lproj */; };
-		FEFD6109965996832710EC2D2FE74A26 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 857F9CF0E370084DD45F7EE72F210D08 /* es.lproj */; };
+		032114835220926E1FAA6B332C20F474 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C463285A5925FB898105EC16FCB462 /* Carbon.framework */; };
+		0E7B078C378488D0FE927FAA1A5C96D0 /* MASShortcut-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6374DC3D73D05DC6DDF696B0874073 /* MASShortcut-dummy.m */; };
+		11779DBA685BB660420494534B69AE9C /* BundleInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D90066DB370CE7374341AA1AFC7437 /* BundleInfo.swift */; };
+		147CCDE5AD17EEAEB7307135649A1CDA /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8CE1222E5403FDBA0FF874D786E3C334 /* ko.lproj */; };
+		175B873D32A93054ED16A9EA28DF554E /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = EC7E83519E23A52CAFACE3CFA8ABBC2D /* zh-Hant.lproj */; };
+		1BFE6C690E87497478B413DA698581FE /* MASDictionaryTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD3DCA07EE6BBEB510E28B78164795C /* MASDictionaryTransformer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1C49168C4CA9F8F28855E705CEAAF3BE /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808932CA81FC8F274816065B66B90F65 /* Types.swift */; };
+		1C84CDAD529437F703DB82AFEAA5E4B6 /* cs.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8A2C3441A87129B30CE1D55EB0FCF88D /* cs.lproj */; };
+		1CCDA82A9A7612E541FF8AC05CE0618C /* AMCoreAudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0CDCAC090952E3A35832B935916ECDD /* AMCoreAudio-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1D752D5EB52D85DA8E81118D6F0F563D /* AMCoreAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC1A40C3AEEF2B0A906A2D9AF3CBDCF /* AMCoreAudio.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2490A627FB16436157C4D688D93B583F /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2A33F9E4DBC6B092FFBED9AD66583B93 /* es.lproj */; };
+		2C3B819108C015056E37E70B8F5F5F97 /* MASShortcut.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D7CF235F8CB3695AEA8FC1C2CDC23A8 /* MASShortcut.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2D21A45126693BB628C5E9218D29BBF7 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 11F84CECBBD83213FAB9437CC53005DA /* zh-Hans.lproj */; };
+		2D676047C6F308F0D8284D6607018D39 /* MASShortcutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8800159F77D90A6B11F9E6DB2B1D10C9 /* MASShortcutView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3DDE5D8E6BA5807A73AA2DAF0A6380AD /* AudioObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C89D595D7C6327CB99F166987ABB3D /* AudioObject.swift */; };
+		4AE0C21E0BAA974F2C60A080ED8C2C60 /* AMCoreAudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8FB88DFDF9A34BCF6BBD18958D3FB /* AMCoreAudio-dummy.m */; };
+		4CBD52728FBB8422C646B006C863DFBC /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F93B81931EFDFBEB38B35E3B439A2 /* Bool+Extensions.swift */; };
+		4CF6A428699BBCD512BCB75DDD04253C /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 71F1ACA1E273718B63DB243453762045 /* pl.lproj */; };
+		5072F8909F7D9030E51C99863E0DCA5F /* Pods-Mute Me-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3138415EE4C39E4D8D18803DC62AF15D /* Pods-Mute Me-dummy.m */; };
+		576F91878CBEE7B98FFE2DBF14513287 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9728E6AECF701D9714A158FBE4E4FBCB /* NotificationCenter.swift */; };
+		5949E58680693F245B6618769F48E027 /* MASDictionaryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED566130640BE986EDE9AECEDFA19ED3 /* MASDictionaryTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5991CFA46E6B481A7D16A8FCE2C8AAB3 /* MASShortcutView+Bindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5598DDAC241575E32DD53C69F65BCED0 /* MASShortcutView+Bindings.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5DB9D8AB23B4B44A2D310195FE6DD9C8 /* MASLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 61EA23293B8D52869CE0C2B73D305DD6 /* MASLocalization.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		60FEA26188D044E89F8677FF2145602B /* MASShortcutValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1BCD39C024EBD38C4E46D3D5C45CD /* MASShortcutValidator.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		68743B36BC7BA3D8353809CFB18E3AAF /* MASShortcutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD746AFD858C4E4600305FC69BC4A43 /* MASShortcutBinder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		70505A7976C90DA277BCF05983D4C3D0 /* AudioHardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29DB9EACC28E55F42B7F7497E56930E /* AudioHardware.swift */; };
+		796502BE643C8A0FAF717D67A10A022F /* MASShortcutView+Bindings.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F63DB772886EF01076D831D08536154 /* MASShortcutView+Bindings.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		923B336EBB1CB2B1133BC0C99EA63782 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E053F4D7E5A0171F99A441F2A495E70F /* nl.lproj */; };
+		98814E7E8FEEEF74ED4649F9784E04F0 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8F1DC0F50F5A8F203662D33E3A752F98 /* ja.lproj */; };
+		9EB36945B3F024B1AB74EBE26568F349 /* MASHotKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ACBA716BF0D15B78C9F91A90F7DCDD3 /* MASHotKey.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A08D6BAA2DB79A661C32701D100ECC42 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 672E38A4C198C098BA76D00DCF2C525D /* MASShortcutView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A18A16B46F8E24827037BC1351CB1902 /* MASShortcutBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB80BE4D14C42B10C7E6DD69A3D08DE /* MASShortcutBinder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A23370E6F15B4D760D58F352944C3980 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 6A085AC897F480938FD8205E790E5362 /* de.lproj */; };
+		A51BA2AC7C6DCC3FBB4DCCC0E0A9C85D /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7C797DD5F54C68F7AD07C6902E910D04 /* ru.lproj */; };
+		A54431EC24BD97D6F53C3D5C663D5535 /* MASLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = C7330DB3FC46777FEFD2C7EEB68073A8 /* MASLocalization.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A9BE08C9AD3438D768172849F8906280 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8E37AFC5D939ABD376E54DF6FDBEBF6D /* en.lproj */; };
+		ACFD347C8623905355E68B1BFF70D5C3 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE6173A1C8468D123FC535E451CBD03 /* MASShortcut.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B012CA369CF29D6A7C9ADC7FAB089BFA /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C24D7458B53FC8C0E0AC5F35F93DCD8 /* AudioDevice.swift */; };
+		B28578A4640B4DEF4630973C9241A60D /* Shortcut.h in Headers */ = {isa = PBXBuildFile; fileRef = C343B557884B84D2882E164F9DB07510 /* Shortcut.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BFE2D11FD048C0C802913C3EACA335BF /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = AE6AE58205DC91D08D3628029D578BD1 /* fr.lproj */; };
+		C146D10CABABA35034A0A071B3762FB4 /* MASShortcutMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 57B8F916B49E58D68B23EBD1B84CEACD /* MASShortcutMonitor.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C2B7C61C31EBBAC3DD5AD0BCF6F08FEE /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FD7A1CAC5F980162BB80AF3BA94FD1 /* AudioStream.swift */; };
+		D12A1378E0CE7DFEB6DF6C415233C124 /* MASShortcutValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 205B5B4550A3C02781B4A85C62DB6BB0 /* MASShortcutValidator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D32E5B0A81CBB4E15BDD7ED6702454A7 /* MASKeyMasks.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E68CC19D1A4D6596255D409C2B6C267 /* MASKeyMasks.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DB9C9F72BFAEF42212533B457687EF91 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FF318380E895C518B7B8052F375AD842 /* it.lproj */; };
+		E0474C69B6C6A2948B9C1CC1700FE887 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F87DCFDA2B9446DEFB997E726115125 /* Utils.swift */; };
+		E6D988DDCE07F9F298F552404DA897DF /* Pods-Mute Me-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91C31DF27E277122DD1523A744A7A165 /* Pods-Mute Me-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F3A152D35D07959868FBF3D2E29EAEE1 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089CBA884EB516614A8C77B86196F0A2 /* AppKit.framework */; };
+		F4BC1C6AE1DA18857CCE4CE5017EB06B /* MASShortcutMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D51F19AB07CE6C018FABF6A86AB240CC /* MASShortcutMonitor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F58931A610D4EE4CE5BA282CE50CDBAE /* MASHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C97E6CABF48BDC6DC927F5984D59C6A /* MASHotKey.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F62C2E44D07A79CCDAD8A813684B2B7E /* MASKeyCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = AA28AFF1B24A13B063349AC1800C6BBE /* MASKeyCodes.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		864BADC041E6C26B87C3BEBC266C0532 /* PBXContainerItemProxy */ = {
+		0C3A21DFDB41A3CB6E4AD1C5DDC20F55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2E029AB0CA275443A2AF3531E33683AB;
-			remoteInfo = MASShortcut;
-		};
-		AB589568138B5952333D183DCA39836A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 21E49887F9334B84548BFF0BA2C69086;
+			remoteGlobalIDString = 51129A24EE72AC4637629D9606318911;
 			remoteInfo = "MASShortcut-MASShortcut";
+		};
+		38506A9005375B291F3480229AD70EC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2DF73D98ECF3AA885B70529062E51F2;
+			remoteInfo = AMCoreAudio;
+		};
+		9F916A9B1DDCD9C6C3315E1399EE7D5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31DA45D85CE3DAB6BBD38E00F0A444BA;
+			remoteInfo = MASShortcut;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		038D200C5F73B8EFF0A93DF4E6E1BD90 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = fr.lproj; sourceTree = "<group>"; };
-		0A5E586EAF4C098BB13472B84B96B96F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
-		12CB16911106539CF98B4AF79FAA2938 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		19DD9FCBCB8B9347A5BE1D983DEE6192 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = de.lproj; sourceTree = "<group>"; };
-		20E469613DEEF5698CC2E0658385B3A7 /* MASShortcutView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutView.h; path = Framework/MASShortcutView.h; sourceTree = "<group>"; };
-		2404E18B631A74AD670CE1609A7080BF /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = en.lproj; sourceTree = "<group>"; };
-		2414CC14D6996F009EBA016B98439675 /* MASDictionaryTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASDictionaryTransformer.h; path = Framework/MASDictionaryTransformer.h; sourceTree = "<group>"; };
-		262F9C963F67BB43B77AEBFCCACE7C2E /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
-		2E8B3BCAE3930DB03E31F39C1A09E705 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
-		2EAD18341A993AF2033A3FB2D21AA783 /* MASLocalization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLocalization.m; path = Framework/MASLocalization.m; sourceTree = "<group>"; };
-		30E9081214B252FA88E26761619D5384 /* Pods-Mute Me-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mute Me-acknowledgements.plist"; sourceTree = "<group>"; };
-		34E349B65FF57F7507C7E886525FCD29 /* Pods-Mute Me-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mute Me-frameworks.sh"; sourceTree = "<group>"; };
-		36695E6AC45B850D887F4F00D8CE1EE9 /* MASShortcutBinder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutBinder.m; path = Framework/MASShortcutBinder.m; sourceTree = "<group>"; };
-		3ADD1D498AC44A5D7BD80C8B9F21D30B /* Pods-Mute Me-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Mute Me-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4ABF22BA082314E781B0AA36E9E238C4 /* MASShortcut.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MASShortcut.xcconfig; sourceTree = "<group>"; };
-		4EA5D3E1505005EA05EF0615090F48F8 /* MASShortcut.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcut.h; path = Framework/MASShortcut.h; sourceTree = "<group>"; };
-		55A11AB5D416530A484DAD1F97D9E010 /* MASHotKey.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASHotKey.m; path = Framework/MASHotKey.m; sourceTree = "<group>"; };
-		5BAF377C4E8EF2A53E3ACA62B79CD7E7 /* ResourceBundle-MASShortcut-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MASShortcut-Info.plist"; sourceTree = "<group>"; };
-		605EBDBCA1616C656042B471811F6C71 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = ru.lproj; sourceTree = "<group>"; };
-		6247799F171A0B65576998B4116F1F4E /* MASLocalization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLocalization.h; path = Framework/MASLocalization.h; sourceTree = "<group>"; };
-		66963E9C1F04B976EC0D1830456B912C /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = ko.lproj; sourceTree = "<group>"; };
-		71170E4E2771D185598BE05475B68E69 /* MASShortcutMonitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutMonitor.m; path = Framework/MASShortcutMonitor.m; sourceTree = "<group>"; };
-		7431A6D435BC007D466649E2A7BAC1A9 /* Shortcut.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Shortcut.h; path = Framework/Shortcut.h; sourceTree = "<group>"; };
-		7F7B48185DC0E504A7EAF6C3CAC1FBFB /* Pods-Mute Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mute Me.release.xcconfig"; sourceTree = "<group>"; };
-		819F2EB6B7FFAB4121876D2654ACD028 /* MASKeyMasks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASKeyMasks.h; path = Framework/MASKeyMasks.h; sourceTree = "<group>"; };
-		857F9CF0E370084DD45F7EE72F210D08 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = es.lproj; sourceTree = "<group>"; };
-		8A7023C612FF3F139AE89D62A61C7A13 /* MASKeyCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASKeyCodes.h; path = Framework/MASKeyCodes.h; sourceTree = "<group>"; };
-		8AD57029FEF1D175476848C76ACD611D /* MASShortcutView+Bindings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASShortcutView+Bindings.h"; path = "Framework/MASShortcutView+Bindings.h"; sourceTree = "<group>"; };
-		8C406EEFC562A5DDF90E7181CB08331B /* cs.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = cs.lproj; sourceTree = "<group>"; };
-		8E4CB1032B70EC4DE02D87B368D77636 /* Pods-Mute Me-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mute Me-dummy.m"; sourceTree = "<group>"; };
-		8ED853B9DF49E5C90CCA069BB3F2B43B /* MASDictionaryTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASDictionaryTransformer.m; path = Framework/MASDictionaryTransformer.m; sourceTree = "<group>"; };
+		020C0DA4FA888537D881BA658A516317 /* MASShortcut-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MASShortcut-prefix.pch"; sourceTree = "<group>"; };
+		089CBA884EB516614A8C77B86196F0A2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		09ACDB21F879D80D2F628185562E7A4A /* AMCoreAudio.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMCoreAudio.xcconfig; sourceTree = "<group>"; };
+		0D96CB7C478CD981286C75F892355A12 /* MASShortcut.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MASShortcut.xcconfig; sourceTree = "<group>"; };
+		0FB17B12CA8811D0A23D3E900BA24288 /* Pods-Mute Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mute Me.release.xcconfig"; sourceTree = "<group>"; };
+		0FC8FB88DFDF9A34BCF6BBD18958D3FB /* AMCoreAudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMCoreAudio-dummy.m"; sourceTree = "<group>"; };
+		11F84CECBBD83213FAB9437CC53005DA /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
+		14F3CA06AA7BC4907F6A1A4177CEC11D /* libPods-Mute Me.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Mute Me.a"; path = "libPods-Mute Me.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DD3DCA07EE6BBEB510E28B78164795C /* MASDictionaryTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASDictionaryTransformer.h; path = Framework/MASDictionaryTransformer.h; sourceTree = "<group>"; };
+		1F63DB772886EF01076D831D08536154 /* MASShortcutView+Bindings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASShortcutView+Bindings.h"; path = "Framework/MASShortcutView+Bindings.h"; sourceTree = "<group>"; };
+		205B5B4550A3C02781B4A85C62DB6BB0 /* MASShortcutValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutValidator.h; path = Framework/MASShortcutValidator.h; sourceTree = "<group>"; };
+		2A33F9E4DBC6B092FFBED9AD66583B93 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = es.lproj; sourceTree = "<group>"; };
+		2CE6173A1C8468D123FC535E451CBD03 /* MASShortcut.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcut.m; path = Framework/MASShortcut.m; sourceTree = "<group>"; };
+		2E126F54F7E79480B1976648D32C8D66 /* libAMCoreAudio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAMCoreAudio.a; path = libAMCoreAudio.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3138415EE4C39E4D8D18803DC62AF15D /* Pods-Mute Me-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mute Me-dummy.m"; sourceTree = "<group>"; };
+		34C89D595D7C6327CB99F166987ABB3D /* AudioObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioObject.swift; path = AMCoreAudio/AudioObject.swift; sourceTree = "<group>"; };
+		4484AF6BAC1CAFF87FE9AE927E507BDC /* Pods-Mute Me-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Mute Me-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4908D3B99EFE914B3ECEC78FE635CD9C /* AMCoreAudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = AMCoreAudio.modulemap; path = ../../Headers/Public/AMCoreAudio/AMCoreAudio.modulemap; sourceTree = "<group>"; };
+		4C97E6CABF48BDC6DC927F5984D59C6A /* MASHotKey.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASHotKey.m; path = Framework/MASHotKey.m; sourceTree = "<group>"; };
+		4F6374DC3D73D05DC6DDF696B0874073 /* MASShortcut-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut-dummy.m"; sourceTree = "<group>"; };
+		4F87DCFDA2B9446DEFB997E726115125 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = AMCoreAudio/Utils.swift; sourceTree = "<group>"; };
+		5598DDAC241575E32DD53C69F65BCED0 /* MASShortcutView+Bindings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MASShortcutView+Bindings.m"; path = "Framework/MASShortcutView+Bindings.m"; sourceTree = "<group>"; };
+		57B8F916B49E58D68B23EBD1B84CEACD /* MASShortcutMonitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutMonitor.h; path = Framework/MASShortcutMonitor.h; sourceTree = "<group>"; };
+		61EA23293B8D52869CE0C2B73D305DD6 /* MASLocalization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLocalization.m; path = Framework/MASLocalization.m; sourceTree = "<group>"; };
+		672E38A4C198C098BA76D00DCF2C525D /* MASShortcutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutView.m; path = Framework/MASShortcutView.m; sourceTree = "<group>"; };
+		68C6B64AF2EA5E434C96A9A30426465B /* AMCoreAudio-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMCoreAudio-prefix.pch"; sourceTree = "<group>"; };
+		6A085AC897F480938FD8205E790E5362 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = de.lproj; sourceTree = "<group>"; };
+		6E68CC19D1A4D6596255D409C2B6C267 /* MASKeyMasks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASKeyMasks.h; path = Framework/MASKeyMasks.h; sourceTree = "<group>"; };
+		71F1ACA1E273718B63DB243453762045 /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = pl.lproj; sourceTree = "<group>"; };
+		795F93B81931EFDFBEB38B35E3B439A2 /* Bool+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bool+Extensions.swift"; path = "AMCoreAudio/Bool+Extensions.swift"; sourceTree = "<group>"; };
+		7ACBA716BF0D15B78C9F91A90F7DCDD3 /* MASHotKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASHotKey.h; path = Framework/MASHotKey.h; sourceTree = "<group>"; };
+		7C797DD5F54C68F7AD07C6902E910D04 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = ru.lproj; sourceTree = "<group>"; };
+		7EF0A9BFDE8644C1FC9E8B49B30D176E /* Pods-Mute Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mute Me.debug.xcconfig"; sourceTree = "<group>"; };
+		808932CA81FC8F274816065B66B90F65 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Types.swift; path = AMCoreAudio/Types.swift; sourceTree = "<group>"; };
+		8800159F77D90A6B11F9E6DB2B1D10C9 /* MASShortcutView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutView.h; path = Framework/MASShortcutView.h; sourceTree = "<group>"; };
+		8A2C3441A87129B30CE1D55EB0FCF88D /* cs.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = cs.lproj; sourceTree = "<group>"; };
+		8CE1222E5403FDBA0FF874D786E3C334 /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = ko.lproj; sourceTree = "<group>"; };
+		8CF1BCD39C024EBD38C4E46D3D5C45CD /* MASShortcutValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutValidator.m; path = Framework/MASShortcutValidator.m; sourceTree = "<group>"; };
+		8D7CF235F8CB3695AEA8FC1C2CDC23A8 /* MASShortcut.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcut.h; path = Framework/MASShortcut.h; sourceTree = "<group>"; };
+		8E37AFC5D939ABD376E54DF6FDBEBF6D /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = en.lproj; sourceTree = "<group>"; };
+		8F1DC0F50F5A8F203662D33E3A752F98 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = ja.lproj; sourceTree = "<group>"; };
+		91C31DF27E277122DD1523A744A7A165 /* Pods-Mute Me-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mute Me-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9775F916524923D2392B56450009DFB7 /* MASShortcutBinder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutBinder.h; path = Framework/MASShortcutBinder.h; sourceTree = "<group>"; };
-		9B3E9B40B057B9FEE6019C779F14C5A8 /* MASShortcutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutView.m; path = Framework/MASShortcutView.m; sourceTree = "<group>"; };
-		9F2035E0B6B08D4683931B31919D5194 /* MASShortcut-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut-dummy.m"; sourceTree = "<group>"; };
-		A212E1D2BC7A106F0B6463091F90FEB8 /* libPods-Mute Me.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Mute Me.a"; path = "libPods-Mute Me.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8FCD63C6E322922A731DB941C851A4F /* MASShortcut.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MASShortcut.bundle; path = MASShortcut.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9C4628298B582F17383E31ED11A5F08 /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hant.lproj"; sourceTree = "<group>"; };
-		B4F45EF1CC04352F093E8BF2B47F48B1 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = nl.lproj; sourceTree = "<group>"; };
-		BA53FE178C20D7B44CF09D6CE340DB43 /* MASShortcut.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcut.m; path = Framework/MASShortcut.m; sourceTree = "<group>"; };
-		BC5C51BB4780191957F415BC673514BE /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = it.lproj; sourceTree = "<group>"; };
-		BC6E28893186CA3688715CA60BFC32E0 /* MASHotKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASHotKey.h; path = Framework/MASHotKey.h; sourceTree = "<group>"; };
-		BE890D74FF5505CA2C7D20BDC9D0402A /* MASShortcutValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutValidator.h; path = Framework/MASShortcutValidator.h; sourceTree = "<group>"; };
-		C59C0A36CF0FF5402DE8930148D3C39D /* Pods-Mute Me-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mute Me-resources.sh"; sourceTree = "<group>"; };
-		C9A948480CC4094D7FD4DB1934F308DF /* MASShortcut-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MASShortcut-prefix.pch"; sourceTree = "<group>"; };
-		CA5C2484673E6954903EEDF333085965 /* MASShortcutValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutValidator.m; path = Framework/MASShortcutValidator.m; sourceTree = "<group>"; };
-		D9BE4BA371D4340E716B396548885BFB /* Pods-Mute Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mute Me.debug.xcconfig"; sourceTree = "<group>"; };
-		EF3789198921958045681A19D290466B /* libMASShortcut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMASShortcut.a; path = libMASShortcut.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFDE7A909E6986B29687C1E0DEFF2C69 /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = pl.lproj; sourceTree = "<group>"; };
-		FC87DC0EA27BB8249F80FAE5FC10020C /* MASShortcutMonitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutMonitor.h; path = Framework/MASShortcutMonitor.h; sourceTree = "<group>"; };
-		FD619B73B50911A58B096529F52A50A7 /* MASShortcutView+Bindings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MASShortcutView+Bindings.m"; path = "Framework/MASShortcutView+Bindings.m"; sourceTree = "<group>"; };
-		FD95351169AD17DCD8AE7D859C1D6BC1 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = ja.lproj; sourceTree = "<group>"; };
+		9728E6AECF701D9714A158FBE4E4FBCB /* NotificationCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationCenter.swift; path = AMCoreAudio/NotificationCenter.swift; sourceTree = "<group>"; };
+		9C24D7458B53FC8C0E0AC5F35F93DCD8 /* AudioDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioDevice.swift; path = AMCoreAudio/AudioDevice.swift; sourceTree = "<group>"; };
+		A4F05A0D12CA9ADB324902B31CD47933 /* Pods-Mute Me-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mute Me-acknowledgements.plist"; sourceTree = "<group>"; };
+		AA28AFF1B24A13B063349AC1800C6BBE /* MASKeyCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASKeyCodes.h; path = Framework/MASKeyCodes.h; sourceTree = "<group>"; };
+		AE6AE58205DC91D08D3628029D578BD1 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = fr.lproj; sourceTree = "<group>"; };
+		B822D22D1BB8539F8DBBF2BA53655683 /* MASShortcut.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MASShortcut.bundle; path = "MASShortcut-MASShortcut.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC1A40C3AEEF2B0A906A2D9AF3CBDCF /* AMCoreAudio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMCoreAudio.h; path = AMCoreAudio/AMCoreAudio.h; sourceTree = "<group>"; };
+		C2FE061CA93A2BDB59B73987EB219397 /* ResourceBundle-MASShortcut-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MASShortcut-Info.plist"; sourceTree = "<group>"; };
+		C343B557884B84D2882E164F9DB07510 /* Shortcut.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Shortcut.h; path = Framework/Shortcut.h; sourceTree = "<group>"; };
+		C4D90066DB370CE7374341AA1AFC7437 /* BundleInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BundleInfo.swift; path = AMCoreAudio/BundleInfo.swift; sourceTree = "<group>"; };
+		C7330DB3FC46777FEFD2C7EEB68073A8 /* MASLocalization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLocalization.h; path = Framework/MASLocalization.h; sourceTree = "<group>"; };
+		CB6080E06103C655397D0E8D218C77D0 /* Pods-Mute Me-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mute Me-resources.sh"; sourceTree = "<group>"; };
+		CBD746AFD858C4E4600305FC69BC4A43 /* MASShortcutBinder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutBinder.m; path = Framework/MASShortcutBinder.m; sourceTree = "<group>"; };
+		CD72F76D34D1B6EC12D2BFC70FE1F42C /* libMASShortcut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMASShortcut.a; path = libMASShortcut.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29DB9EACC28E55F42B7F7497E56930E /* AudioHardware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioHardware.swift; path = AMCoreAudio/AudioHardware.swift; sourceTree = "<group>"; };
+		D51F19AB07CE6C018FABF6A86AB240CC /* MASShortcutMonitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutMonitor.m; path = Framework/MASShortcutMonitor.m; sourceTree = "<group>"; };
+		D6BF686FED3D7AC758EACBA7D84FE58E /* Pods-Mute Me-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mute Me-frameworks.sh"; sourceTree = "<group>"; };
+		DBB80BE4D14C42B10C7E6DD69A3D08DE /* MASShortcutBinder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutBinder.h; path = Framework/MASShortcutBinder.h; sourceTree = "<group>"; };
+		E053F4D7E5A0171F99A441F2A495E70F /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = nl.lproj; sourceTree = "<group>"; };
+		E0CDCAC090952E3A35832B935916ECDD /* AMCoreAudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AMCoreAudio-umbrella.h"; path = "../../Headers/Public/AMCoreAudio/AMCoreAudio-umbrella.h"; sourceTree = "<group>"; };
+		E4C463285A5925FB898105EC16FCB462 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
+		E8E18812312F7AA632C59DF80A2A39E8 /* Pods-Mute Me.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Mute Me.modulemap"; sourceTree = "<group>"; };
+		EC7E83519E23A52CAFACE3CFA8ABBC2D /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hant.lproj"; sourceTree = "<group>"; };
+		ED566130640BE986EDE9AECEDFA19ED3 /* MASDictionaryTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASDictionaryTransformer.m; path = Framework/MASDictionaryTransformer.m; sourceTree = "<group>"; };
+		F5FD7A1CAC5F980162BB80AF3BA94FD1 /* AudioStream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioStream.swift; path = AMCoreAudio/AudioStream.swift; sourceTree = "<group>"; };
+		FF318380E895C518B7B8052F375AD842 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = it.lproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		941213D2430D297562720C51FB950F5F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C322A7288AAD972168AE2C0B75CD059B /* AppKit.framework in Frameworks */,
-				902EEE23E9D3AA8467EF3A50431EF2BE /* Carbon.framework in Frameworks */,
-				87E1E943697B97013BB895607DAC60F4 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C297045AF0032DBFB26D4A5B9CD541B /* Frameworks */ = {
+		4ADF60BA1B90B87D52EF550ED5194EC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E52C92D7ABC8344192B32D6F33418646 /* Frameworks */ = {
+		79DA256310AC3FF7FC0CF4ECB3E444F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86288836A35118CD387C7B8383A1F9F1 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABEC36A3BE615CABC95DE7D955652A38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3A152D35D07959868FBF3D2E29EAEE1 /* AppKit.framework in Frameworks */,
+				032114835220926E1FAA6B332C20F474 /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E573664A3C95AFD973D5B3D392F77059 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32DF2D860294139396E2A0B2201DC7AF /* Pods-Mute Me */ = {
+		1082483116FC7239B010F925255F24AC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3ADD1D498AC44A5D7BD80C8B9F21D30B /* Pods-Mute Me-acknowledgements.markdown */,
-				30E9081214B252FA88E26761619D5384 /* Pods-Mute Me-acknowledgements.plist */,
-				8E4CB1032B70EC4DE02D87B368D77636 /* Pods-Mute Me-dummy.m */,
-				34E349B65FF57F7507C7E886525FCD29 /* Pods-Mute Me-frameworks.sh */,
-				C59C0A36CF0FF5402DE8930148D3C39D /* Pods-Mute Me-resources.sh */,
-				D9BE4BA371D4340E716B396548885BFB /* Pods-Mute Me.debug.xcconfig */,
-				7F7B48185DC0E504A7EAF6C3CAC1FBFB /* Pods-Mute Me.release.xcconfig */,
+				8A2C3441A87129B30CE1D55EB0FCF88D /* cs.lproj */,
+				6A085AC897F480938FD8205E790E5362 /* de.lproj */,
+				8E37AFC5D939ABD376E54DF6FDBEBF6D /* en.lproj */,
+				2A33F9E4DBC6B092FFBED9AD66583B93 /* es.lproj */,
+				AE6AE58205DC91D08D3628029D578BD1 /* fr.lproj */,
+				FF318380E895C518B7B8052F375AD842 /* it.lproj */,
+				8F1DC0F50F5A8F203662D33E3A752F98 /* ja.lproj */,
+				8CE1222E5403FDBA0FF874D786E3C334 /* ko.lproj */,
+				E053F4D7E5A0171F99A441F2A495E70F /* nl.lproj */,
+				71F1ACA1E273718B63DB243453762045 /* pl.lproj */,
+				7C797DD5F54C68F7AD07C6902E910D04 /* ru.lproj */,
+				11F84CECBBD83213FAB9437CC53005DA /* zh-Hans.lproj */,
+				EC7E83519E23A52CAFACE3CFA8ABBC2D /* zh-Hant.lproj */,
 			);
-			name = "Pods-Mute Me";
-			path = "Target Support Files/Pods-Mute Me";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		3505FEFEE0F5A3FB4CD41AB3E1F4B539 /* Targets Support Files */ = {
+		36DBC7BC9E611E31F9CE9A414EFDFA39 /* OS X */ = {
 			isa = PBXGroup;
 			children = (
-				32DF2D860294139396E2A0B2201DC7AF /* Pods-Mute Me */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		71E828FE9FE82679B14421EDD9C435F0 /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				0A5E586EAF4C098BB13472B84B96B96F /* AppKit.framework */,
-				2E8B3BCAE3930DB03E31F39C1A09E705 /* Carbon.framework */,
-				12CB16911106539CF98B4AF79FAA2938 /* Cocoa.framework */,
+				089CBA884EB516614A8C77B86196F0A2 /* AppKit.framework */,
+				E4C463285A5925FB898105EC16FCB462 /* Carbon.framework */,
 			);
 			name = "OS X";
+			sourceTree = "<group>";
+		};
+		57946C177876550CC342F7BB749D5AC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E126F54F7E79480B1976648D32C8D66 /* libAMCoreAudio.a */,
+				CD72F76D34D1B6EC12D2BFC70FE1F42C /* libMASShortcut.a */,
+				14F3CA06AA7BC4907F6A1A4177CEC11D /* libPods-Mute Me.a */,
+				B822D22D1BB8539F8DBBF2BA53655683 /* MASShortcut.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7249C0F68A4D2A372EFE9254A03D144F /* MASShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				1DD3DCA07EE6BBEB510E28B78164795C /* MASDictionaryTransformer.h */,
+				ED566130640BE986EDE9AECEDFA19ED3 /* MASDictionaryTransformer.m */,
+				7ACBA716BF0D15B78C9F91A90F7DCDD3 /* MASHotKey.h */,
+				4C97E6CABF48BDC6DC927F5984D59C6A /* MASHotKey.m */,
+				AA28AFF1B24A13B063349AC1800C6BBE /* MASKeyCodes.h */,
+				6E68CC19D1A4D6596255D409C2B6C267 /* MASKeyMasks.h */,
+				C7330DB3FC46777FEFD2C7EEB68073A8 /* MASLocalization.h */,
+				61EA23293B8D52869CE0C2B73D305DD6 /* MASLocalization.m */,
+				8D7CF235F8CB3695AEA8FC1C2CDC23A8 /* MASShortcut.h */,
+				2CE6173A1C8468D123FC535E451CBD03 /* MASShortcut.m */,
+				DBB80BE4D14C42B10C7E6DD69A3D08DE /* MASShortcutBinder.h */,
+				CBD746AFD858C4E4600305FC69BC4A43 /* MASShortcutBinder.m */,
+				57B8F916B49E58D68B23EBD1B84CEACD /* MASShortcutMonitor.h */,
+				D51F19AB07CE6C018FABF6A86AB240CC /* MASShortcutMonitor.m */,
+				205B5B4550A3C02781B4A85C62DB6BB0 /* MASShortcutValidator.h */,
+				8CF1BCD39C024EBD38C4E46D3D5C45CD /* MASShortcutValidator.m */,
+				8800159F77D90A6B11F9E6DB2B1D10C9 /* MASShortcutView.h */,
+				672E38A4C198C098BA76D00DCF2C525D /* MASShortcutView.m */,
+				1F63DB772886EF01076D831D08536154 /* MASShortcutView+Bindings.h */,
+				5598DDAC241575E32DD53C69F65BCED0 /* MASShortcutView+Bindings.m */,
+				C343B557884B84D2882E164F9DB07510 /* Shortcut.h */,
+				1082483116FC7239B010F925255F24AC /* Resources */,
+				C7E850A750123E5BEF2B86D3A472966D /* Support Files */,
+			);
+			name = MASShortcut;
+			path = MASShortcut;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				96D996393384F21972E2DD81788EE22C /* Frameworks */,
-				DD0B7A53801E1BE1901C3DF3EFE653E5 /* Pods */,
-				845F177C4E367A46B437CA2784062F52 /* Products */,
-				3505FEFEE0F5A3FB4CD41AB3E1F4B539 /* Targets Support Files */,
+				D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */,
+				8C4327BE4D104B8362CEA14E368661BF /* Pods */,
+				57946C177876550CC342F7BB749D5AC5 /* Products */,
+				8368889B80401765FDE77555A43011AA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		845F177C4E367A46B437CA2784062F52 /* Products */ = {
+		8368889B80401765FDE77555A43011AA /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				EF3789198921958045681A19D290466B /* libMASShortcut.a */,
-				A212E1D2BC7A106F0B6463091F90FEB8 /* libPods-Mute Me.a */,
-				A8FCD63C6E322922A731DB941C851A4F /* MASShortcut.bundle */,
+				AB4F7A31AA0559D8C47D02D937B773C2 /* Pods-Mute Me */,
 			);
-			name = Products;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		86C7852825D60E928A0CFA79CBCEFD72 /* Support Files */ = {
+		8C4327BE4D104B8362CEA14E368661BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4ABF22BA082314E781B0AA36E9E238C4 /* MASShortcut.xcconfig */,
-				9F2035E0B6B08D4683931B31919D5194 /* MASShortcut-dummy.m */,
-				C9A948480CC4094D7FD4DB1934F308DF /* MASShortcut-prefix.pch */,
-				5BAF377C4E8EF2A53E3ACA62B79CD7E7 /* ResourceBundle-MASShortcut-Info.plist */,
+				DC2A003D24B72D222EF88AAD9ADD0A9C /* AMCoreAudio */,
+				7249C0F68A4D2A372EFE9254A03D144F /* MASShortcut */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AB4F7A31AA0559D8C47D02D937B773C2 /* Pods-Mute Me */ = {
+			isa = PBXGroup;
+			children = (
+				E8E18812312F7AA632C59DF80A2A39E8 /* Pods-Mute Me.modulemap */,
+				4484AF6BAC1CAFF87FE9AE927E507BDC /* Pods-Mute Me-acknowledgements.markdown */,
+				A4F05A0D12CA9ADB324902B31CD47933 /* Pods-Mute Me-acknowledgements.plist */,
+				3138415EE4C39E4D8D18803DC62AF15D /* Pods-Mute Me-dummy.m */,
+				D6BF686FED3D7AC758EACBA7D84FE58E /* Pods-Mute Me-frameworks.sh */,
+				CB6080E06103C655397D0E8D218C77D0 /* Pods-Mute Me-resources.sh */,
+				91C31DF27E277122DD1523A744A7A165 /* Pods-Mute Me-umbrella.h */,
+				7EF0A9BFDE8644C1FC9E8B49B30D176E /* Pods-Mute Me.debug.xcconfig */,
+				0FB17B12CA8811D0A23D3E900BA24288 /* Pods-Mute Me.release.xcconfig */,
+			);
+			name = "Pods-Mute Me";
+			path = "Target Support Files/Pods-Mute Me";
+			sourceTree = "<group>";
+		};
+		C7E850A750123E5BEF2B86D3A472966D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D96CB7C478CD981286C75F892355A12 /* MASShortcut.xcconfig */,
+				4F6374DC3D73D05DC6DDF696B0874073 /* MASShortcut-dummy.m */,
+				020C0DA4FA888537D881BA658A516317 /* MASShortcut-prefix.pch */,
+				C2FE061CA93A2BDB59B73987EB219397 /* ResourceBundle-MASShortcut-Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MASShortcut";
 			sourceTree = "<group>";
 		};
-		9001976D922754630998DED442D7BE6D /* Resources */ = {
+		D648CE86F139C7CCFD55D5B8A03BE74B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8C406EEFC562A5DDF90E7181CB08331B /* cs.lproj */,
-				19DD9FCBCB8B9347A5BE1D983DEE6192 /* de.lproj */,
-				2404E18B631A74AD670CE1609A7080BF /* en.lproj */,
-				857F9CF0E370084DD45F7EE72F210D08 /* es.lproj */,
-				038D200C5F73B8EFF0A93DF4E6E1BD90 /* fr.lproj */,
-				BC5C51BB4780191957F415BC673514BE /* it.lproj */,
-				FD95351169AD17DCD8AE7D859C1D6BC1 /* ja.lproj */,
-				66963E9C1F04B976EC0D1830456B912C /* ko.lproj */,
-				B4F45EF1CC04352F093E8BF2B47F48B1 /* nl.lproj */,
-				EFDE7A909E6986B29687C1E0DEFF2C69 /* pl.lproj */,
-				605EBDBCA1616C656042B471811F6C71 /* ru.lproj */,
-				262F9C963F67BB43B77AEBFCCACE7C2E /* zh-Hans.lproj */,
-				A9C4628298B582F17383E31ED11A5F08 /* zh-Hant.lproj */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		96D996393384F21972E2DD81788EE22C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				71E828FE9FE82679B14421EDD9C435F0 /* OS X */,
+				36DBC7BC9E611E31F9CE9A414EFDFA39 /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9A4A1752687DE09C8DBF2479B5B1D8F3 /* MASShortcut */ = {
+		DC2A003D24B72D222EF88AAD9ADD0A9C /* AMCoreAudio */ = {
 			isa = PBXGroup;
 			children = (
-				2414CC14D6996F009EBA016B98439675 /* MASDictionaryTransformer.h */,
-				8ED853B9DF49E5C90CCA069BB3F2B43B /* MASDictionaryTransformer.m */,
-				BC6E28893186CA3688715CA60BFC32E0 /* MASHotKey.h */,
-				55A11AB5D416530A484DAD1F97D9E010 /* MASHotKey.m */,
-				8A7023C612FF3F139AE89D62A61C7A13 /* MASKeyCodes.h */,
-				819F2EB6B7FFAB4121876D2654ACD028 /* MASKeyMasks.h */,
-				6247799F171A0B65576998B4116F1F4E /* MASLocalization.h */,
-				2EAD18341A993AF2033A3FB2D21AA783 /* MASLocalization.m */,
-				4EA5D3E1505005EA05EF0615090F48F8 /* MASShortcut.h */,
-				BA53FE178C20D7B44CF09D6CE340DB43 /* MASShortcut.m */,
-				9775F916524923D2392B56450009DFB7 /* MASShortcutBinder.h */,
-				36695E6AC45B850D887F4F00D8CE1EE9 /* MASShortcutBinder.m */,
-				FC87DC0EA27BB8249F80FAE5FC10020C /* MASShortcutMonitor.h */,
-				71170E4E2771D185598BE05475B68E69 /* MASShortcutMonitor.m */,
-				BE890D74FF5505CA2C7D20BDC9D0402A /* MASShortcutValidator.h */,
-				CA5C2484673E6954903EEDF333085965 /* MASShortcutValidator.m */,
-				20E469613DEEF5698CC2E0658385B3A7 /* MASShortcutView.h */,
-				9B3E9B40B057B9FEE6019C779F14C5A8 /* MASShortcutView.m */,
-				8AD57029FEF1D175476848C76ACD611D /* MASShortcutView+Bindings.h */,
-				FD619B73B50911A58B096529F52A50A7 /* MASShortcutView+Bindings.m */,
-				7431A6D435BC007D466649E2A7BAC1A9 /* Shortcut.h */,
-				9001976D922754630998DED442D7BE6D /* Resources */,
-				86C7852825D60E928A0CFA79CBCEFD72 /* Support Files */,
+				BFC1A40C3AEEF2B0A906A2D9AF3CBDCF /* AMCoreAudio.h */,
+				9C24D7458B53FC8C0E0AC5F35F93DCD8 /* AudioDevice.swift */,
+				D29DB9EACC28E55F42B7F7497E56930E /* AudioHardware.swift */,
+				34C89D595D7C6327CB99F166987ABB3D /* AudioObject.swift */,
+				F5FD7A1CAC5F980162BB80AF3BA94FD1 /* AudioStream.swift */,
+				795F93B81931EFDFBEB38B35E3B439A2 /* Bool+Extensions.swift */,
+				C4D90066DB370CE7374341AA1AFC7437 /* BundleInfo.swift */,
+				9728E6AECF701D9714A158FBE4E4FBCB /* NotificationCenter.swift */,
+				808932CA81FC8F274816065B66B90F65 /* Types.swift */,
+				4F87DCFDA2B9446DEFB997E726115125 /* Utils.swift */,
+				F33FD00B1B7E8C7F5BD788D5CB8E0995 /* Support Files */,
 			);
-			name = MASShortcut;
-			path = MASShortcut;
+			name = AMCoreAudio;
+			path = AMCoreAudio;
 			sourceTree = "<group>";
 		};
-		DD0B7A53801E1BE1901C3DF3EFE653E5 /* Pods */ = {
+		F33FD00B1B7E8C7F5BD788D5CB8E0995 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9A4A1752687DE09C8DBF2479B5B1D8F3 /* MASShortcut */,
+				4908D3B99EFE914B3ECEC78FE635CD9C /* AMCoreAudio.modulemap */,
+				09ACDB21F879D80D2F628185562E7A4A /* AMCoreAudio.xcconfig */,
+				0FC8FB88DFDF9A34BCF6BBD18958D3FB /* AMCoreAudio-dummy.m */,
+				68C6B64AF2EA5E434C96A9A30426465B /* AMCoreAudio-prefix.pch */,
+				E0CDCAC090952E3A35832B935916ECDD /* AMCoreAudio-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/AMCoreAudio";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9473DBBEA25053B2575C0714CC0FCF87 /* Headers */ = {
+		0A8C2CE0B151F8DC356286934DA03617 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720804F34108B4D8CA6ED208E23391E0 /* MASDictionaryTransformer.h in Headers */,
-				A5D5DCDE376956279D5B36EA42A24D7D /* MASHotKey.h in Headers */,
-				CA74C6C7D02F9C3FFAA2E3600617F0EF /* MASKeyCodes.h in Headers */,
-				6F22DF5181A0505E68AB893585556551 /* MASKeyMasks.h in Headers */,
-				CC55627A7F9AC4EFF8FFE3AE9A73CBEC /* MASLocalization.h in Headers */,
-				2BEA82707F6B1289F28D8C8097CF4121 /* MASShortcut.h in Headers */,
-				56B0E92AC0CDAB0AD106E4A16CAA4B1C /* MASShortcutBinder.h in Headers */,
-				6DFD61F5CE0AFF2AD3918A9719D46F63 /* MASShortcutMonitor.h in Headers */,
-				34A3BE024A34E64B83C0CEBB641D987D /* MASShortcutValidator.h in Headers */,
-				F0E73BA1E7A419B07EDEDB7670600937 /* MASShortcutView+Bindings.h in Headers */,
-				7A95B39667A492A060986B0795B85122 /* MASShortcutView.h in Headers */,
-				45333808B39FACCB4128E10F4B44432B /* Shortcut.h in Headers */,
+				1BFE6C690E87497478B413DA698581FE /* MASDictionaryTransformer.h in Headers */,
+				9EB36945B3F024B1AB74EBE26568F349 /* MASHotKey.h in Headers */,
+				F62C2E44D07A79CCDAD8A813684B2B7E /* MASKeyCodes.h in Headers */,
+				D32E5B0A81CBB4E15BDD7ED6702454A7 /* MASKeyMasks.h in Headers */,
+				A54431EC24BD97D6F53C3D5C663D5535 /* MASLocalization.h in Headers */,
+				2C3B819108C015056E37E70B8F5F5F97 /* MASShortcut.h in Headers */,
+				A18A16B46F8E24827037BC1351CB1902 /* MASShortcutBinder.h in Headers */,
+				C146D10CABABA35034A0A071B3762FB4 /* MASShortcutMonitor.h in Headers */,
+				D12A1378E0CE7DFEB6DF6C415233C124 /* MASShortcutValidator.h in Headers */,
+				796502BE643C8A0FAF717D67A10A022F /* MASShortcutView+Bindings.h in Headers */,
+				2D676047C6F308F0D8284D6607018D39 /* MASShortcutView.h in Headers */,
+				B28578A4640B4DEF4630973C9241A60D /* Shortcut.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		201732951AB0C19FCE19E246F43A4DE1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CCDA82A9A7612E541FF8AC05CE0618C /* AMCoreAudio-umbrella.h in Headers */,
+				1D752D5EB52D85DA8E81118D6F0F563D /* AMCoreAudio.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36B272E0E496595AF85940A795F1D756 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6D988DDCE07F9F298F552404DA897DF /* Pods-Mute Me-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		21E49887F9334B84548BFF0BA2C69086 /* MASShortcut-MASShortcut */ = {
+		1E1EC0119E43772249F4DA6C196F1AC1 /* Pods-Mute Me */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0CB5289DD0F20D2CAF82C92BB3129B3 /* Build configuration list for PBXNativeTarget "MASShortcut-MASShortcut" */;
+			buildConfigurationList = 461133804696F2C9B398FD36B4E87314 /* Build configuration list for PBXNativeTarget "Pods-Mute Me" */;
 			buildPhases = (
-				EAF659BC5D7419DEE732EC806EF56C72 /* Sources */,
-				9C297045AF0032DBFB26D4A5B9CD541B /* Frameworks */,
-				B8F7EFE753FA2FA9DA9FA9242878193C /* Resources */,
+				36B272E0E496595AF85940A795F1D756 /* Headers */,
+				D3C064E1A7B19573560C7067BF52FEAD /* Sources */,
+				4ADF60BA1B90B87D52EF550ED5194EC9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE4273EDC616BFD1B5D413ACFDC58343 /* PBXTargetDependency */,
+				B96D52435348CF71C0133A549FC16F6B /* PBXTargetDependency */,
+			);
+			name = "Pods-Mute Me";
+			productName = "Pods-Mute Me";
+			productReference = 14F3CA06AA7BC4907F6A1A4177CEC11D /* libPods-Mute Me.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		31DA45D85CE3DAB6BBD38E00F0A444BA /* MASShortcut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F155FB4BBE57344E45D3CA53C13D3641 /* Build configuration list for PBXNativeTarget "MASShortcut" */;
+			buildPhases = (
+				0A8C2CE0B151F8DC356286934DA03617 /* Headers */,
+				3B5D5C57E22CD7600ADDE5721A475DD6 /* Sources */,
+				ABEC36A3BE615CABC95DE7D955652A38 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74663D37B1256C26D923FCA051D14AF5 /* PBXTargetDependency */,
+			);
+			name = MASShortcut;
+			productName = MASShortcut;
+			productReference = CD72F76D34D1B6EC12D2BFC70FE1F42C /* libMASShortcut.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		51129A24EE72AC4637629D9606318911 /* MASShortcut-MASShortcut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1E6AC30F4C5B84ACB2136F98CB7E174 /* Build configuration list for PBXNativeTarget "MASShortcut-MASShortcut" */;
+			buildPhases = (
+				6CA09106A67B3F4D75AAC0B366ACDC60 /* Sources */,
+				E573664A3C95AFD973D5B3D392F77059 /* Frameworks */,
+				1789053DFF49032E8587EA5DAE66FFD3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -322,42 +451,25 @@
 			);
 			name = "MASShortcut-MASShortcut";
 			productName = "MASShortcut-MASShortcut";
-			productReference = A8FCD63C6E322922A731DB941C851A4F /* MASShortcut.bundle */;
+			productReference = B822D22D1BB8539F8DBBF2BA53655683 /* MASShortcut.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		2E029AB0CA275443A2AF3531E33683AB /* MASShortcut */ = {
+		F2DF73D98ECF3AA885B70529062E51F2 /* AMCoreAudio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C84B7482B124C24B3A3B284872F1F133 /* Build configuration list for PBXNativeTarget "MASShortcut" */;
+			buildConfigurationList = FB4CC7B56B8FD57B1CB073A923739B6A /* Build configuration list for PBXNativeTarget "AMCoreAudio" */;
 			buildPhases = (
-				21E448A741CC6884D96A953FA9B7F8E0 /* Sources */,
-				941213D2430D297562720C51FB950F5F /* Frameworks */,
-				9473DBBEA25053B2575C0714CC0FCF87 /* Headers */,
+				201732951AB0C19FCE19E246F43A4DE1 /* Headers */,
+				C0A47ECA6AEC8A942D8E6AEB359B323C /* Sources */,
+				79DA256310AC3FF7FC0CF4ECB3E444F7 /* Frameworks */,
+				F67A829BC74401AE68DB21DFF1C7ABA4 /* Copy generated compatibility header */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C5433A9590099A9CA8A6C30603588C9B /* PBXTargetDependency */,
 			);
-			name = MASShortcut;
-			productName = MASShortcut;
-			productReference = EF3789198921958045681A19D290466B /* libMASShortcut.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		AD411026F3BFEA85B8D683794E6457DD /* Pods-Mute Me */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C59B4804432D9ECA9159C80B7B37BC2A /* Build configuration list for PBXNativeTarget "Pods-Mute Me" */;
-			buildPhases = (
-				12F1C704E5AE3C323C402A4B4BA9268E /* Sources */,
-				E52C92D7ABC8344192B32D6F33418646 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				62484F1F158BEFC07EDDF05DA6DFC680 /* PBXTargetDependency */,
-			);
-			name = "Pods-Mute Me";
-			productName = "Pods-Mute Me";
-			productReference = A212E1D2BC7A106F0B6463091F90FEB8 /* libPods-Mute Me.a */;
+			name = AMCoreAudio;
+			productName = AMCoreAudio;
+			productReference = 2E126F54F7E79480B1976648D32C8D66 /* libAMCoreAudio.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -366,8 +478,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -377,242 +489,241 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 845F177C4E367A46B437CA2784062F52 /* Products */;
+			productRefGroup = 57946C177876550CC342F7BB749D5AC5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E029AB0CA275443A2AF3531E33683AB /* MASShortcut */,
-				21E49887F9334B84548BFF0BA2C69086 /* MASShortcut-MASShortcut */,
-				AD411026F3BFEA85B8D683794E6457DD /* Pods-Mute Me */,
+				F2DF73D98ECF3AA885B70529062E51F2 /* AMCoreAudio */,
+				31DA45D85CE3DAB6BBD38E00F0A444BA /* MASShortcut */,
+				51129A24EE72AC4637629D9606318911 /* MASShortcut-MASShortcut */,
+				1E1EC0119E43772249F4DA6C196F1AC1 /* Pods-Mute Me */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B8F7EFE753FA2FA9DA9FA9242878193C /* Resources */ = {
+		1789053DFF49032E8587EA5DAE66FFD3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BFB0520F10AC37A104DF56489C393AD /* cs.lproj in Resources */,
-				D7790A18B5A9A073E65E6C35CC4E93C4 /* de.lproj in Resources */,
-				D6B7130455C1FC500FCFBB4C7B52F8DF /* en.lproj in Resources */,
-				FEFD6109965996832710EC2D2FE74A26 /* es.lproj in Resources */,
-				0E3FE226CE18F169D10196723C37D1D6 /* fr.lproj in Resources */,
-				F0FBB86094DE6FFD72E0FA11946335D7 /* it.lproj in Resources */,
-				88087104DB90EC679F1E367163351FFD /* ja.lproj in Resources */,
-				6229CC2D8700E52B2C67C085FF9563D5 /* ko.lproj in Resources */,
-				D12DF721C2FBA157157279D77B865C1E /* nl.lproj in Resources */,
-				F111E58A8F199C64FAA24329DE9DC5C8 /* pl.lproj in Resources */,
-				67250F0458194534752D26E44041F059 /* ru.lproj in Resources */,
-				2DBA7EDB796E0AF9A189672E9CBA1407 /* zh-Hans.lproj in Resources */,
-				A358B1CC04588D145AA9D67E26A66AEA /* zh-Hant.lproj in Resources */,
+				1C84CDAD529437F703DB82AFEAA5E4B6 /* cs.lproj in Resources */,
+				A23370E6F15B4D760D58F352944C3980 /* de.lproj in Resources */,
+				A9BE08C9AD3438D768172849F8906280 /* en.lproj in Resources */,
+				2490A627FB16436157C4D688D93B583F /* es.lproj in Resources */,
+				BFE2D11FD048C0C802913C3EACA335BF /* fr.lproj in Resources */,
+				DB9C9F72BFAEF42212533B457687EF91 /* it.lproj in Resources */,
+				98814E7E8FEEEF74ED4649F9784E04F0 /* ja.lproj in Resources */,
+				147CCDE5AD17EEAEB7307135649A1CDA /* ko.lproj in Resources */,
+				923B336EBB1CB2B1133BC0C99EA63782 /* nl.lproj in Resources */,
+				4CF6A428699BBCD512BCB75DDD04253C /* pl.lproj in Resources */,
+				A51BA2AC7C6DCC3FBB4DCCC0E0A9C85D /* ru.lproj in Resources */,
+				2D21A45126693BB628C5E9218D29BBF7 /* zh-Hans.lproj in Resources */,
+				175B873D32A93054ED16A9EA28DF554E /* zh-Hant.lproj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F67A829BC74401AE68DB21DFF1C7ABA4 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/AMCoreAudio/AMCoreAudio.modulemap",
+				"${PODS_ROOT}/Headers/Public/AMCoreAudio/AMCoreAudio-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/AMCoreAudio-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/AMCoreAudio/AMCoreAudio.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/AMCoreAudio/AMCoreAudio-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+			showEnvVarsInLog = 1;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		12F1C704E5AE3C323C402A4B4BA9268E /* Sources */ = {
+		3B5D5C57E22CD7600ADDE5721A475DD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				959B73A9B0B7E25899F6A37ECB3302C5 /* Pods-Mute Me-dummy.m in Sources */,
+				5949E58680693F245B6618769F48E027 /* MASDictionaryTransformer.m in Sources */,
+				F58931A610D4EE4CE5BA282CE50CDBAE /* MASHotKey.m in Sources */,
+				5DB9D8AB23B4B44A2D310195FE6DD9C8 /* MASLocalization.m in Sources */,
+				0E7B078C378488D0FE927FAA1A5C96D0 /* MASShortcut-dummy.m in Sources */,
+				ACFD347C8623905355E68B1BFF70D5C3 /* MASShortcut.m in Sources */,
+				68743B36BC7BA3D8353809CFB18E3AAF /* MASShortcutBinder.m in Sources */,
+				F4BC1C6AE1DA18857CCE4CE5017EB06B /* MASShortcutMonitor.m in Sources */,
+				60FEA26188D044E89F8677FF2145602B /* MASShortcutValidator.m in Sources */,
+				5991CFA46E6B481A7D16A8FCE2C8AAB3 /* MASShortcutView+Bindings.m in Sources */,
+				A08D6BAA2DB79A661C32701D100ECC42 /* MASShortcutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		21E448A741CC6884D96A953FA9B7F8E0 /* Sources */ = {
+		6CA09106A67B3F4D75AAC0B366ACDC60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C5FEAFEBC103CA46099D2D65EBC47A1 /* MASDictionaryTransformer.m in Sources */,
-				BCF8876FA78B037CCD4B6BC9246DC6FD /* MASHotKey.m in Sources */,
-				3C5B1682B90C602799A06D0A5FDC68F9 /* MASLocalization.m in Sources */,
-				0E9F71B13EB5B5185C1368803180F2BA /* MASShortcut-dummy.m in Sources */,
-				3F085DAD796785980C134C9F89C27044 /* MASShortcut.m in Sources */,
-				33691F55769BFDF534CD2343841B2B48 /* MASShortcutBinder.m in Sources */,
-				4416502FCC3847A2A4239B44A9624A47 /* MASShortcutMonitor.m in Sources */,
-				96C33D954D43210E97B3DF6444AB94E5 /* MASShortcutValidator.m in Sources */,
-				BE1F5449678438070473EA08C4951547 /* MASShortcutView+Bindings.m in Sources */,
-				E450732C1FBD59C7E1C614CC5B0AA249 /* MASShortcutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EAF659BC5D7419DEE732EC806EF56C72 /* Sources */ = {
+		C0A47ECA6AEC8A942D8E6AEB359B323C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE0C21E0BAA974F2C60A080ED8C2C60 /* AMCoreAudio-dummy.m in Sources */,
+				B012CA369CF29D6A7C9ADC7FAB089BFA /* AudioDevice.swift in Sources */,
+				70505A7976C90DA277BCF05983D4C3D0 /* AudioHardware.swift in Sources */,
+				3DDE5D8E6BA5807A73AA2DAF0A6380AD /* AudioObject.swift in Sources */,
+				C2B7C61C31EBBAC3DD5AD0BCF6F08FEE /* AudioStream.swift in Sources */,
+				4CBD52728FBB8422C646B006C863DFBC /* Bool+Extensions.swift in Sources */,
+				11779DBA685BB660420494534B69AE9C /* BundleInfo.swift in Sources */,
+				576F91878CBEE7B98FFE2DBF14513287 /* NotificationCenter.swift in Sources */,
+				1C49168C4CA9F8F28855E705CEAAF3BE /* Types.swift in Sources */,
+				E0474C69B6C6A2948B9C1CC1700FE887 /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3C064E1A7B19573560C7067BF52FEAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5072F8909F7D9030E51C99863E0DCA5F /* Pods-Mute Me-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		62484F1F158BEFC07EDDF05DA6DFC680 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MASShortcut;
-			target = 2E029AB0CA275443A2AF3531E33683AB /* MASShortcut */;
-			targetProxy = 864BADC041E6C26B87C3BEBC266C0532 /* PBXContainerItemProxy */;
-		};
-		C5433A9590099A9CA8A6C30603588C9B /* PBXTargetDependency */ = {
+		74663D37B1256C26D923FCA051D14AF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MASShortcut-MASShortcut";
-			target = 21E49887F9334B84548BFF0BA2C69086 /* MASShortcut-MASShortcut */;
-			targetProxy = AB589568138B5952333D183DCA39836A /* PBXContainerItemProxy */;
+			target = 51129A24EE72AC4637629D9606318911 /* MASShortcut-MASShortcut */;
+			targetProxy = 0C3A21DFDB41A3CB6E4AD1C5DDC20F55 /* PBXContainerItemProxy */;
+		};
+		B96D52435348CF71C0133A549FC16F6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MASShortcut;
+			target = 31DA45D85CE3DAB6BBD38E00F0A444BA /* MASShortcut */;
+			targetProxy = 9F916A9B1DDCD9C6C3315E1399EE7D5D /* PBXContainerItemProxy */;
+		};
+		CE4273EDC616BFD1B5D413ACFDC58343 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AMCoreAudio;
+			target = F2DF73D98ECF3AA885B70529062E51F2 /* AMCoreAudio */;
+			targetProxy = 38506A9005375B291F3480229AD70EC7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		34342BBF37D3A9ED85FF2EB654934920 /* Debug */ = {
+		02206A39950AB264474BF72228F5C23F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		4ADF51409C9F39D25DA9E7B14E326488 /* Debug */ = {
+		177A3C31A884A9FB4358C0993A597543 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ABF22BA082314E781B0AA36E9E238C4 /* MASShortcut.xcconfig */;
+			baseConfigurationReference = 09ACDB21F879D80D2F628185562E7A4A /* AMCoreAudio.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MASShortcut/MASShortcut-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AMCoreAudio/AMCoreAudio-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = Headers/Public/AMCoreAudio/AMCoreAudio.modulemap;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = AMCoreAudio;
+				PRODUCT_NAME = AMCoreAudio;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		737E5759E3AAFFA34D1366864DD40719 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9BE4BA371D4340E716B396548885BFB /* Pods-Mute Me.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_NO_COMMON_BLOCKS = YES;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		8E6B18C7D47F86023A169919C67AA2BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ABF22BA082314E781B0AA36E9E238C4 /* MASShortcut.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MASShortcut/MASShortcut-prefix.pch";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
-		C351F93C45351B853B14E951EBE0194B /* Release */ = {
+		5264FC0E0F7539F4AEF4522752B4933D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F7B48185DC0E504A7EAF6C3CAC1FBFB /* Pods-Mute Me.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_NO_COMMON_BLOCKS = YES;
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		C953738A4376755FEA05BB8FF29736EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ABF22BA082314E781B0AA36E9E238C4 /* MASShortcut.xcconfig */;
+			baseConfigurationReference = 0D96CB7C478CD981286C75F892355A12 /* MASShortcut.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MASShortcut";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/MASShortcut/ResourceBundle-MASShortcut-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -621,57 +732,125 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
-		F6FC88CB717F413199C282718D2DC09F /* Release */ = {
+		55998CC6BA9E1A6B83723D47B9B43C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FB17B12CA8811D0A23D3E900BA24288 /* Pods-Mute Me.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mute Me/Pods-Mute Me.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		62FE7660C9BFFBB21FA80BED50834E37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		FE5FC25B90CAF06F692706624247B99B /* Release */ = {
+		A23337F7C0FF3056A6C7F0EA448DFB23 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ABF22BA082314E781B0AA36E9E238C4 /* MASShortcut.xcconfig */;
+			baseConfigurationReference = 0D96CB7C478CD981286C75F892355A12 /* MASShortcut.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/MASShortcut/MASShortcut-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MASShortcut;
+				PRODUCT_NAME = MASShortcut;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		B15D47C5D9F1047A7741288EF415BBBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D96CB7C478CD981286C75F892355A12 /* MASShortcut.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MASShortcut";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/MASShortcut/ResourceBundle-MASShortcut-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -680,7 +859,80 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
+		};
+		BA82A7769D6BCA62D3D7B4E6342FC5F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D96CB7C478CD981286C75F892355A12 /* MASShortcut.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/MASShortcut/MASShortcut-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MASShortcut;
+				PRODUCT_NAME = MASShortcut;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		C7023F3E5A3824DB503445EB69825484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09ACDB21F879D80D2F628185562E7A4A /* AMCoreAudio.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/AMCoreAudio/AMCoreAudio-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = Headers/Public/AMCoreAudio/AMCoreAudio.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = AMCoreAudio;
+				PRODUCT_NAME = AMCoreAudio;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		D64028E85DAEFFBC9149E212D1BF48D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EF0A9BFDE8644C1FC9E8B49B30D176E /* Pods-Mute Me.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mute Me/Pods-Mute Me.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -688,35 +940,44 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				34342BBF37D3A9ED85FF2EB654934920 /* Debug */,
-				F6FC88CB717F413199C282718D2DC09F /* Release */,
+				02206A39950AB264474BF72228F5C23F /* Debug */,
+				62FE7660C9BFFBB21FA80BED50834E37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0CB5289DD0F20D2CAF82C92BB3129B3 /* Build configuration list for PBXNativeTarget "MASShortcut-MASShortcut" */ = {
+		461133804696F2C9B398FD36B4E87314 /* Build configuration list for PBXNativeTarget "Pods-Mute Me" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C953738A4376755FEA05BB8FF29736EB /* Debug */,
-				FE5FC25B90CAF06F692706624247B99B /* Release */,
+				D64028E85DAEFFBC9149E212D1BF48D5 /* Debug */,
+				55998CC6BA9E1A6B83723D47B9B43C94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C59B4804432D9ECA9159C80B7B37BC2A /* Build configuration list for PBXNativeTarget "Pods-Mute Me" */ = {
+		C1E6AC30F4C5B84ACB2136F98CB7E174 /* Build configuration list for PBXNativeTarget "MASShortcut-MASShortcut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				737E5759E3AAFFA34D1366864DD40719 /* Debug */,
-				C351F93C45351B853B14E951EBE0194B /* Release */,
+				B15D47C5D9F1047A7741288EF415BBBB /* Debug */,
+				5264FC0E0F7539F4AEF4522752B4933D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C84B7482B124C24B3A3B284872F1F133 /* Build configuration list for PBXNativeTarget "MASShortcut" */ = {
+		F155FB4BBE57344E45D3CA53C13D3641 /* Build configuration list for PBXNativeTarget "MASShortcut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4ADF51409C9F39D25DA9E7B14E326488 /* Debug */,
-				8E6B18C7D47F86023A169919C67AA2BA /* Release */,
+				BA82A7769D6BCA62D3D7B4E6342FC5F6 /* Debug */,
+				A23337F7C0FF3056A6C7F0EA448DFB23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB4CC7B56B8FD57B1CB073A923739B6A /* Build configuration list for PBXNativeTarget "AMCoreAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7023F3E5A3824DB503445EB69825484 /* Debug */,
+				177A3C31A884A9FB4358C0993A597543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

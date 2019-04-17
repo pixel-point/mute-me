@@ -8,6 +8,7 @@
 #import <CoreAudio/CoreAudio.h>
 #import <AudioToolbox/AudioServices.h>
 #import "ViewController.h"
+#import "Mute_Me-Swift.h"
 
 static const NSTouchBarItemIdentifier muteIdentifier = @"pp.mute";
 static NSString *const MASCustomShortcutKey = @"customShortcut";
@@ -29,9 +30,7 @@ NSString *STATUS_ICON_WHITE = @"tray-unactive-white";
 NSString *STATUS_ICON_OFF = @"micOff";
 NSString *STATUS_ICON_ON = @"micOn";
 
-AudioDeviceID currentAudioDeviceID = kAudioObjectUnknown;
-AudioObjectPropertyListenerBlock onDefaultInputDeviceChange = NULL;
-AudioObjectPropertyListenerBlock onAudioDeviceMuteChange = NULL;
+MuteState lastMuteState;
 
 - (void) awakeFromNib {
     BOOL hideStatusBar = NO;
@@ -133,123 +132,40 @@ AudioObjectPropertyListenerBlock onAudioDeviceMuteChange = NULL;
 
     NSCustomTouchBarItem *mute = [[NSCustomTouchBarItem alloc] initWithIdentifier:muteIdentifier];
     NSImage *muteImage = [NSImage imageNamed:NSImageNameTouchBarAudioInputMuteTemplate];
-    TouchButton *button = [TouchButton buttonWithImage: muteImage target:nil action:nil];
-    [button setDelegate: self];
-    mute.view = button;
-    
-    touchBarButton = button;
-
+    touchBarButton = [TouchButton buttonWithImage: muteImage target:self action:@selector(onPressed:)];
+    mute.view = touchBarButton;
     [NSTouchBarItem addSystemTrayItem:mute];
     DFRElementSetControlStripPresenceForIdentifier(muteIdentifier, YES);
     
-    onDefaultInputDeviceChange = ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress * _Nonnull inAddresses) {
-        BOOL muted = false;
-        BOOL setMuted = false;
-        
-        if (currentAudioDeviceID != kAudioObjectUnknown) {
-            setMuted = true;
-            muted = [self getInputDeviceMute:currentAudioDeviceID];
-            
-            [self unlistenInputDevice:currentAudioDeviceID];
-        }
-        
-        [self setDefaultInputDeviceAsCurrentAndListen];
-        
-        if (setMuted) {
-            [self setInputDevice:currentAudioDeviceID mute:muted];
-        }
-    };
-    
-    onAudioDeviceMuteChange = ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress * _Nonnull inAddresses) {
+    [Mute preformInitializationWithChangeCallback:^(enum MuteState state) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self updatePresentation];
+            lastMuteState = state;
+            [self updatePresentationWithLastState];
         });
-    };
+    }];
 
     [self enableLoginAutostart];
-    [self listenInputDevices];
     
     // fires if we enter / exit dark mode
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(darkModeChanged:) name:@"AppleInterfaceThemeChangedNotification" object:nil];
 }
 
-- (void) unlistenCurrentDevice {
-    if (currentAudioDeviceID != kAudioObjectUnknown) {
-        [self unlistenInputDevice:currentAudioDeviceID];
-    }
+- (void) updatePresentationWithLastState {
+    [self updateTouchBarButtonWithMuteState:lastMuteState];
+    [self updateStatusBarIconWithMuteState:lastMuteState];
 }
 
-- (void) setDefaultInputDeviceAsCurrentAndListen {
-    currentAudioDeviceID = [self getDefaultInputDevice];
-    
-    if (currentAudioDeviceID != kAudioObjectUnknown) {
-        OSStatus error = [self listenInputDevice:currentAudioDeviceID];
-        if (error != noErr) {
-            currentAudioDeviceID = kAudioObjectUnknown;
-        } else {
-            NSLog(@"Listen device: 0x%0x", currentAudioDeviceID);
-        }
-    }
-}
-
-- (void) listenInputDevices {
-    AudioObjectPropertyAddress propertyAddress = [self defaultInputDevicePropertyAddress];
-    
-    OSStatus error = AudioObjectAddPropertyListenerBlock(kAudioObjectSystemObject, &propertyAddress, NULL, onDefaultInputDeviceChange);
-    if (error != noErr) {
-        NSLog(@"Can't listen change of default device. Error: %d", error);
-    }
-    
-    [self setDefaultInputDeviceAsCurrentAndListen];
-}
-
-- (OSStatus) listenInputDevice:(AudioDeviceID)deviceID {
-    AudioObjectPropertyAddress muteAddress = [self mutePropertyAddress];
-    
-    OSStatus error = AudioObjectAddPropertyListenerBlock(deviceID, &muteAddress, NULL, onAudioDeviceMuteChange);
-    if (error != noErr) {
-        NSLog(@"Can't listen mute change of device: 0x%0x. Error: %d", deviceID, error);
-    }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self updatePresentation];
-    });
-    
-    return error;
-}
-
-- (void) unlistenInputDevice:(AudioDeviceID)deviceID {
-    AudioObjectPropertyAddress muteAddress = [self mutePropertyAddress];
-    
-    OSStatus error = AudioObjectRemovePropertyListenerBlock(deviceID, &muteAddress, NULL, onAudioDeviceMuteChange);
-    if (error != noErr) {
-        NSLog(@"Can't unlisten mute change of device: 0x%0x. Error: %d", deviceID, error);
-    }
-    
-    [self setInputDevice:deviceID mute:false];
-}
-
-- (void) updatePresentation {
-    if (currentAudioDeviceID == kAudioObjectUnknown) {
-        return;
-    }
-    
-    BOOL muted = [self getInputDeviceMute:currentAudioDeviceID];
-    [self updateTouchBarButtonWithMuted:muted];
-    [self updateStatusBarIconWithMuted:muted];
-}
-
-- (void) updateTouchBarButtonWithMuted:(BOOL)muted {
-    [touchBarButton setBezelColor: [self colorForMuted: muted]];
+- (void) updateTouchBarButtonWithMuteState:(MuteState) state {
+    [touchBarButton setBezelColor: [self colorForMuteState: state]];
     [touchBarButton layout];
 }
 
-- (void) updateStatusBarIconWithMuted:(BOOL)muted {
-    [self setStatusBarImgRed: muted];
+- (void) updateStatusBarIconWithMuteState:(MuteState) state {
+    [self setStatusBarImgRed: state == MuteStateAll];
 }
 
 -(void)darkModeChanged:(NSNotification *)notif {
-    [self updatePresentation];
+    [self updatePresentationWithLastState];
 }
 
 
@@ -309,93 +225,6 @@ AudioObjectPropertyListenerBlock onAudioDeviceMuteChange = NULL;
     
 }
 
-- (BOOL) setAudioObject:(AudioObjectID)audioObjectID
-               property:(AudioObjectPropertyAddress)propertyAddress
-               dataSize:(UInt32)dataSize
-                   data:(const void *)data
-{
-    if (!AudioObjectHasProperty(audioObjectID, &propertyAddress) ) {
-        NSLog(@"No property for audioObject 0x%0x", audioObjectID);
-        return false;
-    }
-    
-    Boolean settable;
-    OSStatus theError = AudioObjectIsPropertySettable(audioObjectID, &propertyAddress, &settable);
-    if (theError != noErr || !settable) {
-        NSLog(@"The property of audioObject 0x%0x cannot be set", audioObjectID);
-        return false;
-    }
-    
-    //now read the property and correct it, if outside [0...1]
-    theError = AudioObjectSetPropertyData(audioObjectID, &propertyAddress, 0, NULL, dataSize, data);
-    if (theError != noErr) {
-        NSLog(@"Unable to set property for audioObject 0x%0x", audioObjectID);
-        return false;
-    }
-    
-    return true;
-}
-
-- (BOOL) getAudioObject:(AudioObjectID)audioObjectID
-                       property:(AudioObjectPropertyAddress)propertyAddress
-                       dataSize:(UInt32)dataSize
-                           data:(void *)data
-{
-    if (!AudioObjectHasProperty(audioObjectID, &propertyAddress) ) {
-        NSLog(@"No property for audioObject 0x%0x", audioObjectID);
-        return false;
-    }
-    
-    OSStatus theError = AudioObjectGetPropertyData(audioObjectID, &propertyAddress, 0, NULL, &dataSize, data);
-    if (theError != noErr)    {
-        NSLog(@"Unable to read property for audioObject 0x%0x", audioObjectID);
-        return false;
-    }
-    
-    return true;
-}
-
-- (AudioObjectPropertyAddress) mutePropertyAddress {
-    AudioObjectPropertyAddress propertyAddress = {
-        kAudioDevicePropertyMute,
-        kAudioDevicePropertyScopeInput,
-        kAudioObjectPropertyElementMaster
-    };
-
-    return propertyAddress;
-}
-
-- (AudioObjectPropertyAddress) defaultInputDevicePropertyAddress {
-    AudioObjectPropertyAddress propertyAddress = {
-        kAudioHardwarePropertyDefaultInputDevice,
-        kAudioObjectPropertyScopeGlobal,
-        kAudioObjectPropertyElementMaster
-    };
-    
-    return propertyAddress;
-}
-
-- (BOOL) getInputDeviceMute:(AudioDeviceID)deviceID {
-    AudioObjectPropertyAddress propertyAddress = [self mutePropertyAddress];
-    UInt32 data;
-    
-    BOOL success = [self getAudioObject:deviceID property:propertyAddress dataSize:sizeof(data) data:&data];
-    return success ? data == 1 : false;
-}
-
-- (void) setInputDevice:(AudioDeviceID)deviceID mute:(BOOL)mute {
-    UInt32 value = mute ? 1 : 0;
-    AudioObjectPropertyAddress propertyAddress = [self mutePropertyAddress];
-    
-    BOOL s = [self setAudioObject:deviceID property:propertyAddress dataSize:sizeof(value) data:&value];
-    
-    if (s) {
-        printf("123");
-        AudioObjectShow(deviceID);
-        NSLog(@"Set property for audioObject 0x%0x to %d", deviceID, value);
-    }
-}
-
 -(void) enableLoginAutostart {
 
     // on the first run this should be nil. So don't setup auto run
@@ -410,24 +239,13 @@ AudioObjectPropertyListenerBlock onAudioDeviceMuteChange = NULL;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    [self unlistenCurrentDevice];
+    [Mute deinitialize];
 }
 
-- (AudioDeviceID) getDefaultInputDevice {
-    AudioDeviceID defaultDevice = kAudioObjectUnknown;
-    AudioObjectPropertyAddress address = [self defaultInputDevicePropertyAddress];
-    
-    [self getAudioObject:kAudioObjectSystemObject property:address dataSize:sizeof(AudioDeviceID) data:&defaultDevice];
-    
-    return defaultDevice;
-}
-
--(NSColor *)colorForMuted:(BOOL)muted {
-    if(muted) {
-        return NSColor.redColor;
-    } else {
-        return NSColor.clearColor;
-    }
+-(NSColor *)colorForMuteState:(MuteState)state {
+    if(state == MuteStateAll) return NSColor.redColor;
+    if(state == MuteStatePartially) return NSColor.yellowColor;
+    return NSColor.clearColor;
 }
 
 - (void)onPressed:(TouchButton*)sender {
@@ -435,13 +253,7 @@ AudioObjectPropertyListenerBlock onAudioDeviceMuteChange = NULL;
 }
 
 - (void) toggleMute {
-    if (currentAudioDeviceID == kAudioObjectUnknown) {
-        NSLog(@"Can't toggle mute. No audio device.");
-        return;
-    }
-    
-    BOOL isMuted = [self getInputDeviceMute:currentAudioDeviceID];
-    [self setInputDevice:currentAudioDeviceID mute:!isMuted];
+    [Mute toggleMuteOfAllInputDevices];
 }
 
 - (void) openPrefsWindow {

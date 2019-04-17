@@ -1,5 +1,6 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "Mute_Me-Swift.h"
 
 static NSString *githubURL = @"https://github.com/pixel-point/mute-me";
 static NSString *projectURL = @"https://muteme.pixelpoint.io/";
@@ -50,6 +51,13 @@ static void *MASObservingContext = &MASObservingContext;
     NSString *buildLabel = [buildVersion isEqualToString:@"1"] ? @"" :[NSString stringWithFormat:@"(%@)", buildVersion];
     NSString *versionFieldValue = [NSString stringWithFormat:@"Version %@%@", version, buildLabel];
     [self.versionTextFieldCell setStringValue:versionFieldValue];
+    
+    [Mute subscribeToDevicesMutedChangeWithCallback:^(NSArray<DeviceInfo *> * _Nonnull _deviceInfos) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.deviceInfos = _deviceInfos;
+            [self.devicesTable reloadData];
+        });
+    }];
 }
 
 - (void) observeValueForKeyPath: (NSString*) keyPath ofObject: (id) object change: (NSDictionary*) change context: (void*) context
@@ -176,9 +184,28 @@ static void *MASObservingContext = &MASObservingContext;
     
 }
 
-
 - (IBAction)onMainWebsitePressed:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:companyURL]];
 }
+
+// NSTableViewDataSource
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return self.deviceInfos.count;
+};
+
+- (nullable NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row {
+    DeviceInfo *info = self.deviceInfos[row];
+    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"textCell" owner:nil];
+    
+    if (tableColumn == tableView.tableColumns[0]) {
+        cell.textField.stringValue = info.name;
+    } else if (tableColumn == tableView.tableColumns[1]) {
+        cell.textField.stringValue = info.muted ? @"Muted" : @"Not muted";
+    }
+    
+    return cell;
+}
+
 
 @end
